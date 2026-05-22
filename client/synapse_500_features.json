@@ -1,0 +1,4802 @@
+[
+  {
+    "id": "TOUCHLESS_001",
+    "name": "Physical button wake/sleep cycle",
+    "description": "Map power button long-press to xdotool key super+l for screen lock. Zero latency, 100% reliable.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_001",
+      "args": "Physical button wake/sleep cycle"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "TOUCHLESS_002",
+    "name": "Volume-up single press → scroll up",
+    "description": "Use evdev/udev rules to intercept volume key events and pipe to xdotool key Page_Up. Native Linux, <5ms latency.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_002",
+      "args": "Volume-up single press → scroll up"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "cpu"
+  },
+  {
+    "id": "TOUCHLESS_003",
+    "name": "Volume-down single press → scroll down",
+    "description": "Mirror of scroll up. xdotool key Page_Down on volume- event. Solid tactile feedback loop.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_003",
+      "args": "Volume-down single press → scroll down"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "monitor"
+  },
+  {
+    "id": "TOUCHLESS_004",
+    "name": "Volume-up hold → master volume raise",
+    "description": "evdev hold detection + amixer set Master 5%+ via systemd oneshot. Instant, no vision overhead.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_004",
+      "args": "Volume-up hold → master volume raise"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_005",
+    "name": "Volume-down hold → master volume lower",
+    "description": "amixer set Master 5%- on sustained keydown. Pure shell, zero CPU cost.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_005",
+      "args": "Volume-down hold → master volume lower"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "TOUCHLESS_006",
+    "name": "Double volume-up → next track",
+    "description": "Debounce two rapid presses in Node.js event buffer → playerctl next. Reliable, <10ms.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_006",
+      "args": "Double volume-up → next track"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "volume-2"
+  },
+  {
+    "id": "TOUCHLESS_007",
+    "name": "Double volume-down → previous track",
+    "description": "Same debounce logic → playerctl previous. Clean and battle-tested.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_007",
+      "args": "Double volume-down → previous track"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "TOUCHLESS_008",
+    "name": "Power + volume-up chord → brightness up",
+    "description": "Chord detection in evdev listener → xrandr --brightness increment. Hardware-native.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_008",
+      "args": "Power + volume-up chord → brightness up"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "eye"
+  },
+  {
+    "id": "TOUCHLESS_009",
+    "name": "Power + volume-down chord → brightness down",
+    "description": "xrandr --brightness decrement on chord. Works fully offline, no camera.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_009",
+      "args": "Power + volume-down chord → brightness down"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_010",
+    "name": "Triple volume-up → play/pause toggle",
+    "description": "Three-press burst → playerctl play-pause. Tactile, deterministic, zero false positives.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_010",
+      "args": "Triple volume-up → play/pause toggle"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_011",
+    "name": "WebSocket heartbeat ping",
+    "description": "Node.js server sends a JSON ping every 2s. Client JS ACKs. Detects disconnect in <4s. Foundation for all WS features.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_011",
+      "args": "WebSocket heartbeat ping"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_012",
+    "name": "Push notification overlay",
+    "description": "Ubuntu sends notify-send; Node.js mirrors payload over WS → client renders a toast div. Dead simple, instant.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_012",
+      "args": "Push notification overlay"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_013",
+    "name": "Clipboard sync",
+    "description": "xclip -selection clipboard piped over WS to Android clipboard API. Bidirectional text sharing.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_013",
+      "args": "Clipboard sync"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_014",
+    "name": "Active window title display",
+    "description": "wmctrl -l polled every 500ms, diff detected, pushed over WS. Client shows current active app in HUD bar.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_014",
+      "args": "Active window title display"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_015",
+    "name": "System CPU/RAM meter HUD",
+    "description": "/proc/stat and /proc/meminfo read every 2s, JSON-pushed to client. Renders a live gauge on tablet.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_015",
+      "args": "System CPU/RAM meter HUD"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "TOUCHLESS_016",
+    "name": "Media metadata display",
+    "description": "playerctl metadata piped over WS every second. Shows track name, artist, album on HUD.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_016",
+      "args": "Media metadata display"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_017",
+    "name": "Battery level display",
+    "description": "upower -i /org/freedesktop/UPower/devices/battery polled, pushed as JSON. Simple HUD widget.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_017",
+      "args": "Battery level display"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "crosshair"
+  },
+  {
+    "id": "TOUCHLESS_018",
+    "name": "Network speed meter",
+    "description": "Parse /proc/net/dev at 1s intervals, compute delta bytes/s, push to tablet HUD. Zero overhead.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_018",
+      "args": "Network speed meter"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "unlock"
+  },
+  {
+    "id": "TOUCHLESS_019",
+    "name": "Orientation-based screen rotation",
+    "description": "Gyroscope on tablet → if pitch > 80° → send WS command → host runs xrandr --rotate. Instant, reliable.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_019",
+      "args": "Orientation-based screen rotation"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_020",
+    "name": "Shake gesture → mute toggle",
+    "description": "Accelerometer detects >3g burst across 200ms → amixer set Master toggle. Very low false positive on a desk.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_020",
+      "args": "Shake gesture → mute toggle"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "star"
+  },
+  {
+    "id": "TOUCHLESS_021",
+    "name": "Tilt left → previous workspace",
+    "description": "Roll angle < -25° sustained 400ms → wmctrl -n + wmctrl -s (prev desktop). Clean, low CPU.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_021",
+      "args": "Tilt left → previous workspace"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_022",
+    "name": "Tilt right → next workspace",
+    "description": "Roll angle > 25° sustained 400ms → wmctrl -s (next desktop). Mirror of tilt-left.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_022",
+      "args": "Tilt right → next workspace"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "play"
+  },
+  {
+    "id": "TOUCHLESS_023",
+    "name": "Lay flat → screen dim",
+    "description": "Pitch near 0° for 5s → xrandr --brightness 0.2. Saves burn-in when user walks away.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_023",
+      "args": "Lay flat → screen dim"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "tool"
+  },
+  {
+    "id": "TOUCHLESS_024",
+    "name": "Stand upright → screen restore",
+    "description": "Pitch returns to 60-90° → xrandr --brightness 1.0. Paired with lay-flat dim.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_024",
+      "args": "Stand upright → screen restore"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_025",
+    "name": "Clap detection → play/pause",
+    "description": "Mic amplitude threshold crossing twice in <600ms via Web Audio API. Simple, low CPU, reliable in quiet room.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_025",
+      "args": "Clap detection → play/pause"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_026",
+    "name": "Voice keyword → run script",
+    "description": "Browser SpeechRecognition API detects keyword (e.g. 'synapse run') → sends WS command. No offline model needed.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_026",
+      "args": "Voice keyword → run script"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_027",
+    "name": "Voice keyword → mute mic",
+    "description": "'Synapse mute' → amixer set Capture nocap. Instant via SpeechRecognition.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_027",
+      "args": "Voice keyword → mute mic"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "eye"
+  },
+  {
+    "id": "TOUCHLESS_028",
+    "name": "Presence detection → screen on",
+    "description": "Front camera luma average rises above threshold → host exits screensaver. Simple frame diff, low overhead.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_028",
+      "args": "Presence detection → screen on"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_029",
+    "name": "Absence detection → screen off",
+    "description": "No face detected for 30s → xset dpms force off. Companion to presence detection.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_029",
+      "args": "Absence detection → screen off"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_030",
+    "name": "QR code scan → open URL on host",
+    "description": "Rear camera + jsQR library → decoded URL sent over WS → host runs xdg-open. Zero extra model overhead.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_030",
+      "args": "QR code scan → open URL on host"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_031",
+    "name": "Barcode scan → clipboard paste",
+    "description": "jsQR/zxing-js detects 1D barcode on rear cam → pushes string over WS → xdotool type on host.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_031",
+      "args": "Barcode scan → clipboard paste"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_032",
+    "name": "Flashlight mode → rear LED on",
+    "description": "Host sends torch command → tablet JS enables rear camera torch track constraint. Useful HUD utility.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_032",
+      "args": "Flashlight mode → rear LED on"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_033",
+    "name": "Ambient light reading → auto-brightness",
+    "description": "Front camera average brightness sampled every 5s → xrandr --brightness scaled linearly.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_033",
+      "args": "Ambient light reading → auto-brightness"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_034",
+    "name": "WS command: open application",
+    "description": "Tablet sends {cmd:'launch', app:'firefox'} → server runs xdg-open or direct binary. Clean RPC.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_034",
+      "args": "WS command: open application"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_035",
+    "name": "WS command: close active window",
+    "description": "Tablet sends close_active → server runs wmctrl -c :ACTIVE:. Simple.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_035",
+      "args": "WS command: close active window"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "zap"
+  },
+  {
+    "id": "TOUCHLESS_036",
+    "name": "WS command: type text",
+    "description": "Tablet sends {cmd:'type', text:'...'} → xdotool type --delay 20 -- \"text\". Universal input injection.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_036",
+      "args": "WS command: type text"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "play"
+  },
+  {
+    "id": "TOUCHLESS_037",
+    "name": "WS command: move mouse to coords",
+    "description": "Tablet sends {cmd:'mouse', x:400, y:300} → xdotool mousemove. Foundation for all pointer control.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_037",
+      "args": "WS command: move mouse to coords"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "settings"
+  },
+  {
+    "id": "TOUCHLESS_038",
+    "name": "WS command: left click",
+    "description": "xdotool click 1 on server side. Pairs with mouse move for full pointer control.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_038",
+      "args": "WS command: left click"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "star"
+  },
+  {
+    "id": "TOUCHLESS_039",
+    "name": "WS command: right click",
+    "description": "xdotool click 3. Menu access without touch.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_039",
+      "args": "WS command: right click"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "tool"
+  },
+  {
+    "id": "TOUCHLESS_040",
+    "name": "WS command: scroll wheel",
+    "description": "xdotool click 4/5 for scroll up/down. Infinite scroll without touch input.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_040",
+      "args": "WS command: scroll wheel"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "monitor"
+  },
+  {
+    "id": "TOUCHLESS_041",
+    "name": "Hand wave → next slide",
+    "description": "MediaPipe Hands detects leftward swipe velocity > threshold → WS → xdotool key Right. 200-400ms latency.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_041",
+      "args": "Hand wave → next slide"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_042",
+    "name": "Thumbs up gesture → confirm action",
+    "description": "MediaPipe Hands thumbs-up classifier → sends confirm signal over WS. Moderate CPU on MediaPipe loop.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_042",
+      "args": "Thumbs up gesture → confirm action"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_043",
+    "name": "Thumbs down gesture → cancel action",
+    "description": "MediaPipe Hands thumbs-down classifier → cancel WS event. Same overhead as thumbs-up.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_043",
+      "args": "Thumbs down gesture → cancel action"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_044",
+    "name": "Open palm → pause all media",
+    "description": "MediaPipe Hands: all 5 fingers extended → playerctl pause. Good semantics, moderate CPU.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_044",
+      "args": "Open palm → pause all media"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "shield"
+  },
+  {
+    "id": "TOUCHLESS_045",
+    "name": "Fist gesture → stop script",
+    "description": "MediaPipe Hands: 0 fingers extended → sends kill signal over WS. Needs reliable fist classifier.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_045",
+      "args": "Fist gesture → stop script"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_046",
+    "name": "Two-finger point → mouse warp",
+    "description": "MediaPipe Hands index+middle extended, tracks normalized tip position → maps to xdotool mousemove. Requires calibration.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_046",
+      "args": "Two-finger point → mouse warp"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "terminal"
+  },
+  {
+    "id": "TOUCHLESS_047",
+    "name": "Head nod → confirm",
+    "description": "MediaPipe Face Mesh: Y-delta of nose tip landmark across 3 frames → confirm WS event.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_047",
+      "args": "Head nod → confirm"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_048",
+    "name": "Head shake → cancel",
+    "description": "MediaPipe Face Mesh: X-delta oscillation across 4 frames → cancel event. False positives on normal head movement.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_048",
+      "args": "Head shake → cancel"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_049",
+    "name": "Gaze left zone → focus left monitor",
+    "description": "MediaPipe iris tracking: gaze vector points left of center → wmctrl move window to left display.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_049",
+      "args": "Gaze left zone → focus left monitor"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "terminal"
+  },
+  {
+    "id": "TOUCHLESS_050",
+    "name": "Gaze right zone → focus right monitor",
+    "description": "Mirror of gaze-left. Requires proper iris model, moderate CPU.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_050",
+      "args": "Gaze right zone → focus right monitor"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "star"
+  },
+  {
+    "id": "TOUCHLESS_051",
+    "name": "Gaze up → scroll up",
+    "description": "Iris Y-offset above neutral band → continuous xdotool scroll. Needs per-user calibration.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_051",
+      "args": "Gaze up → scroll up"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "crosshair"
+  },
+  {
+    "id": "TOUCHLESS_052",
+    "name": "Gaze down → scroll down",
+    "description": "Iris Y-offset below neutral → xdotool scroll down. Paired with gaze-up.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_052",
+      "args": "Gaze down → scroll down"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "unlock"
+  },
+  {
+    "id": "TOUCHLESS_053",
+    "name": "Eye blink left → back",
+    "description": "MediaPipe left-eye EAR drops below 0.2 for 80-200ms → xdotool key alt+Left browser back.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_053",
+      "args": "Eye blink left → back"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_054",
+    "name": "Eye blink right → forward",
+    "description": "Right-eye EAR metric → xdotool key alt+Right. Hard to distinguish from natural blink without calibration.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_054",
+      "args": "Eye blink right → forward"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "star"
+  },
+  {
+    "id": "TOUCHLESS_055",
+    "name": "Double blink → screenshot",
+    "description": "Two rapid blinks <600ms apart → scrot ~/screenshot.png + notify. Timing window is tricky.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_055",
+      "args": "Double blink → screenshot"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "monitor"
+  },
+  {
+    "id": "TOUCHLESS_056",
+    "name": "Pose: arms raised → fullscreen toggle",
+    "description": "MediaPipe Pose: both wrists above shoulder Y → xdotool key F11. Dramatic but semantically clear.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_056",
+      "args": "Pose: arms raised → fullscreen toggle"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_057",
+    "name": "Pose: lean forward → zoom in",
+    "description": "Face bounding box area increases 15%+ → xdotool key ctrl+plus. Requires stable distance baseline.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_057",
+      "args": "Pose: lean forward → zoom in"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_058",
+    "name": "Pose: lean back → zoom out",
+    "description": "Face bbox area decreases 15%+ → xdotool key ctrl+minus. Mirror of lean-forward.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_058",
+      "args": "Pose: lean back → zoom out"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_059",
+    "name": "Voice command: open named app",
+    "description": "Whisper tiny model offline inference → parsed command → exec. 400-800ms per utterance on host CPU.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_059",
+      "args": "Voice command: open named app"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "tool"
+  },
+  {
+    "id": "TOUCHLESS_060",
+    "name": "Voice command: navigate URL",
+    "description": "Whisper parses 'go to [site]' → constructs URL → xdg-open. Needs good transcription accuracy.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_060",
+      "args": "Voice command: navigate URL"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_061",
+    "name": "Voice dictation mode",
+    "description": "Whisper streaming → accumulated buffer → xdotool type result. Latency makes real-time use hard.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_061",
+      "args": "Voice dictation mode"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "zap"
+  },
+  {
+    "id": "TOUCHLESS_062",
+    "name": "Voice command: window layout",
+    "description": "'Synapse tile left' → wmctrl reposition current window. Requires reliable parse.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_062",
+      "args": "Voice command: window layout"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "eye"
+  },
+  {
+    "id": "TOUCHLESS_063",
+    "name": "Voice trigger: run bash script by name",
+    "description": "Whisper transcribes script name → server maps to /scripts/ dir → executes. Powerful but needs lexicon.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_063",
+      "args": "Voice trigger: run bash script by name"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_064",
+    "name": "Ambient noise level meter → alert",
+    "description": "Web Audio FFT: if dB above threshold for 10s → notify-send 'loud environment'. Simple FFT, mod overhead.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_064",
+      "args": "Ambient noise level meter → alert"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_065",
+    "name": "Knock pattern on desk → trigger macro",
+    "description": "Mic detects low-frequency knock pattern via autocorrelation. Moderate DSP, decent reliability on hard desk.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_065",
+      "args": "Knock pattern on desk → trigger macro"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_066",
+    "name": "Finger snap → dismiss notification",
+    "description": "Mic detects broadband transient with fast attack → dismisses current toast. Works in quiet room.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_066",
+      "args": "Finger snap → dismiss notification"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_067",
+    "name": "Whistle detection → custom event",
+    "description": "FFT dominant frequency 1-3kHz sustained 200ms → WS event. Works but sensitive to HVAC noise.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_067",
+      "args": "Whistle detection → custom event"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_068",
+    "name": "Speech pause detection → auto-paragraph",
+    "description": "VAD detects >1.5s silence in dictation → injects newline via xdotool. Useful for dictation workflows.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_068",
+      "args": "Speech pause detection → auto-paragraph"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_069",
+    "name": "Face recognition → user profile switch",
+    "description": "dlib face_recognition lib: identifies user → loads profile-specific keybinds and layouts. CPU-heavy setup.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_069",
+      "args": "Face recognition → user profile switch"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Heavy",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_070",
+    "name": "Face distance monitor → posture alert",
+    "description": "Face bbox width exceeds threshold (too close) → notify-send posture warning. Useful, needs calibration.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_070",
+      "args": "Face distance monitor → posture alert"
+    },
+    "haptic_profile": "NotificationFeedbackType.Warning",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_071",
+    "name": "Color card detection → macro trigger",
+    "description": "Rear cam detects dominant HSV color of held card → maps to preset action. Fun, moderate precision.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_071",
+      "args": "Color card detection → macro trigger"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "TOUCHLESS_072",
+    "name": "Object presence trigger",
+    "description": "YOLO-nano rear cam: detects specific object (coffee mug, book) → triggers corresponding macro.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_072",
+      "args": "Object presence trigger"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "terminal"
+  },
+  {
+    "id": "TOUCHLESS_073",
+    "name": "BLE device proximity → lock/unlock",
+    "description": "Bluetooth LE RSSI of paired device (phone/watch) → if RSSI < -85dBm, lock host. Solid BLE concept.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_073",
+      "args": "BLE device proximity → lock/unlock"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "TOUCHLESS_074",
+    "name": "BLE device appears → auto-launch app",
+    "description": "bluetoothctl monitor detects known MAC → triggers app launch. Reliable with known devices.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_074",
+      "args": "BLE device appears → auto-launch app"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_075",
+    "name": "Wi-Fi SSID change → environment mode",
+    "description": "iwgetid polls SSID → 'office' SSID triggers work profile, 'home' triggers home profile.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_075",
+      "args": "Wi-Fi SSID change → environment mode"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_076",
+    "name": "Local LAN device count → occupancy indicator",
+    "description": "nmap -sn sweep counts active IPs → displays room occupancy estimate on HUD.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_076",
+      "args": "Local LAN device count → occupancy indicator"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "play"
+  },
+  {
+    "id": "TOUCHLESS_077",
+    "name": "Port scan script trigger over WS",
+    "description": "Tablet sends scan request → server runs nmap → returns open services JSON to HUD.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_077",
+      "args": "Port scan script trigger over WS"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "truck"
+  },
+  {
+    "id": "TOUCHLESS_078",
+    "name": "Gyro tap-tap detection → enter key",
+    "description": "Accelerometer detects double-tap physical surface event via high-pass filter → xdotool key Return.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_078",
+      "args": "Gyro tap-tap detection → enter key"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_079",
+    "name": "Rotation rate threshold → undo",
+    "description": "Gyro detects rapid twist (>200°/s) → xdotool key ctrl+z. Hard to distinguish accidental bumps.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_079",
+      "args": "Rotation rate threshold → undo"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_080",
+    "name": "Free-fall detection → emergency lock",
+    "description": "Accelerometer magnitude < 0.5g for 100ms → instant xset dpms force off + lock. Device safety feature.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_080",
+      "args": "Free-fall detection → emergency lock"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "TOUCHLESS_081",
+    "name": "Full air mouse pointer via hand tracking",
+    "description": "MediaPipe Hands: index tip 3D coords → normalized to screen → continuous xdotool mousemove. CPU-saturating loop, high jitter.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_081",
+      "args": "Full air mouse pointer via hand tracking"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_082",
+    "name": "Air typing keyboard via finger tracking",
+    "description": "10-finger position tracking → virtual keyboard collision detection. Extreme CPU, sub-50% accuracy realistically.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_082",
+      "args": "Air typing keyboard via finger tracking"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "cpu"
+  },
+  {
+    "id": "TOUCHLESS_083",
+    "name": "Lip reading → text input",
+    "description": "MediaPipe Face Mesh lip landmarks → phoneme classifier → text. State-of-the-art models still <80% accuracy.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_083",
+      "args": "Lip reading → text input"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_084",
+    "name": "Emotion detection → adaptive UI",
+    "description": "Facial AU classifier → detects stress/focus/boredom → adjusts HUD theme. High CPU, ethically complex.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_084",
+      "args": "Emotion detection → adaptive UI"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "TOUCHLESS_085",
+    "name": "Full-body skeleton macro control",
+    "description": "MediaPipe Pose 33-landmark full skeleton → pose library matching. 300ms+ latency, heavy CPU.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_085",
+      "args": "Full-body skeleton macro control"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Heavy",
+    "ui_icon": "tool"
+  },
+  {
+    "id": "TOUCHLESS_086",
+    "name": "Eye-only mouse cursor (no calibration)",
+    "description": "Iris tracking for fine mouse control without calibration is extremely inaccurate without eye tracker hardware.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_086",
+      "args": "Eye-only mouse cursor (no calibration)"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "activity"
+  },
+  {
+    "id": "TOUCHLESS_087",
+    "name": "Real-time OCR of real-world documents",
+    "description": "Rear cam → tesseract OCR in real time → parse structured data. CPU-heavy, highly sensitive to lighting.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_087",
+      "args": "Real-time OCR of real-world documents"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Heavy",
+    "ui_icon": "terminal"
+  },
+  {
+    "id": "TOUCHLESS_088",
+    "name": "Depth estimation from monocular camera",
+    "description": "MiDaS monocular depth → used for gesture depth gating. Requires GPU-class inference, unusable on Tab CPU.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_088",
+      "args": "Depth estimation from monocular camera"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "star"
+  },
+  {
+    "id": "TOUCHLESS_089",
+    "name": "3D room mapping via camera sweep",
+    "description": "ORB-SLAM or similar via rear cam → map room layout. Computationally absurd for this hardware.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_089",
+      "args": "3D room mapping via camera sweep"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "star"
+  },
+  {
+    "id": "TOUCHLESS_090",
+    "name": "Speaker diarization → per-person commands",
+    "description": "Real-time speaker ID + command routing. pyannote.audio requires significant RAM and compute.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_090",
+      "args": "Speaker diarization → per-person commands"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_091",
+    "name": "Continuous emotion from voice tone",
+    "description": "Prosody analysis every 500ms → maps to mood → adapts interface. Latency + accuracy make it impractical.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_091",
+      "args": "Continuous emotion from voice tone"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_092",
+    "name": "Musical note vocalization → MIDI control",
+    "description": "Mic pitch detection → MIDI CC → DAW control. Hilarious in practice, requires perfect pitch vocalization.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_092",
+      "args": "Musical note vocalization → MIDI control"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_093",
+    "name": "Heartbeat detection via front camera",
+    "description": "rPPG (remote PPG) from face color micro-variations. Requires ideal lighting, prone to noise.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_093",
+      "args": "Heartbeat detection via front camera"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_094",
+    "name": "Stress level biometric HUD",
+    "description": "Combines rPPG + facial AU + voice tone into stress score. Three unreliable inputs compounded.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_094",
+      "args": "Stress level biometric HUD"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "settings"
+  },
+  {
+    "id": "TOUCHLESS_095",
+    "name": "Hand geometry biometric unlock",
+    "description": "Rear cam hand silhouette ratio comparison → authentication. Too many false positives for security use.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_095",
+      "args": "Hand geometry biometric unlock"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "TOUCHLESS_096",
+    "name": "Subliminal sound frequency control",
+    "description": "Mic detects 18-20kHz ultrasonic tones as control signals. Android mic hardware typically rolls off above 16kHz.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_096",
+      "args": "Subliminal sound frequency control"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_097",
+    "name": "Ambient soundscape classification",
+    "description": "Audio CNN classifies room environment (cafe, office, home) in real time → adjusts profile. 200ms+ inference.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_097",
+      "args": "Ambient soundscape classification"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_098",
+    "name": "Crowd density estimation via rear cam",
+    "description": "YOLO person detection → density map. Only useful in unusual HUD deployments, heavy CPU.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_098",
+      "args": "Crowd density estimation via rear cam"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Heavy",
+    "ui_icon": "terminal"
+  },
+  {
+    "id": "TOUCHLESS_099",
+    "name": "Gait recognition for user ID",
+    "description": "MediaPipe Pose gait cycle analysis → person identity from walk pattern. Computationally extreme.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_099",
+      "args": "Gait recognition for user ID"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "shield"
+  },
+  {
+    "id": "TOUCHLESS_100",
+    "name": "Neural style transfer for UI theming",
+    "description": "Apply artistic style transfer to UI screenshots in real-time. GPU-only, completely impractical on Tab.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_100",
+      "args": "Neural style transfer for UI theming"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "terminal"
+  },
+  {
+    "id": "TOUCHLESS_101",
+    "name": "Vol-up triple hold → emergency SOS WS broadcast",
+    "description": "3s hold on vol-up → Node.js broadcasts SOS JSON to all WS clients on LAN. Instant hardware-based alert.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_101",
+      "args": "Vol-up triple hold → emergency SOS WS broadcast"
+    },
+    "haptic_profile": "NotificationFeedbackType.Warning",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_102",
+    "name": "Vol-down triple hold → start screen recorder",
+    "description": "ffmpeg -f x11grab launched via WS command on 3s vol-down hold. Zero camera, pure hardware trigger.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_102",
+      "args": "Vol-down triple hold → start screen recorder"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_103",
+    "name": "Power double-tap → toggle do-not-disturb",
+    "description": "Rapid power presses → dunstctl set-paused toggle. Silences all Ubuntu notifications instantly.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_103",
+      "args": "Power double-tap → toggle do-not-disturb"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "play"
+  },
+  {
+    "id": "TOUCHLESS_104",
+    "name": "Vol-up then vol-down rapid sequence → toggle Wi-Fi",
+    "description": "Alternating button pattern → nmcli radio wifi toggle on host. Morse-code-like physical input.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_104",
+      "args": "Vol-up then vol-down rapid sequence → toggle Wi-Fi"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_105",
+    "name": "Vol-down then vol-up → toggle Bluetooth on host",
+    "description": "Paired alternate press → rfkill toggle bluetooth. Pure hardware, zero camera.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_105",
+      "args": "Vol-down then vol-up → toggle Bluetooth on host"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_106",
+    "name": "Power 5-tap → safe shutdown sequence",
+    "description": "Five rapid power taps → sends shutdown -h +1 with cancelable WS confirmation window on HUD.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_106",
+      "args": "Power 5-tap → safe shutdown sequence"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_107",
+    "name": "Vol chord held 10s → factory reset confirmation UI",
+    "description": "Sustained chord triggers HUD overlay asking for second physical confirmation before wipe. Safety interlock.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_107",
+      "args": "Vol chord held 10s → factory reset confirmation UI"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "TOUCHLESS_108",
+    "name": "Vol-up hold at boot → recovery mode menu",
+    "description": "Physical key state read at app startup → displays HUD recovery menu (clear cache, reset prefs, etc.).",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_108",
+      "args": "Vol-up hold at boot → recovery mode menu"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "eye"
+  },
+  {
+    "id": "TOUCHLESS_109",
+    "name": "Button sequence as morse code input",
+    "description": "Vol-up = dot, vol-down = dash, power = space. Buffer decoded to ASCII → WS types to host. Slow but 100% offline.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_109",
+      "args": "Button sequence as morse code input"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_110",
+    "name": "Button rhythm pattern → scene activation",
+    "description": "Custom tap rhythm (long-short-long) → maps to scene ID → WS activates KDE/GNOME activity. Rhythmic macro.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_110",
+      "args": "Button rhythm pattern → scene activation"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_111",
+    "name": "WS command: focus window by partial title",
+    "description": "Tablet sends {cmd:'focus', title:'Firefox'} → wmctrl -a. Lets HUD act as window switcher.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_111",
+      "args": "WS command: focus window by partial title"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "play"
+  },
+  {
+    "id": "TOUCHLESS_112",
+    "name": "WS command: move window to coordinates",
+    "description": "wmctrl -r :ACTIVE: -e 0,x,y,w,h piped from WS payload. Full remote window manager.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_112",
+      "args": "WS command: move window to coordinates"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_113",
+    "name": "WS command: take named screenshot + push to HUD",
+    "description": "scrot /tmp/snap.png → base64 → WS → HUD img element. Live screen preview on tablet.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_113",
+      "args": "WS command: take named screenshot + push to HUD"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_114",
+    "name": "WS file transfer: host → tablet",
+    "description": "Host reads file → base64 chunks over WS → tablet reassembles Blob → offers download. LAN file share.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_114",
+      "args": "WS file transfer: host → tablet"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_115",
+    "name": "WS file transfer: tablet → host",
+    "description": "Reverse direction. Tablet sends FileReader chunks → host Node.js writes to ~/Downloads/. Bidirectional.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_115",
+      "args": "WS file transfer: tablet → host"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_116",
+    "name": "LAN mDNS service discovery display",
+    "description": "avahi-browse -a on host → JSON over WS → HUD shows all LAN services (Plex, printers, NAS). Network map.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_116",
+      "args": "LAN mDNS service discovery display"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_117",
+    "name": "Running process list on HUD",
+    "description": "ps aux --sort=-%cpu | head -20 → JSON over WS every 5s → live process table on tablet.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_117",
+      "args": "Running process list on HUD"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_118",
+    "name": "Kill process by WS command",
+    "description": "Tablet sends {cmd:'kill', pid:1234} → server runs kill -9 PID. Remote task manager from HUD.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_118",
+      "args": "Kill process by WS command"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "volume-2"
+  },
+  {
+    "id": "TOUCHLESS_119",
+    "name": "Disk usage tree pushed to HUD",
+    "description": "du -sh /* → JSON → rendered as treemap on tablet. Storage overview without touching host.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_119",
+      "args": "Disk usage tree pushed to HUD"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "monitor"
+  },
+  {
+    "id": "TOUCHLESS_120",
+    "name": "WS-based alarm scheduler",
+    "description": "Tablet sends {cmd:'alarm', time:'09:30', msg:'standup'} → host cron job → plays TTS + notify at scheduled time.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_120",
+      "args": "WS-based alarm scheduler"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_121",
+    "name": "Specific alarm clock sound detection → auto-dismiss",
+    "description": "Web Audio FFT fingerprints a known alarm tone frequency pattern → auto-sends dismiss keypress to host.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_121",
+      "args": "Specific alarm clock sound detection → auto-dismiss"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_122",
+    "name": "Phone ringtone detection → put host in DND mode",
+    "description": "Classify incoming ring frequency signature → dunstctl pause + notify on HUD. Acoustic awareness.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_122",
+      "args": "Phone ringtone detection → put host in DND mode"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "TOUCHLESS_123",
+    "name": "Door knock detection → log visitor event",
+    "description": "Mic detects low-freq impact pair (80-400Hz) → logs timestamp + plays doorbell chime via host speaker.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_123",
+      "args": "Door knock detection → log visitor event"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_124",
+    "name": "Appliance sound monitoring (smoke alarm)",
+    "description": "FFT matches 3kHz pulsed tone of smoke detector → emergency WS broadcast to all LAN clients.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_124",
+      "args": "Appliance sound monitoring (smoke alarm)"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_125",
+    "name": "Glass break detection → security alert",
+    "description": "Broadband transient with specific spectral flatness → fires security alert WS event + optional siren via host.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_125",
+      "args": "Glass break detection → security alert"
+    },
+    "haptic_profile": "NotificationFeedbackType.Warning",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_126",
+    "name": "Background music BPM detection → sync HUD animations",
+    "description": "Web Audio beat tracker → sends current BPM over WS → HUD CSS animation speed synced to music.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_126",
+      "args": "Background music BPM detection → sync HUD animations"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_127",
+    "name": "Room reverb estimation → meeting mode toggle",
+    "description": "Mic captures impulse (clap) → estimates RT60 reverb time → if large room detected, bumps mic gain.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_127",
+      "args": "Room reverb estimation → meeting mode toggle"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_128",
+    "name": "Voice stress level proxy → break reminder",
+    "description": "Pitch variance + jitter in voice increases under stress → after 30 min of high variance, suggests break.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_128",
+      "args": "Voice stress level proxy → break reminder"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_129",
+    "name": "Acoustic echo map of room",
+    "description": "Speaker plays chirp → mic captures reflections → estimates room geometry. Fascinating but computationally heavy.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_129",
+      "args": "Acoustic echo map of room"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Heavy",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_130",
+    "name": "Continuous ambient audio fingerprint logging",
+    "description": "Chromaprint-style audio hash every 10s → logs environment signatures. Heavy I/O + privacy concerns.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_130",
+      "args": "Continuous ambient audio fingerprint logging"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Heavy",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_131",
+    "name": "Face count → meeting HUD mode",
+    "description": "MediaPipe Face Detection count > 1 → switches HUD to presentation mode (bigger text, hides private info).",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_131",
+      "args": "Face count → meeting HUD mode"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_132",
+    "name": "Face center tracking → mouse nudge",
+    "description": "Face centroid X normalized to screen width → nudges mouse cursor toward gaze region. Soft attractor.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_132",
+      "args": "Face center tracking → mouse nudge"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_133",
+    "name": "Hat/cap detection → casual mode",
+    "description": "Person landmark: head region crop → binary hat classifier → switches to casual notification profile.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_133",
+      "args": "Hat/cap detection → casual mode"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "eye"
+  },
+  {
+    "id": "TOUCHLESS_134",
+    "name": "Micro-expression rapid blink rate monitor",
+    "description": "EAR calculated per-frame → if blink rate drops <8/min for 20min → eye strain alert with break prompt.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_134",
+      "args": "Micro-expression rapid blink rate monitor"
+    },
+    "haptic_profile": "NotificationFeedbackType.Warning",
+    "ui_icon": "tool"
+  },
+  {
+    "id": "TOUCHLESS_135",
+    "name": "Attention zone heatmap → focus score",
+    "description": "Gaze zone sampling over 5 min → generates focus score (% time on screen) → displayed on HUD.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_135",
+      "args": "Attention zone heatmap → focus score"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "unlock"
+  },
+  {
+    "id": "TOUCHLESS_136",
+    "name": "Look-away timer → Pomodoro assist",
+    "description": "Face not detected for 20s during focus session → pauses Pomodoro timer. Keeps honest time tracking.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_136",
+      "args": "Look-away timer → Pomodoro assist"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_137",
+    "name": "Head turn left → tab switch left",
+    "description": "MediaPipe Face Mesh yaw angle < -20° → xdotool key ctrl+shift+Tab. Natural browsing gesture.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_137",
+      "args": "Head turn left → tab switch left"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_138",
+    "name": "Head turn right → tab switch right",
+    "description": "Yaw > +20° → xdotool key ctrl+Tab. Paired with head-turn-left.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_138",
+      "args": "Head turn right → tab switch right"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_139",
+    "name": "Eyebrow raise → open spotlight/launcher",
+    "description": "MediaPipe: AU1+AU2 (inner+outer brow raise) → xdotool key super. Launcher trigger without hands.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_139",
+      "args": "Eyebrow raise → open spotlight/launcher"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "play"
+  },
+  {
+    "id": "TOUCHLESS_140",
+    "name": "Sustained frown detection → ambient music trigger",
+    "description": "AU4 corrugator activation sustained 3s → playerctl play ambient playlist. Stress-responsive automation.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_140",
+      "args": "Sustained frown detection → ambient music trigger"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_141",
+    "name": "Document scan → OCR → paste to host",
+    "description": "Rear cam captures flat document → perspective correct → tesseract → xdotool type result. Powerful scan-to-type.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_141",
+      "args": "Document scan → OCR → paste to host"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "zap"
+  },
+  {
+    "id": "TOUCHLESS_142",
+    "name": "Plant health monitor",
+    "description": "Rear cam crops plant region → hue histogram → yellowing detection → sends care reminder over WS.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_142",
+      "args": "Plant health monitor"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_143",
+    "name": "Item counter on surface",
+    "description": "YOLO-nano counts specific objects on desk (books, cups) → logs inventory over time to HUD.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_143",
+      "args": "Item counter on surface"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "TOUCHLESS_144",
+    "name": "Color temperature of room light → warm/cool alert",
+    "description": "Rear cam white balance estimation → if below 3000K push warm-light alert (good for eyes).",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_144",
+      "args": "Color temperature of room light → warm/cool alert"
+    },
+    "haptic_profile": "NotificationFeedbackType.Warning",
+    "ui_icon": "shield"
+  },
+  {
+    "id": "TOUCHLESS_145",
+    "name": "Printout QR code as macro trigger",
+    "description": "Rear cam scans printed QR code at desk → maps QR payload to macro. Physical macro buttons from paper.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_145",
+      "args": "Printout QR code as macro trigger"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "truck"
+  },
+  {
+    "id": "TOUCHLESS_146",
+    "name": "ArUco marker detection → AR overlay trigger",
+    "description": "Rear cam detects ArUco marker → sends marker ID + pose over WS → host overlays info on HUD.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_146",
+      "args": "ArUco marker detection → AR overlay trigger"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_147",
+    "name": "Book spine OCR → Goodreads lookup",
+    "description": "Rear cam captures bookshelf → tesseract extracts title → host fetches Goodreads rating via curl.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_147",
+      "args": "Book spine OCR → Goodreads lookup"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "eye"
+  },
+  {
+    "id": "TOUCHLESS_148",
+    "name": "Whiteboard capture → clean image push",
+    "description": "Rear cam captures whiteboard → adaptive threshold + perspective correct → pushes PNG to host ~/Desktop.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_148",
+      "args": "Whiteboard capture → clean image push"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "cpu"
+  },
+  {
+    "id": "TOUCHLESS_149",
+    "name": "Light on/off detection → automate workflow",
+    "description": "Rear cam luma mean crosses dark/bright threshold → triggers 'lights on' or 'lights off' WS event.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_149",
+      "args": "Light on/off detection → automate workflow"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_150",
+    "name": "Motion zone alarm via rear cam",
+    "description": "Frame differencing in defined ROI → if object moves in 'restricted zone' → alert WS event. Security mode.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_150",
+      "args": "Motion zone alarm via rear cam"
+    },
+    "haptic_profile": "NotificationFeedbackType.Warning",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_151",
+    "name": "Tap surface once → keyboard shortcut 1",
+    "description": "Accelerometer 1 impact (15-30ms) → xdotool key ctrl+c. Single tap = copy. Tactile desk interaction.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_151",
+      "args": "Tap surface once → keyboard shortcut 1"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "star"
+  },
+  {
+    "id": "TOUCHLESS_152",
+    "name": "Tap surface twice → keyboard shortcut 2",
+    "description": "Two impacts < 300ms apart → xdotool key ctrl+v. Double tap = paste.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_152",
+      "args": "Tap surface twice → keyboard shortcut 2"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "truck"
+  },
+  {
+    "id": "TOUCHLESS_153",
+    "name": "Three taps → keyboard shortcut 3",
+    "description": "Triple impact burst → xdotool key ctrl+z. Three taps = undo.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_153",
+      "args": "Three taps → keyboard shortcut 3"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "unlock"
+  },
+  {
+    "id": "TOUCHLESS_154",
+    "name": "Long hold tap → right-click context menu",
+    "description": "Single impact held vibration (pressure proxy via sustained z-variance) → xdotool click 3.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_154",
+      "args": "Long hold tap → right-click context menu"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_155",
+    "name": "Spinning tablet on surface → app carousel",
+    "description": "Gyro Z-axis sustained rotation → cycles through running app list via wmctrl. Fun, low false positives.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_155",
+      "args": "Spinning tablet on surface → app carousel"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "TOUCHLESS_156",
+    "name": "Vigorous shake → panic kill all terminals",
+    "description": "High-magnitude sustained shake (>4g, >500ms) → killall gnome-terminal xterm. Emergency quit.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_156",
+      "args": "Vigorous shake → panic kill all terminals"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Heavy",
+    "ui_icon": "star"
+  },
+  {
+    "id": "TOUCHLESS_157",
+    "name": "Tilt forward (toward user) → scroll to top",
+    "description": "Pitch angle drops below -15° sustained 300ms → xdotool key ctrl+Home.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_157",
+      "args": "Tilt forward (toward user) → scroll to top"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_158",
+    "name": "Tilt back → scroll to bottom",
+    "description": "Pitch > +15° sustained → xdotool key ctrl+End. Paired with tilt-forward.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_158",
+      "args": "Tilt back → scroll to bottom"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "terminal"
+  },
+  {
+    "id": "TOUCHLESS_159",
+    "name": "Circular tilt motion → window resize",
+    "description": "Gyro traces circular path → maps radius to window size delta → wmctrl resize. Experimental.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_159",
+      "args": "Circular tilt motion → window resize"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "activity"
+  },
+  {
+    "id": "TOUCHLESS_160",
+    "name": "Micro-vibration pattern logger",
+    "description": "Accelerometer logs vibration signature of desk (fans, HDD spin) → anomaly detection if pattern changes.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_160",
+      "args": "Micro-vibration pattern logger"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "truck"
+  },
+  {
+    "id": "TOUCHLESS_161",
+    "name": "TTS readback of active window title",
+    "description": "wmctrl active title → Piper TTS → aplay. Auditory feedback when window changes.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_161",
+      "args": "TTS readback of active window title"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "tool"
+  },
+  {
+    "id": "TOUCHLESS_162",
+    "name": "TTS clock announcement every hour",
+    "description": "Cron job → date string → Piper TTS → aplay. Time awareness without looking.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_162",
+      "args": "TTS clock announcement every hour"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "activity"
+  },
+  {
+    "id": "TOUCHLESS_163",
+    "name": "Voice macro recording mode",
+    "description": "Say 'synapse record' → every subsequent voice command is stored as a named macro sequence. Meta-command.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_163",
+      "args": "Voice macro recording mode"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "tool"
+  },
+  {
+    "id": "TOUCHLESS_164",
+    "name": "Voice-controlled SSH session",
+    "description": "'Synapse ssh pi' → Whisper parses host name → xterm -e ssh [host] launched on Ubuntu. Hands-free remote.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_164",
+      "args": "Voice-controlled SSH session"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "TOUCHLESS_165",
+    "name": "Voice-triggered file search",
+    "description": "'Synapse find invoice' → locate invoice → results JSON over WS → HUD file list. Instant lookup.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_165",
+      "args": "Voice-triggered file search"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_166",
+    "name": "Voice note → append to daily journal",
+    "description": "Whisper transcription → appended with timestamp to ~/journal/YYYY-MM-DD.md. Frictionless logging.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_166",
+      "args": "Voice note → append to daily journal"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "shield"
+  },
+  {
+    "id": "TOUCHLESS_167",
+    "name": "Hotword confidence threshold tuning HUD",
+    "description": "HUD slider (sent via hardware buttons) adjusts SpeechRecognition confidence threshold live. Self-calibrating.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_167",
+      "args": "Hotword confidence threshold tuning HUD"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "TOUCHLESS_168",
+    "name": "Per-app voice command profiles",
+    "description": "wmctrl active window → switches Whisper command grammar → 'synapse compile' in VS Code vs 'synapse send' in email.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_168",
+      "args": "Per-app voice command profiles"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "tool"
+  },
+  {
+    "id": "TOUCHLESS_169",
+    "name": "Voice to shell pipeline",
+    "description": "'Synapse run: ls -la /home' → Whisper → Electron executes trusted shell command → result displayed on HUD.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_169",
+      "args": "Voice to shell pipeline"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "zap"
+  },
+  {
+    "id": "TOUCHLESS_170",
+    "name": "Multilingual hotword switching",
+    "description": "Detect spoken language via Whisper language ID → switches interface language + TTS voice. Complex config.",
+    "module": "Voice",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_170",
+      "args": "Multilingual hotword switching"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_171",
+    "name": "Auto-hide sensitive info on face absence",
+    "description": "MediaPipe: face not detected → HUD blurs/hides password fields and private data. Privacy screen.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_171",
+      "args": "Auto-hide sensitive info on face absence"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_172",
+    "name": "HUD widget layout saved per orientation",
+    "description": "Gyro detects landscape vs portrait → loads different widget layout JSON from localStorage. Adaptive HUD.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_172",
+      "args": "HUD widget layout saved per orientation"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "cpu"
+  },
+  {
+    "id": "TOUCHLESS_173",
+    "name": "WS-pushed calendar event overlay",
+    "description": "Host cron checks gcalcli or calcurse → upcoming events JSON over WS → HUD shows next 3 events.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_173",
+      "args": "WS-pushed calendar event overlay"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_174",
+    "name": "Live terminal output widget",
+    "description": "tail -f /var/log/syslog | WS stream → HUD renders live log tail. System monitoring at a glance.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_174",
+      "args": "Live terminal output widget"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_175",
+    "name": "Git status widget",
+    "description": "git status --short in watched repo → JSON over WS → HUD shows modified/untracked file count.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_175",
+      "args": "Git status widget"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_176",
+    "name": "Docker container status HUD",
+    "description": "docker ps --format json polled every 10s → WS → HUD shows running containers, uptime, port map.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_176",
+      "args": "Docker container status HUD"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_177",
+    "name": "Weather widget via curl wttr.in",
+    "description": "curl wttr.in/?format=j1 on server every 30min → JSON cached → WS pushed to HUD weather card.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_177",
+      "args": "Weather widget via curl wttr.in"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_178",
+    "name": "Pomodoro timer driven by HUD + physical keys",
+    "description": "Vol-up starts 25min timer, vol-down pauses, power skip. Piper TTS announces breaks. Full Pomodoro cycle.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_178",
+      "args": "Pomodoro timer driven by HUD + physical keys"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "cpu"
+  },
+  {
+    "id": "TOUCHLESS_179",
+    "name": "Focus mode: dims non-primary windows on HUD",
+    "description": "wmctrl lists windows → all except active get 0.4 opacity via xprop → snaps back on switch.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_179",
+      "args": "Focus mode: dims non-primary windows on HUD"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_180",
+    "name": "Idle time tracker pushed to HUD",
+    "description": "xprintidle polled every minute → accumulated idle vs active time → daily productivity bar on HUD.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_180",
+      "args": "Idle time tracker pushed to HUD"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "activity"
+  },
+  {
+    "id": "TOUCHLESS_181",
+    "name": "Luma-based screen privacy filter",
+    "description": "Front cam detects second face → instantly enables xrandr privacy mode (reduced brightness + angle simulation).",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_181",
+      "args": "Luma-based screen privacy filter"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_182",
+    "name": "WS session encryption (WSS)",
+    "description": "Node.js upgraded to wss:// with self-signed cert → all WS traffic TLS-encrypted on LAN. Security baseline.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_182",
+      "args": "WS session encryption (WSS)"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_183",
+    "name": "MAC address allowlist for WS connections",
+    "description": "Server checks client IP → arp-scan maps to MAC → rejects unknown devices. LAN access control.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_183",
+      "args": "MAC address allowlist for WS connections"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_184",
+    "name": "Inactivity auto-lock with grace countdown",
+    "description": "xprintidle > 300000ms → HUD shows 10s countdown → if no button press → xset dpms force off + lock.",
+    "module": "Device Physics",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_184",
+      "args": "Inactivity auto-lock with grace countdown"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_185",
+    "name": "Microphone always-off mode with LED indicator",
+    "description": "HUD toggle (via vol buttons) → amixer set Capture nocap → HUD shows red mic icon. Privacy assurance.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_185",
+      "args": "Microphone always-off mode with LED indicator"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_186",
+    "name": "Camera hardware disable flag",
+    "description": "Vol chord → sets camera: false in app config → getUserMedia returns null. Software camera kill switch.",
+    "module": "Hardware Keys",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_186",
+      "args": "Camera hardware disable flag"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "TOUCHLESS_187",
+    "name": "WS command audit log",
+    "description": "Every command received logged with timestamp, source IP, payload to ~/synapse_audit.log. Security trail.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_187",
+      "args": "WS command audit log"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "TOUCHLESS_188",
+    "name": "Anomalous command rate limiter",
+    "description": "Node.js: if >20 WS commands in 5s from one IP → auto-disconnect + notify-send. Anti-replay protection.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_188",
+      "args": "Anomalous command rate limiter"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_189",
+    "name": "Face-spoofing liveness check",
+    "description": "Front cam: requires blink + head turn before unlocking. Liveness = anti-photo-spoof.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_189",
+      "args": "Face-spoofing liveness check"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "TOUCHLESS_190",
+    "name": "Network traffic anomaly HUD alert",
+    "description": "Monitor /proc/net/dev for sudden bandwidth spike → alert if > 10MB/s unexpected → WS warning.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_190",
+      "args": "Network traffic anomaly HUD alert"
+    },
+    "haptic_profile": "NotificationFeedbackType.Warning",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_191",
+    "name": "Time-of-day adaptive HUD theme",
+    "description": "Node.js compares current hour → morning/afternoon/evening/night JSON config → HUD re-themes automatically.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_191",
+      "args": "Time-of-day adaptive HUD theme"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "TOUCHLESS_192",
+    "name": "Sunrise/sunset screen color temp shift",
+    "description": "curl sunrise-sunset.org API → at sunset xrandr --gamma 1.0:0.85:0.7. Blue light reduction.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_192",
+      "args": "Sunrise/sunset screen color temp shift"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "truck"
+  },
+  {
+    "id": "TOUCHLESS_193",
+    "name": "Fan noise estimation → focus mode toggle",
+    "description": "Mic background noise floor measured → if sustained HVAC band detected → auto-enable noise suppression on mic.",
+    "module": "Acoustic",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_193",
+      "args": "Fan noise estimation → focus mode toggle"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_194",
+    "name": "Power outage detection → graceful shutdown",
+    "description": "UPS or battery event via upower → if discharging and < 10% → saves all open docs + initiates shutdown.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_194",
+      "args": "Power outage detection → graceful shutdown"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "TOUCHLESS_195",
+    "name": "Screen content categorizer → break enforcement",
+    "description": "scrot thumbnail every 5min → host-side tflite category inference → if 'social media' label → 10min block.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_195",
+      "args": "Screen content categorizer → break enforcement"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "TOUCHLESS_196",
+    "name": "Periodic posture photo + log",
+    "description": "Front cam captures frame every 30min → saves to ~/posture_log/ for manual review. Low-tech, effective.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_196",
+      "args": "Periodic posture photo + log"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "eye"
+  },
+  {
+    "id": "TOUCHLESS_197",
+    "name": "Desk temperature estimate from camera drift",
+    "description": "Long-exposure luma drift in front cam → correlates with ambient temp change. Highly experimental proxy.",
+    "module": "Vision",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_197",
+      "args": "Desk temperature estimate from camera drift"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "zap"
+  },
+  {
+    "id": "TOUCHLESS_198",
+    "name": "Multi-HUD mesh: two tablets as extended display",
+    "description": "Two SM-T515 units both on WS server → each receives different widget region → extended HUD dashboard.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_198",
+      "args": "Multi-HUD mesh: two tablets as extended display"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_199",
+    "name": "Self-diagnostics report on WS connect",
+    "description": "On new WS connection, server auto-sends: CPU load, free RAM, disk %, open ports, git hash of server app.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_199",
+      "args": "Self-diagnostics report on WS connect"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "TOUCHLESS_200",
+    "name": "SYNAPSE_OS watchdog process",
+    "description": "systemd service monitors Node.js server + MediaPipe loop PIDs → auto-restarts crashed components. OS-level reliability.",
+    "module": "Network/WS",
+    "ws_payload": {
+      "command": "EXEC_TOUCHLESS_200",
+      "args": "SYNAPSE_OS watchdog process"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "IMPROVE_001",
+    "name": "Animated connection pulse",
+    "description": "A living, breathing ring animation around the connection status dot — pulses green on healthy link, turns red and throbs on disconnect.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_001",
+      "args": "Animated connection pulse"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "volume-2"
+  },
+  {
+    "id": "IMPROVE_002",
+    "name": "Glassmorphism card glow on active module",
+    "description": "When a module fires, its card briefly glows with a colored halo using CSS box-shadow animation.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_002",
+      "args": "Glassmorphism card glow on active module"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "IMPROVE_003",
+    "name": "20+ professional UI themes",
+    "description": "Cyber Matrix, Stealth Dark, Sunset Fusion, Arctic White, Blood Orange, Deep Ocean, Vaporwave, Tokyo Night, and more — switchable live.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_003",
+      "args": "20+ professional UI themes"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "eye"
+  },
+  {
+    "id": "IMPROVE_004",
+    "name": "Custom wallpaper engine for PC app",
+    "description": "Set an animated or static wallpaper behind the glassmorphic panels — syncs with theme selection.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_004",
+      "args": "Custom wallpaper engine for PC app"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "IMPROVE_005",
+    "name": "Particle network background",
+    "description": "A slow-moving particle mesh background that reacts to system CPU load — busier particles = higher CPU.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_005",
+      "args": "Particle network background"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "shield"
+  },
+  {
+    "id": "IMPROVE_006",
+    "name": "Live color extraction from scrcpy feed",
+    "description": "Sample dominant color from the current tablet screen and shift the UI accent color to match in real time.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_006",
+      "args": "Live color extraction from scrcpy feed"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "IMPROVE_007",
+    "name": "Neon scan-line overlay mode",
+    "description": "Optional retro CRT scan-line overlay on the scrcpy mirror window for aesthetic.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_007",
+      "args": "Neon scan-line overlay mode"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "IMPROVE_008",
+    "name": "Module grid customizer",
+    "description": "Drag-and-drop rearrange the 100 module cards into your preferred layout. Saved per profile.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_008",
+      "args": "Module grid customizer"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "settings"
+  },
+  {
+    "id": "IMPROVE_009",
+    "name": "Status LED strip simulator",
+    "description": "A horizontal LED strip UI element at the top of the app that shows device states in color-coded lights.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_009",
+      "args": "Status LED strip simulator"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "IMPROVE_010",
+    "name": "Font selector (10 monospace options)",
+    "description": "Switch between fonts: JetBrains Mono, Fira Code, Cascadia, IBM Plex Mono, etc. Applied globally across the app.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_010",
+      "args": "Font selector (10 monospace options)"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "IMPROVE_011",
+    "name": "Holographic module card style",
+    "description": "Cards render with a subtle rainbow iridescent sheen on hover — like holographic trading cards.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_011",
+      "args": "Holographic module card style"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "tool"
+  },
+  {
+    "id": "IMPROVE_012",
+    "name": "Custom icon pack system",
+    "description": "Replace module icons with curated Tabler, Lucide, or custom SVG icon packs per theme.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_012",
+      "args": "Custom icon pack system"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "IMPROVE_013",
+    "name": "Module fire ripple animation",
+    "description": "When any module executes, a ripple wave radiates outward from that card across the grid.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_013",
+      "args": "Module fire ripple animation"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "crosshair"
+  },
+  {
+    "id": "IMPROVE_014",
+    "name": "Data stream waterfall visualization",
+    "description": "A Matrix-style character waterfall on the side panel when data is being transferred at high speed.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_014",
+      "args": "Data stream waterfall visualization"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "eye"
+  },
+  {
+    "id": "IMPROVE_015",
+    "name": "Connection handshake animation",
+    "description": "On successful ADB link, an animated handshake sequence plays with device icons connecting.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_015",
+      "args": "Connection handshake animation"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "monitor"
+  },
+  {
+    "id": "IMPROVE_016",
+    "name": "Telemetry graph with physics springs",
+    "description": "CPU/RAM graphs use spring physics — values bounce to their new position instead of jumping.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_016",
+      "args": "Telemetry graph with physics springs"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "truck"
+  },
+  {
+    "id": "IMPROVE_017",
+    "name": "Smooth theme transition morphing",
+    "description": "Switching themes cross-fades all colors simultaneously over 400ms instead of instant swap.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_017",
+      "args": "Smooth theme transition morphing"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "IMPROVE_018",
+    "name": "File transfer particle burst",
+    "description": "When a file transfer completes, a burst of particles explodes from the transfer card.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_018",
+      "args": "File transfer particle burst"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "IMPROVE_019",
+    "name": "Keyboard shortcut ghost trail",
+    "description": "When a hotkey fires, ghost key labels float up and fade out at the top of the screen.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_019",
+      "args": "Keyboard shortcut ghost trail"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "crosshair"
+  },
+  {
+    "id": "IMPROVE_020",
+    "name": "Boot sequence cinematic intro",
+    "description": "On app launch, a 2-second cinematic boot sequence plays: SYNAPSE logo assembles from particles, then UI fades in.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_020",
+      "args": "Boot sequence cinematic intro"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "IMPROVE_021",
+    "name": "Module cooldown radial timer",
+    "description": "After firing a module, a radial progress ring shows the cooldown before it can fire again.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_021",
+      "args": "Module cooldown radial timer"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "IMPROVE_022",
+    "name": "Disconnect earthquake shake",
+    "description": "When ADB drops, the entire UI briefly shakes like an earthquake — impossible to miss.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_022",
+      "args": "Disconnect earthquake shake"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Heavy",
+    "ui_icon": "settings"
+  },
+  {
+    "id": "IMPROVE_023",
+    "name": "UI sound design pack",
+    "description": "Every button click, module fire, and alert has a distinct, satisfying sound effect. 3 sound packs: Cyber, Minimal, Retro.",
+    "module": "Audio/Visual",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_023",
+      "args": "UI sound design pack"
+    },
+    "haptic_profile": "NotificationFeedbackType.Warning",
+    "ui_icon": "eye"
+  },
+  {
+    "id": "IMPROVE_024",
+    "name": "Connection success chime",
+    "description": "A clean 3-note ascending chime plays when ADB handshake completes.",
+    "module": "Audio/Visual",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_024",
+      "args": "Connection success chime"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Heavy",
+    "ui_icon": "play"
+  },
+  {
+    "id": "IMPROVE_025",
+    "name": "Alert siren with custom pitch",
+    "description": "Disconnect or ghost-touch re-detection triggers a rising siren — pitch and volume configurable.",
+    "module": "Audio/Visual",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_025",
+      "args": "Alert siren with custom pitch"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "cpu"
+  },
+  {
+    "id": "IMPROVE_026",
+    "name": "Bidirectional audio stream",
+    "description": "Stream tablet audio to PC speakers AND PC audio back to tablet — full duplex over ADB.",
+    "module": "Audio/Visual",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_026",
+      "args": "Bidirectional audio stream"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "IMPROVE_027",
+    "name": "Audio spectrum visualizer panel",
+    "description": "Real-time FFT spectrum visualizer for the audio stream — bars react to frequencies.",
+    "module": "Audio/Visual",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_027",
+      "args": "Audio spectrum visualizer panel"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "IMPROVE_028",
+    "name": "Voice command activation",
+    "description": "Say 'Synapse, fire module 47' and the app executes it via Web Speech API on the PC.",
+    "module": "Audio/Visual",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_028",
+      "args": "Voice command activation"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "tool"
+  },
+  {
+    "id": "IMPROVE_029",
+    "name": "Volume crossfader",
+    "description": "A DJ-style crossfader slider to blend PC and tablet audio levels in real time.",
+    "module": "Audio/Visual",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_029",
+      "args": "Volume crossfader"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "IMPROVE_030",
+    "name": "Sound pack creator",
+    "description": "Record your own UI sounds and save them as a custom sound pack.",
+    "module": "Audio/Visual",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_030",
+      "args": "Sound pack creator"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "eye"
+  },
+  {
+    "id": "IMPROVE_031",
+    "name": "Beat-reactive UI mode",
+    "description": "UI accent colors pulse in sync with the beat of whatever audio is playing on the system.",
+    "module": "Audio/Visual",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_031",
+      "args": "Beat-reactive UI mode"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "IMPROVE_032",
+    "name": "Mute all hotkey with visual confirmation",
+    "description": "Single hotkey mutes both devices simultaneously — a large MUTED badge overlays the screen briefly.",
+    "module": "Audio/Visual",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_032",
+      "args": "Mute all hotkey with visual confirmation"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "IMPROVE_033",
+    "name": "Persistent mini HUD overlay",
+    "description": "A always-on-top translucent strip at screen edge showing: connection status, CPU%, RAM%, battery, latency. Never goes away.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_033",
+      "args": "Persistent mini HUD overlay"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "volume-2"
+  },
+  {
+    "id": "IMPROVE_034",
+    "name": "Streaming latency counter overlay",
+    "description": "ms latency counter overlaid directly on the scrcpy mirror window like a game FPS counter.",
+    "module": "Performance",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_034",
+      "args": "Streaming latency counter overlay"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "zap"
+  },
+  {
+    "id": "IMPROVE_035",
+    "name": "Touch coordinate crosshair",
+    "description": "When tablet touch coordinates are sent to PC, a crosshair appears on the PC screen showing exactly where the click lands.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_035",
+      "args": "Touch coordinate crosshair"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "IMPROVE_036",
+    "name": "Ghost touch detector HUD",
+    "description": "A live event counter overlay showing how many ghost touch events are being silenced per second.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_036",
+      "args": "Ghost touch detector HUD"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "activity"
+  },
+  {
+    "id": "IMPROVE_037",
+    "name": "Dual device battery bar",
+    "description": "Side-by-side battery indicators for PC (if laptop), tablet, and DS4 controller — always visible.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_037",
+      "args": "Dual device battery bar"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "settings"
+  },
+  {
+    "id": "IMPROVE_038",
+    "name": "Network signal quality ring",
+    "description": "A circular signal strength indicator that fills/empties like a speedometer dial.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_038",
+      "args": "Network signal quality ring"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "tool"
+  },
+  {
+    "id": "IMPROVE_039",
+    "name": "Clipboard preview toast",
+    "description": "When clipboard syncs, a toast popup shows a preview of what just synced — text snippet or image thumbnail.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_039",
+      "args": "Clipboard preview toast"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "IMPROVE_040",
+    "name": "Active module indicator ribbon",
+    "description": "A horizontal ribbon at the bottom listing the last 5 modules fired with timestamps.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_040",
+      "args": "Active module indicator ribbon"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "zap"
+  },
+  {
+    "id": "IMPROVE_041",
+    "name": "Fullscreen takeover alert mode",
+    "description": "Critical alerts (disconnect, ghost touch return) trigger a full-screen red overlay that demands acknowledgment.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_041",
+      "args": "Fullscreen takeover alert mode"
+    },
+    "haptic_profile": "NotificationFeedbackType.Warning",
+    "ui_icon": "image"
+  },
+  {
+    "id": "IMPROVE_042",
+    "name": "PiP tablet mirror anywhere",
+    "description": "Float a small live tablet mirror as a Picture-in-Picture window over any app on the PC.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_042",
+      "args": "PiP tablet mirror anywhere"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "terminal"
+  },
+  {
+    "id": "IMPROVE_043",
+    "name": "DS4 button map HUD",
+    "description": "An overlay showing the current DS4 button → action mapping so you never forget your hotkeys.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_043",
+      "args": "DS4 button map HUD"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "IMPROVE_044",
+    "name": "Session timeline scrubber",
+    "description": "A visual timeline of everything that happened in the session — scroll back through events like a git log.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_044",
+      "args": "Session timeline scrubber"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "IMPROVE_045",
+    "name": "AI anomaly detector",
+    "description": "Machine learning model trained on your normal CPU/RAM patterns — alerts you when something looks off.",
+    "module": "AI",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_045",
+      "args": "AI anomaly detector"
+    },
+    "haptic_profile": "NotificationFeedbackType.Warning",
+    "ui_icon": "image"
+  },
+  {
+    "id": "IMPROVE_046",
+    "name": "Smart module suggester",
+    "description": "Based on your usage patterns, the app suggests which modules you're likely to fire next.",
+    "module": "AI",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_046",
+      "args": "Smart module suggester"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "monitor"
+  },
+  {
+    "id": "IMPROVE_047",
+    "name": "Natural language ADB commands",
+    "description": "Type 'disable all Samsung bloatware' and AI translates it into the right ADB pm disable commands.",
+    "module": "AI",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_047",
+      "args": "Natural language ADB commands"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "shield"
+  },
+  {
+    "id": "IMPROVE_048",
+    "name": "Auto bitrate optimizer",
+    "description": "AI continuously tunes scrcpy bitrate and FPS based on current WiFi interference patterns.",
+    "module": "AI",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_048",
+      "args": "Auto bitrate optimizer"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "IMPROVE_049",
+    "name": "Predictive disconnect prevention",
+    "description": "Detects early signs of ADB instability (rising latency, packet patterns) and pre-reconnects before it drops.",
+    "module": "AI",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_049",
+      "args": "Predictive disconnect prevention"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "eye"
+  },
+  {
+    "id": "IMPROVE_050",
+    "name": "Usage heatmap",
+    "description": "Visualize which modules you fire most as a color heatmap over the module grid.",
+    "module": "AI",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_050",
+      "args": "Usage heatmap"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "IMPROVE_051",
+    "name": "Session summary AI report",
+    "description": "At end of session, AI generates a plain-English summary: what was done, issues encountered, uptime.",
+    "module": "AI",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_051",
+      "args": "Session summary AI report"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "crosshair"
+  },
+  {
+    "id": "IMPROVE_052",
+    "name": "Smart clipboard filter",
+    "description": "AI detects when clipboard contains a password or sensitive data and blocks it from syncing to tablet.",
+    "module": "AI",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_052",
+      "args": "Smart clipboard filter"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "IMPROVE_053",
+    "name": "Ghost touch pattern learning",
+    "description": "AI learns the unique ghost touch signature of your broken digitizer and ignores only those exact patterns.",
+    "module": "AI",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_053",
+      "args": "Ghost touch pattern learning"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "eye"
+  },
+  {
+    "id": "IMPROVE_054",
+    "name": "Voice-to-ADB command",
+    "description": "Speak a full English sentence, AI converts it to an ADB shell command and executes it.",
+    "module": "AI",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_054",
+      "args": "Voice-to-ADB command"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "IMPROVE_055",
+    "name": "Zero-copy clipboard pipeline",
+    "description": "Clipboard sync uses shared memory instead of WebSocket serialization — microsecond latency.",
+    "module": "Performance",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_055",
+      "args": "Zero-copy clipboard pipeline"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "IMPROVE_056",
+    "name": "H.265 hardware encoder selection",
+    "description": "Automatically select the fastest hardware H.265 encoder available (VAAPI, NVENC, etc.).",
+    "module": "Performance",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_056",
+      "args": "H.265 hardware encoder selection"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "tool"
+  },
+  {
+    "id": "IMPROVE_057",
+    "name": "USB 3.0 throughput mode",
+    "description": "Detect USB 3.0 connection and unlock higher ADB transfer speed caps automatically.",
+    "module": "Performance",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_057",
+      "args": "USB 3.0 throughput mode"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "IMPROVE_058",
+    "name": "Parallel module execution",
+    "description": "Fire up to 5 modules simultaneously via multi-threaded child_process workers instead of sequential queuing.",
+    "module": "Performance",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_058",
+      "args": "Parallel module execution"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "truck"
+  },
+  {
+    "id": "IMPROVE_059",
+    "name": "Pre-warmed ADB command cache",
+    "description": "Common ADB commands are pre-executed and cached — module response time drops to near-zero.",
+    "module": "Performance",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_059",
+      "args": "Pre-warmed ADB command cache"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "shield"
+  },
+  {
+    "id": "IMPROVE_060",
+    "name": "RAM usage optimizer (PC side)",
+    "description": "Electron memory profiler that auto-garbage-collects when PC app RAM exceeds a set threshold.",
+    "module": "Performance",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_060",
+      "args": "RAM usage optimizer (PC side)"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "unlock"
+  },
+  {
+    "id": "IMPROVE_061",
+    "name": "Differential screen update streaming",
+    "description": "Only transmit pixels that changed between frames — drastically cuts bandwidth on static screens.",
+    "module": "Performance",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_061",
+      "args": "Differential screen update streaming"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "star"
+  },
+  {
+    "id": "IMPROVE_062",
+    "name": "Network QoS tagging",
+    "description": "Mark Synapse traffic with DSCP QoS tags so your router prioritizes it over other traffic.",
+    "module": "Performance",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_062",
+      "args": "Network QoS tagging"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "zap"
+  },
+  {
+    "id": "IMPROVE_063",
+    "name": "Startup time under 2 seconds",
+    "description": "Aggressive lazy-loading and pre-fork worker pool to get from cold launch to connected in under 2s.",
+    "module": "Performance",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_063",
+      "args": "Startup time under 2 seconds"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "terminal"
+  },
+  {
+    "id": "IMPROVE_064",
+    "name": "Benchmark mode",
+    "description": "Run a full performance benchmark of the rig — measures stream latency, transfer speed, input lag — and generates a score.",
+    "module": "Performance",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_064",
+      "args": "Benchmark mode"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "terminal"
+  },
+  {
+    "id": "IMPROVE_065",
+    "name": "Built-in ADB shell terminal",
+    "description": "A full interactive ADB shell terminal inside the app with syntax highlighting and command history.",
+    "module": "Dev Tool",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_065",
+      "args": "Built-in ADB shell terminal"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "shield"
+  },
+  {
+    "id": "IMPROVE_066",
+    "name": "Live logcat stream with color filters",
+    "description": "Stream Android logcat with color-coded log levels and regex filter support.",
+    "module": "Dev Tool",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_066",
+      "args": "Live logcat stream with color filters"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "IMPROVE_067",
+    "name": "React DevTools auto-bridge",
+    "description": "Automatically detect and bridge the standalone React DevTools to the tablet's Expo app.",
+    "module": "Dev Tool",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_067",
+      "args": "React DevTools auto-bridge"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "star"
+  },
+  {
+    "id": "IMPROVE_068",
+    "name": "Next.js HMR health panel",
+    "description": "Show HMR connection status, last update time, and module hot-swap speed.",
+    "module": "Dev Tool",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_068",
+      "args": "Next.js HMR health panel"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "monitor"
+  },
+  {
+    "id": "IMPROVE_069",
+    "name": "APK drag-and-drop installer",
+    "description": "Drop an APK file onto the Synapse window and it auto-installs on the tablet via adb install.",
+    "module": "Dev Tool",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_069",
+      "args": "APK drag-and-drop installer"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "unlock"
+  },
+  {
+    "id": "IMPROVE_070",
+    "name": "Port forward manager GUI",
+    "description": "Visual GUI for all active adb forward and reverse tunnels — add/remove without CLI.",
+    "module": "Dev Tool",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_070",
+      "args": "Port forward manager GUI"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "monitor"
+  },
+  {
+    "id": "IMPROVE_071",
+    "name": "Network request inspector",
+    "description": "Intercept and display HTTP requests made by apps on the tablet — like Charles Proxy built-in.",
+    "module": "Dev Tool",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_071",
+      "args": "Network request inspector"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "terminal"
+  },
+  {
+    "id": "IMPROVE_072",
+    "name": "Crash log auto-collector",
+    "description": "Automatically capture tombstone crash logs from the tablet and display them formatted in the app.",
+    "module": "Dev Tool",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_072",
+      "args": "Crash log auto-collector"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "monitor"
+  },
+  {
+    "id": "IMPROVE_073",
+    "name": "Gamepad API visualizer",
+    "description": "Real-time visual of all DS4 axis values and button states — essential for debugging Gamepad API code.",
+    "module": "Dev Tool",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_073",
+      "args": "Gamepad API visualizer"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "cpu"
+  },
+  {
+    "id": "IMPROVE_074",
+    "name": "Multi-device Chrome DevTools",
+    "description": "Open remote debugging Chrome DevTools from PC connected to the tablet browser over ADB.",
+    "module": "Dev Tool",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_074",
+      "args": "Multi-device Chrome DevTools"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "IMPROVE_075",
+    "name": "Scrcpy flag builder GUI",
+    "description": "Visual GUI to construct scrcpy launch flags — sliders for FPS, bitrate, size with live preview of the command.",
+    "module": "Dev Tool",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_075",
+      "args": "Scrcpy flag builder GUI"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "truck"
+  },
+  {
+    "id": "IMPROVE_076",
+    "name": "ADB command library",
+    "description": "Searchable database of 200+ useful ADB commands — click to execute instantly.",
+    "module": "Dev Tool",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_076",
+      "args": "ADB command library"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "cpu"
+  },
+  {
+    "id": "IMPROVE_077",
+    "name": "End-to-end AES-256 channel",
+    "description": "All WebSocket traffic encrypted with AES-256-GCM — clipboard, files, commands, everything.",
+    "module": "Security",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_077",
+      "args": "End-to-end AES-256 channel"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "IMPROVE_078",
+    "name": "Device fingerprint pairing",
+    "description": "First connection requires matching a cryptographic device fingerprint on both screens simultaneously.",
+    "module": "Security",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_078",
+      "args": "Device fingerprint pairing"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "activity"
+  },
+  {
+    "id": "IMPROVE_079",
+    "name": "Screen privacy blur hotkey",
+    "description": "One hotkey instantly blurs the scrcpy mirror — for when someone walks behind you.",
+    "module": "Security",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_079",
+      "args": "Screen privacy blur hotkey"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "IMPROVE_080",
+    "name": "IP allowlist with live editor",
+    "description": "Only whitelisted IPs can connect. Edit the list live from the app without restarting.",
+    "module": "Security",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_080",
+      "args": "IP allowlist with live editor"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "unlock"
+  },
+  {
+    "id": "IMPROVE_081",
+    "name": "Auto-lock on idle",
+    "description": "After configurable idle time, lock both devices and require PIN to resume the session.",
+    "module": "Security",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_081",
+      "args": "Auto-lock on idle"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "IMPROVE_082",
+    "name": "Clipboard encryption in transit",
+    "description": "Clipboard contents are AES-encrypted before going over the WebSocket — decrypted only on receipt.",
+    "module": "Security",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_082",
+      "args": "Clipboard encryption in transit"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "eye"
+  },
+  {
+    "id": "IMPROVE_083",
+    "name": "Stealth mode",
+    "description": "Hide the Synapse app from the taskbar and Alt+Tab switcher — accessible only via system tray or hotkey.",
+    "module": "Security",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_083",
+      "args": "Stealth mode"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "IMPROVE_084",
+    "name": "Full audit trail export",
+    "description": "Export a cryptographically signed log of every action, connection, and file transfer to a JSON file.",
+    "module": "Security",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_084",
+      "args": "Full audit trail export"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "IMPROVE_085",
+    "name": "DS4 rumble on module fire",
+    "description": "Trigger left/right motor rumble on the DS4 controller when a module executes successfully.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_085",
+      "args": "DS4 rumble on module fire"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "image"
+  },
+  {
+    "id": "IMPROVE_086",
+    "name": "DS4 lightbar status indicator",
+    "description": "DS4 lightbar color reflects rig status: blue=connected, green=all good, red=error/disconnect.",
+    "module": "Aesthetic",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_086",
+      "args": "DS4 lightbar status indicator"
+    },
+    "haptic_profile": "NotificationFeedbackType.Warning",
+    "ui_icon": "image"
+  },
+  {
+    "id": "IMPROVE_087",
+    "name": "Tablet vibration on PC alert",
+    "description": "When PC fires a critical alert, the tablet vibrates via adb shell cmd vibrator_manager.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_087",
+      "args": "Tablet vibration on PC alert"
+    },
+    "haptic_profile": "NotificationFeedbackType.Warning",
+    "ui_icon": "image"
+  },
+  {
+    "id": "IMPROVE_088",
+    "name": "Haptic pattern library",
+    "description": "Choose from 10 rumble patterns for different event types — short tap, double pulse, long buzz, etc.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_088",
+      "args": "Haptic pattern library"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Heavy",
+    "ui_icon": "truck"
+  },
+  {
+    "id": "IMPROVE_089",
+    "name": "DS4 touchpad gesture library",
+    "description": "Map DS4 touchpad swipes (up/down/left/right/tap) to custom Synapse actions.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_089",
+      "args": "DS4 touchpad gesture library"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "tool"
+  },
+  {
+    "id": "IMPROVE_090",
+    "name": "Battery critical vibration pattern",
+    "description": "When tablet battery hits critical level, DS4 fires a distinct urgent rumble pattern.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_090",
+      "args": "Battery critical vibration pattern"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Heavy",
+    "ui_icon": "play"
+  },
+  {
+    "id": "IMPROVE_091",
+    "name": "Macro recorder & replayer",
+    "description": "Record any sequence of module fires, delays, and commands — save and replay with one click.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_091",
+      "args": "Macro recorder & replayer"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "activity"
+  },
+  {
+    "id": "IMPROVE_092",
+    "name": "Scheduled automation tasks",
+    "description": "Schedule any module to fire at a specific time — e.g. auto-clear RAM every 30 mins.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_092",
+      "args": "Scheduled automation tasks"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "unlock"
+  },
+  {
+    "id": "IMPROVE_093",
+    "name": "If-this-then-that rule engine",
+    "description": "Build conditional logic: 'If RAM < 200MB then fire module 41 and notify me'.",
+    "module": "Dev Tool",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_093",
+      "args": "If-this-then-that rule engine"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "truck"
+  },
+  {
+    "id": "IMPROVE_094",
+    "name": "Session profile hot-swap",
+    "description": "Save the full rig state as a named profile (Dev Mode, Media Mode, Presentation Mode) and switch in one click.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_094",
+      "args": "Session profile hot-swap"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "cpu"
+  },
+  {
+    "id": "IMPROVE_095",
+    "name": "Morning startup sequence",
+    "description": "A configurable boot sequence that fires a chain of modules automatically when Synapse launches.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_095",
+      "args": "Morning startup sequence"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "activity"
+  },
+  {
+    "id": "IMPROVE_096",
+    "name": "Webhook integration",
+    "description": "Trigger any module externally via HTTP webhook — lets you automate from other tools.",
+    "module": "Dev Tool",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_096",
+      "args": "Webhook integration"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "zap"
+  },
+  {
+    "id": "IMPROVE_097",
+    "name": "CLI mode",
+    "description": "Run Synapse headlessly from terminal with full module control: synapse fire 47 --device tab",
+    "module": "Dev Tool",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_097",
+      "args": "CLI mode"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "truck"
+  },
+  {
+    "id": "IMPROVE_098",
+    "name": "GitHub Actions integration",
+    "description": "Fire Synapse modules as steps in a GitHub Actions CI/CD workflow — e.g. auto-install APK on push.",
+    "module": "Dev Tool",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_098",
+      "args": "GitHub Actions integration"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "eye"
+  },
+  {
+    "id": "IMPROVE_099",
+    "name": "Config version control",
+    "description": "Every config change is versioned internally — roll back to any previous rig configuration.",
+    "module": "Dev Tool",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_099",
+      "args": "Config version control"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "cpu"
+  },
+  {
+    "id": "IMPROVE_100",
+    "name": "Synapse Cloud Sync (LAN only)",
+    "description": "Sync your profiles, macros, and configs between multiple PC workstations over LAN — zero cloud dependency.",
+    "module": "UX",
+    "ws_payload": {
+      "command": "EXEC_IMPROVE_100",
+      "args": "Synapse Cloud Sync (LAN only)"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "RIG_001",
+    "name": "Wireless screen mirror (tab→PC)",
+    "description": "Stream the tablet display to your PC over WiFi using scrcpy or custom H.265 pipeline.",
+    "module": "Core",
+    "ws_payload": {
+      "command": "EXEC_RIG_001",
+      "args": "Wireless screen mirror (tab→PC)"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "RIG_002",
+    "name": "Wireless screen mirror (PC→tab)",
+    "description": "Mirror your PC desktop onto the tablet screen as a second monitor.",
+    "module": "Core",
+    "ws_payload": {
+      "command": "EXEC_RIG_002",
+      "args": "Wireless screen mirror (PC→tab)"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "settings"
+  },
+  {
+    "id": "RIG_003",
+    "name": "Dual-display layout manager",
+    "description": "Drag windows to snap between PC and tablet displays from one UI.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_003",
+      "args": "Dual-display layout manager"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "RIG_004",
+    "name": "Adaptive bitrate streaming",
+    "description": "Auto-adjust video bitrate based on current WiFi signal strength.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_004",
+      "args": "Adaptive bitrate streaming"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "RIG_005",
+    "name": "Display resolution profiles",
+    "description": "Save and switch between resolution/FPS presets (performance vs quality).",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_005",
+      "args": "Display resolution profiles"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "volume-2"
+  },
+  {
+    "id": "RIG_006",
+    "name": "Always-on-top window mode",
+    "description": "Pin the tablet mirror window above all other PC windows.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_006",
+      "args": "Always-on-top window mode"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "RIG_007",
+    "name": "Rotate display remotely",
+    "description": "Change the tablet screen orientation from the PC app.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_007",
+      "args": "Rotate display remotely"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "tool"
+  },
+  {
+    "id": "RIG_008",
+    "name": "Screenshot from either device",
+    "description": "Capture a screenshot of the tablet or PC screen from the other device.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_008",
+      "args": "Screenshot from either device"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "RIG_009",
+    "name": "Screen recording with sync",
+    "description": "Record the streamed display with audio and save to PC.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_009",
+      "args": "Screen recording with sync"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "RIG_010",
+    "name": "Picture-in-picture mode",
+    "description": "Float a small tablet preview in the corner of your PC screen.",
+    "module": "Nice",
+    "ws_payload": {
+      "command": "EXEC_RIG_010",
+      "args": "Picture-in-picture mode"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "monitor"
+  },
+  {
+    "id": "RIG_011",
+    "name": "Night mode / color filter sync",
+    "description": "Sync blue-light filter settings between both devices simultaneously.",
+    "module": "Nice",
+    "ws_payload": {
+      "command": "EXEC_RIG_011",
+      "args": "Night mode / color filter sync"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "volume-2"
+  },
+  {
+    "id": "RIG_012",
+    "name": "Stream latency monitor",
+    "description": "Overlay showing current round-trip latency of the video stream in ms.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_012",
+      "args": "Stream latency monitor"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "tool"
+  },
+  {
+    "id": "RIG_013",
+    "name": "Universal mouse sharing",
+    "description": "Move your PC mouse off-screen edge to seamlessly control the tablet.",
+    "module": "Core",
+    "ws_payload": {
+      "command": "EXEC_RIG_013",
+      "args": "Universal mouse sharing"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "unlock"
+  },
+  {
+    "id": "RIG_014",
+    "name": "Universal keyboard sharing",
+    "description": "Type on your PC keyboard and have input routed to whichever device is focused.",
+    "module": "Core",
+    "ws_payload": {
+      "command": "EXEC_RIG_014",
+      "args": "Universal keyboard sharing"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "crosshair"
+  },
+  {
+    "id": "RIG_015",
+    "name": "Gamepad/controller passthrough",
+    "description": "Forward DS4 or Xbox controller input from PC to tablet apps or vice versa.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_015",
+      "args": "Gamepad/controller passthrough"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "RIG_016",
+    "name": "Touch event injection from PC",
+    "description": "Click on the tablet mirror window on PC and inject a real touch event on the tablet.",
+    "module": "Core",
+    "ws_payload": {
+      "command": "EXEC_RIG_016",
+      "args": "Touch event injection from PC"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "terminal"
+  },
+  {
+    "id": "RIG_017",
+    "name": "Swipe gesture macros",
+    "description": "Define custom swipe patterns on the PC that get injected as gestures on the tablet.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_017",
+      "args": "Swipe gesture macros"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "eye"
+  },
+  {
+    "id": "RIG_018",
+    "name": "Keyboard shortcut remapper",
+    "description": "Map PC hotkeys to tablet app actions (e.g. Ctrl+1 = switch chat room in Orbit).",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_018",
+      "args": "Keyboard shortcut remapper"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "truck"
+  },
+  {
+    "id": "RIG_019",
+    "name": "Touch blocker toggle",
+    "description": "Instantly disable/enable the tablet touchscreen via a PC hotkey.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_019",
+      "args": "Touch blocker toggle"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "zap"
+  },
+  {
+    "id": "RIG_020",
+    "name": "Mouse pointer speed sync",
+    "description": "Match pointer speed on both devices from one settings slider.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_020",
+      "args": "Mouse pointer speed sync"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "volume-2"
+  },
+  {
+    "id": "RIG_021",
+    "name": "Multi-device focus switcher",
+    "description": "Click a device indicator on the taskbar to direct all keyboard/mouse input there.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_021",
+      "args": "Multi-device focus switcher"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "unlock"
+  },
+  {
+    "id": "RIG_022",
+    "name": "Macro recorder",
+    "description": "Record a sequence of actions on one device and replay them on demand.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_022",
+      "args": "Macro recorder"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "crosshair"
+  },
+  {
+    "id": "RIG_023",
+    "name": "Voice command passthrough",
+    "description": "Speak into PC mic and have voice commands execute on the tablet.",
+    "module": "Nice",
+    "ws_payload": {
+      "command": "EXEC_RIG_023",
+      "args": "Voice command passthrough"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "RIG_024",
+    "name": "Scroll wheel on tablet scroller",
+    "description": "Use PC mouse scroll wheel to scroll content on the mirrored tablet screen.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_024",
+      "args": "Scroll wheel on tablet scroller"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "cpu"
+  },
+  {
+    "id": "RIG_025",
+    "name": "Universal clipboard sync",
+    "description": "Copy on PC, paste on tablet (and vice versa) automatically in real time.",
+    "module": "Core",
+    "ws_payload": {
+      "command": "EXEC_RIG_025",
+      "args": "Universal clipboard sync"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "settings"
+  },
+  {
+    "id": "RIG_026",
+    "name": "Drag-and-drop file transfer",
+    "description": "Drag a file from PC desktop onto the tablet mirror window to transfer it.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_026",
+      "args": "Drag-and-drop file transfer"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "RIG_027",
+    "name": "Shared file drop zone",
+    "description": "A folder visible on both devices — drop files in from either side.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_027",
+      "args": "Shared file drop zone"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "settings"
+  },
+  {
+    "id": "RIG_028",
+    "name": "Transfer progress indicator",
+    "description": "Show a progress bar and speed readout for file transfers between devices.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_028",
+      "args": "Transfer progress indicator"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "RIG_029",
+    "name": "Image clipboard preview",
+    "description": "When an image is copied, show a thumbnail preview in the app panel.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_029",
+      "args": "Image clipboard preview"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "RIG_030",
+    "name": "Clipboard history",
+    "description": "Keep a scrollable history of the last 20 clipboard entries from both devices.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_030",
+      "args": "Clipboard history"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "play"
+  },
+  {
+    "id": "RIG_031",
+    "name": "Auto photo sync",
+    "description": "Any new photo taken on the tablet auto-syncs to a folder on the PC.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_031",
+      "args": "Auto photo sync"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "tool"
+  },
+  {
+    "id": "RIG_032",
+    "name": "Pastebin-style quick share",
+    "description": "Paste text on PC and instantly have a shareable temp link for the tablet browser.",
+    "module": "Nice",
+    "ws_payload": {
+      "command": "EXEC_RIG_032",
+      "args": "Pastebin-style quick share"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "RIG_033",
+    "name": "Transfer queue manager",
+    "description": "Queue multiple file transfers and manage them with pause/resume/cancel.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_033",
+      "args": "Transfer queue manager"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "shield"
+  },
+  {
+    "id": "RIG_034",
+    "name": "Live CPU/RAM dashboard",
+    "description": "Real-time CPU and RAM usage for both devices shown side-by-side.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_034",
+      "args": "Live CPU/RAM dashboard"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "volume-2"
+  },
+  {
+    "id": "RIG_035",
+    "name": "Battery level monitor (tab)",
+    "description": "Show tablet battery % and charging status on the PC app at all times.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_035",
+      "args": "Battery level monitor (tab)"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "RIG_036",
+    "name": "Controller battery monitor",
+    "description": "Show DS4/controller battery level with low-battery desktop notification.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_036",
+      "args": "Controller battery monitor"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "crosshair"
+  },
+  {
+    "id": "RIG_037",
+    "name": "WiFi signal strength meter",
+    "description": "Show current WiFi RSSI for both devices to diagnose streaming issues.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_037",
+      "args": "WiFi signal strength meter"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "RIG_038",
+    "name": "Network throughput graph",
+    "description": "Live graph of MB/s being used by the rig stream and transfers.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_038",
+      "args": "Network throughput graph"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "volume-2"
+  },
+  {
+    "id": "RIG_039",
+    "name": "Tablet storage overview",
+    "description": "Show used/free storage on the tablet's internal and SD card.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_039",
+      "args": "Tablet storage overview"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "settings"
+  },
+  {
+    "id": "RIG_040",
+    "name": "Running processes list (tab)",
+    "description": "List of apps currently running on the tablet with RAM usage per app.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_040",
+      "args": "Running processes list (tab)"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "RIG_041",
+    "name": "Connection health score",
+    "description": "A single 0-100 score summarizing ADB stability, latency, and packet loss.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_041",
+      "args": "Connection health score"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "RIG_042",
+    "name": "Rig uptime counter",
+    "description": "Show how long the current session has been running without a disconnect.",
+    "module": "Nice",
+    "ws_payload": {
+      "command": "EXEC_RIG_042",
+      "args": "Rig uptime counter"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "RIG_043",
+    "name": "Temperature monitor (tab)",
+    "description": "Show tablet CPU temperature to detect thermal throttling risk.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_043",
+      "args": "Temperature monitor (tab)"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "RIG_044",
+    "name": "Auto-kill RAM hog on tab",
+    "description": "Automatically kill the highest RAM-consuming app on the tablet when free RAM is low.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_044",
+      "args": "Auto-kill RAM hog on tab"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "monitor"
+  },
+  {
+    "id": "RIG_045",
+    "name": "Mirror tab notifications to PC",
+    "description": "All Android notifications from the tablet appear as desktop notifications on PC.",
+    "module": "Core",
+    "ws_payload": {
+      "command": "EXEC_RIG_045",
+      "args": "Mirror tab notifications to PC"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "play"
+  },
+  {
+    "id": "RIG_046",
+    "name": "Reply to messages from PC",
+    "description": "Click a notification on PC and type a reply that sends from the tablet.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_046",
+      "args": "Reply to messages from PC"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "RIG_047",
+    "name": "Notification filter rules",
+    "description": "Whitelist or blacklist apps whose notifications get mirrored to PC.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_047",
+      "args": "Notification filter rules"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "star"
+  },
+  {
+    "id": "RIG_048",
+    "name": "Battery low alert",
+    "description": "Pop-up on PC when tablet battery drops below a set threshold.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_048",
+      "args": "Battery low alert"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "monitor"
+  },
+  {
+    "id": "RIG_049",
+    "name": "ADB disconnect alert",
+    "description": "Instant desktop notification when the ADB connection drops.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_049",
+      "args": "ADB disconnect alert"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "truck"
+  },
+  {
+    "id": "RIG_050",
+    "name": "Stream quality degradation alert",
+    "description": "Notify when video bitrate drops significantly due to WiFi congestion.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_050",
+      "args": "Stream quality degradation alert"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "RIG_051",
+    "name": "Ghost touch re-detection warning",
+    "description": "Alert if touch events are detected despite the dd silencer being active.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_051",
+      "args": "Ghost touch re-detection warning"
+    },
+    "haptic_profile": "NotificationFeedbackType.Warning",
+    "ui_icon": "monitor"
+  },
+  {
+    "id": "RIG_052",
+    "name": "App crash alert (tab)",
+    "description": "Get a PC notification if an app on the tablet crashes.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_052",
+      "args": "App crash alert (tab)"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "crosshair"
+  },
+  {
+    "id": "RIG_053",
+    "name": "Scheduled reminder push",
+    "description": "Set a reminder on PC that fires as a notification on the tablet.",
+    "module": "Nice",
+    "ws_payload": {
+      "command": "EXEC_RIG_053",
+      "args": "Scheduled reminder push"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "tool"
+  },
+  {
+    "id": "RIG_054",
+    "name": "Remote app launcher",
+    "description": "Browse and launch any installed app on the tablet from the PC app.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_054",
+      "args": "Remote app launcher"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "RIG_055",
+    "name": "One-click rig startup",
+    "description": "Single button that connects ADB, starts dd silencer, and launches scrcpy.",
+    "module": "Core",
+    "ws_payload": {
+      "command": "EXEC_RIG_055",
+      "args": "One-click rig startup"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "crosshair"
+  },
+  {
+    "id": "RIG_056",
+    "name": "Saved session profiles",
+    "description": "Save different rig configurations (dev mode, media mode, etc.) and switch instantly.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_056",
+      "args": "Saved session profiles"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "activity"
+  },
+  {
+    "id": "RIG_057",
+    "name": "Auto-reconnect on disconnect",
+    "description": "App automatically re-establishes ADB and restarts all services after a drop.",
+    "module": "Core",
+    "ws_payload": {
+      "command": "EXEC_RIG_057",
+      "args": "Auto-reconnect on disconnect"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "zap"
+  },
+  {
+    "id": "RIG_058",
+    "name": "Wake-on-LAN for tablet",
+    "description": "Send a magic packet to wake the tablet from sleep mode remotely.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_058",
+      "args": "Wake-on-LAN for tablet"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "RIG_059",
+    "name": "Remote reboot / shutdown (tab)",
+    "description": "Reboot or power off the tablet from the PC app.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_059",
+      "args": "Remote reboot / shutdown (tab)"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "RIG_060",
+    "name": "ADB command console",
+    "description": "A built-in ADB shell terminal in the app for running custom commands.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_060",
+      "args": "ADB command console"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "RIG_061",
+    "name": "Package manager (tab)",
+    "description": "Install, uninstall, and disable APKs on the tablet from the PC app.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_061",
+      "args": "Package manager (tab)"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "truck"
+  },
+  {
+    "id": "RIG_062",
+    "name": "Workflow automation scripts",
+    "description": "Write and run bash scripts that affect both devices from one place.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_062",
+      "args": "Workflow automation scripts"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "crosshair"
+  },
+  {
+    "id": "RIG_063",
+    "name": "Multi-device task queue",
+    "description": "Queue a list of actions across both devices and run them sequentially.",
+    "module": "Nice",
+    "ws_payload": {
+      "command": "EXEC_RIG_063",
+      "args": "Multi-device task queue"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "unlock"
+  },
+  {
+    "id": "RIG_064",
+    "name": "Session log / activity history",
+    "description": "Keep a log of every action, connection event, and transfer in the session.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_064",
+      "args": "Session log / activity history"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "zap"
+  },
+  {
+    "id": "RIG_065",
+    "name": "Quick-launch bookmarks",
+    "description": "Pin frequently used ADB commands or app launches to a quick-access bar.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_065",
+      "args": "Quick-launch bookmarks"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "play"
+  },
+  {
+    "id": "RIG_066",
+    "name": "Stream tablet audio to PC speakers",
+    "description": "Forward all audio output from the tablet and play it on PC speakers.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_066",
+      "args": "Stream tablet audio to PC speakers"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "RIG_067",
+    "name": "Stream PC audio to tablet",
+    "description": "Route PC audio to the tablet's speaker for a wireless speaker setup.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_067",
+      "args": "Stream PC audio to tablet"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "RIG_068",
+    "name": "Mic passthrough (PC→tab)",
+    "description": "Use the PC microphone as the active input for tablet apps like voice chat.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_068",
+      "args": "Mic passthrough (PC→tab)"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "RIG_069",
+    "name": "Volume sync",
+    "description": "Changing volume on one device mirrors the change on the other.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_069",
+      "args": "Volume sync"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "play"
+  },
+  {
+    "id": "RIG_070",
+    "name": "Audio visualizer overlay",
+    "description": "Lightweight spectrum visualizer overlay on the streaming window.",
+    "module": "Nice",
+    "ws_payload": {
+      "command": "EXEC_RIG_070",
+      "args": "Audio visualizer overlay"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "eye"
+  },
+  {
+    "id": "RIG_071",
+    "name": "Mute tablet remotely",
+    "description": "Instantly mute/unmute the tablet from a PC hotkey.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_071",
+      "args": "Mute tablet remotely"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "play"
+  },
+  {
+    "id": "RIG_072",
+    "name": "Audio codec selector",
+    "description": "Choose between Opus, AAC, or raw PCM for the audio stream depending on latency needs.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_072",
+      "args": "Audio codec selector"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "mic"
+  },
+  {
+    "id": "RIG_073",
+    "name": "Device pairing with PIN",
+    "description": "First-time connection requires confirming a PIN on both devices.",
+    "module": "Core",
+    "ws_payload": {
+      "command": "EXEC_RIG_073",
+      "args": "Device pairing with PIN"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "truck"
+  },
+  {
+    "id": "RIG_074",
+    "name": "Encrypted data channel",
+    "description": "All transferred files and clipboard data encrypted in transit with AES-256.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_074",
+      "args": "Encrypted data channel"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "shield"
+  },
+  {
+    "id": "RIG_075",
+    "name": "Screen privacy mode",
+    "description": "Blur or black out the tablet stream on PC with a hotkey when needed.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_075",
+      "args": "Screen privacy mode"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "RIG_076",
+    "name": "Connection allowlist",
+    "description": "Only allow specific PC IP addresses to connect to the tablet.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_076",
+      "args": "Connection allowlist"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "terminal"
+  },
+  {
+    "id": "RIG_077",
+    "name": "Auto-lock on disconnect",
+    "description": "Lock the tablet screen automatically when the PC app disconnects.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_077",
+      "args": "Auto-lock on disconnect"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "RIG_078",
+    "name": "Session timeout",
+    "description": "Auto-disconnect after a configurable idle period.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_078",
+      "args": "Session timeout"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "star"
+  },
+  {
+    "id": "RIG_079",
+    "name": "No-cloud architecture",
+    "description": "All data stays on LAN — no external servers, no cloud relay.",
+    "module": "Core",
+    "ws_payload": {
+      "command": "EXEC_RIG_079",
+      "args": "No-cloud architecture"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "RIG_080",
+    "name": "Access log",
+    "description": "Full log of every device that connected, when, and what was transferred.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_080",
+      "args": "Access log"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "cpu"
+  },
+  {
+    "id": "RIG_081",
+    "name": "Live localhost tunnel to tablet",
+    "description": "Automatically expose PC localhost:3000 to the tablet browser on the same URL.",
+    "module": "Core",
+    "ws_payload": {
+      "command": "EXEC_RIG_081",
+      "args": "Live localhost tunnel to tablet"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "RIG_082",
+    "name": "HMR health indicator",
+    "description": "Show whether Next.js hot module replacement is active and delivering updates.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_082",
+      "args": "HMR health indicator"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "truck"
+  },
+  {
+    "id": "RIG_083",
+    "name": "Remote browser DevTools",
+    "description": "Open Chrome DevTools on PC connected to the browser running on the tablet.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_083",
+      "args": "Remote browser DevTools"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "RIG_084",
+    "name": "ADB logcat viewer",
+    "description": "Stream and filter Android logcat output in a panel inside the app.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_084",
+      "args": "ADB logcat viewer"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "tool"
+  },
+  {
+    "id": "RIG_085",
+    "name": "React DevTools bridge",
+    "description": "Automatically bridge the standalone React DevTools to the tablet's browser.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_085",
+      "args": "React DevTools bridge"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "RIG_086",
+    "name": "Port forwarding manager",
+    "description": "GUI for managing ADB forward and reverse port mappings between devices.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_086",
+      "args": "Port forwarding manager"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "volume-2"
+  },
+  {
+    "id": "RIG_087",
+    "name": "Crash log collector",
+    "description": "Automatically capture and display crash logs from the tablet app.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_087",
+      "args": "Crash log collector"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "camera"
+  },
+  {
+    "id": "RIG_088",
+    "name": "Network request inspector",
+    "description": "Inspect HTTP requests made by apps on the tablet (like Charles Proxy, on-device).",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_088",
+      "args": "Network request inspector"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "truck"
+  },
+  {
+    "id": "RIG_089",
+    "name": "APK sideload from PC",
+    "description": "Drag-drop an APK onto the app to instantly install it on the tablet.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_089",
+      "args": "APK sideload from PC"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "truck"
+  },
+  {
+    "id": "RIG_090",
+    "name": "Performance profiler",
+    "description": "Measure frame rate, jank, and CPU time for apps running on the tablet.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_090",
+      "args": "Performance profiler"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "star"
+  },
+  {
+    "id": "RIG_091",
+    "name": "Gamepad API test panel",
+    "description": "Visualize DS4 button presses and axis values in real time for debugging.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_091",
+      "args": "Gamepad API test panel"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "monitor"
+  },
+  {
+    "id": "RIG_092",
+    "name": "Dark / light theme",
+    "description": "Full dark and light mode for the app UI itself.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_092",
+      "args": "Dark / light theme"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "wifi"
+  },
+  {
+    "id": "RIG_093",
+    "name": "Custom accent color",
+    "description": "Choose your app accent color to match your rig aesthetic.",
+    "module": "Nice",
+    "ws_payload": {
+      "command": "EXEC_RIG_093",
+      "args": "Custom accent color"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "image"
+  },
+  {
+    "id": "RIG_094",
+    "name": "Compact / expanded layout modes",
+    "description": "Switch between a minimal tray-style UI and a full dashboard view.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_094",
+      "args": "Compact / expanded layout modes"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "star"
+  },
+  {
+    "id": "RIG_095",
+    "name": "Hotkey customizer",
+    "description": "Rebind every app hotkey from a settings panel.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_095",
+      "args": "Hotkey customizer"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "lock"
+  },
+  {
+    "id": "RIG_096",
+    "name": "System tray / menu bar mode",
+    "description": "Minimize the app to system tray with quick-access menu for common actions.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_096",
+      "args": "System tray / menu bar mode"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "eye"
+  },
+  {
+    "id": "RIG_097",
+    "name": "Widget dashboard",
+    "description": "Drag-and-drop panel of widgets: battery, CPU, connection status, clipboard.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_097",
+      "args": "Widget dashboard"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "volume-2"
+  },
+  {
+    "id": "RIG_098",
+    "name": "Startup behavior config",
+    "description": "Choose whether the app auto-starts with the OS and auto-connects on launch.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_098",
+      "args": "Startup behavior config"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "monitor"
+  },
+  {
+    "id": "RIG_099",
+    "name": "Connection indicator LED",
+    "description": "Color-coded status dot (green/yellow/red) for connection health always visible.",
+    "module": "High",
+    "ws_payload": {
+      "command": "EXEC_RIG_099",
+      "args": "Connection indicator LED"
+    },
+    "haptic_profile": "NotificationFeedbackType.Success",
+    "ui_icon": "image"
+  },
+  {
+    "id": "RIG_100",
+    "name": "Export config to file",
+    "description": "Export your entire rig config (IPs, profiles, hotkeys) to a JSON file to restore later.",
+    "module": "Medium",
+    "ws_payload": {
+      "command": "EXEC_RIG_100",
+      "args": "Export config to file"
+    },
+    "haptic_profile": "ImpactFeedbackStyle.Light",
+    "ui_icon": "activity"
+  }
+]

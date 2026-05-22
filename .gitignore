@@ -1,0 +1,14 @@
+node_modules/
+dist/
+build/
+.expo/
+*.log
+client/node_modules/
+client/android/
+client/ios/
+.vscode/
+tools_list_clean.json
+mcp_output.json
+e2e_results.log
+*.pyc
+__pycache__/

@@ -1,0 +1,5502 @@
+[
+  {
+    "id": 1,
+    "name": "CYBERPUNK_OP_001",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 1,
+      "trigger": "TRIG_1"
+    },
+    "command": "echo 'HUD_1'"
+  },
+  {
+    "id": 2,
+    "name": "CYBERPUNK_OP_002",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 2,
+      "trigger": "TRIG_2"
+    },
+    "command": "echo 'HUD_2'"
+  },
+  {
+    "id": 3,
+    "name": "CYBERPUNK_OP_003",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 3,
+      "trigger": "TRIG_3"
+    },
+    "command": "echo 'HUD_3'"
+  },
+  {
+    "id": 4,
+    "name": "CYBERPUNK_OP_004",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 4,
+      "trigger": "TRIG_4"
+    },
+    "command": "echo 'HUD_4'"
+  },
+  {
+    "id": 5,
+    "name": "CYBERPUNK_OP_005",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 5,
+      "trigger": "TRIG_5"
+    },
+    "command": "echo 'HUD_5'"
+  },
+  {
+    "id": 6,
+    "name": "CYBERPUNK_OP_006",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 6,
+      "trigger": "TRIG_6"
+    },
+    "command": "echo 'HUD_6'"
+  },
+  {
+    "id": 7,
+    "name": "CYBERPUNK_OP_007",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 7,
+      "trigger": "TRIG_7"
+    },
+    "command": "echo 'HUD_7'"
+  },
+  {
+    "id": 8,
+    "name": "CYBERPUNK_OP_008",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 8,
+      "trigger": "TRIG_8"
+    },
+    "command": "echo 'HUD_8'"
+  },
+  {
+    "id": 9,
+    "name": "CYBERPUNK_OP_009",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 9,
+      "trigger": "TRIG_9"
+    },
+    "command": "echo 'HUD_9'"
+  },
+  {
+    "id": 10,
+    "name": "CYBERPUNK_OP_010",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 10,
+      "trigger": "TRIG_10"
+    },
+    "command": "echo 'HUD_10'"
+  },
+  {
+    "id": 11,
+    "name": "CYBERPUNK_OP_011",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 11,
+      "trigger": "TRIG_11"
+    },
+    "command": "echo 'HUD_11'"
+  },
+  {
+    "id": 12,
+    "name": "CYBERPUNK_OP_012",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 12,
+      "trigger": "TRIG_12"
+    },
+    "command": "echo 'HUD_12'"
+  },
+  {
+    "id": 13,
+    "name": "CYBERPUNK_OP_013",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 13,
+      "trigger": "TRIG_13"
+    },
+    "command": "echo 'HUD_13'"
+  },
+  {
+    "id": 14,
+    "name": "CYBERPUNK_OP_014",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 14,
+      "trigger": "TRIG_14"
+    },
+    "command": "echo 'HUD_14'"
+  },
+  {
+    "id": 15,
+    "name": "CYBERPUNK_OP_015",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 15,
+      "trigger": "TRIG_15"
+    },
+    "command": "echo 'HUD_15'"
+  },
+  {
+    "id": 16,
+    "name": "CYBERPUNK_OP_016",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 16,
+      "trigger": "TRIG_16"
+    },
+    "command": "echo 'HUD_16'"
+  },
+  {
+    "id": 17,
+    "name": "CYBERPUNK_OP_017",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 17,
+      "trigger": "TRIG_17"
+    },
+    "command": "echo 'HUD_17'"
+  },
+  {
+    "id": 18,
+    "name": "CYBERPUNK_OP_018",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 18,
+      "trigger": "TRIG_18"
+    },
+    "command": "echo 'HUD_18'"
+  },
+  {
+    "id": 19,
+    "name": "CYBERPUNK_OP_019",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 19,
+      "trigger": "TRIG_19"
+    },
+    "command": "echo 'HUD_19'"
+  },
+  {
+    "id": 20,
+    "name": "CYBERPUNK_OP_020",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 20,
+      "trigger": "TRIG_20"
+    },
+    "command": "echo 'HUD_20'"
+  },
+  {
+    "id": 21,
+    "name": "CYBERPUNK_OP_021",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 21,
+      "trigger": "TRIG_21"
+    },
+    "command": "echo 'HUD_21'"
+  },
+  {
+    "id": 22,
+    "name": "CYBERPUNK_OP_022",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 22,
+      "trigger": "TRIG_22"
+    },
+    "command": "echo 'HUD_22'"
+  },
+  {
+    "id": 23,
+    "name": "CYBERPUNK_OP_023",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 23,
+      "trigger": "TRIG_23"
+    },
+    "command": "echo 'HUD_23'"
+  },
+  {
+    "id": 24,
+    "name": "CYBERPUNK_OP_024",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 24,
+      "trigger": "TRIG_24"
+    },
+    "command": "echo 'HUD_24'"
+  },
+  {
+    "id": 25,
+    "name": "CYBERPUNK_OP_025",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 25,
+      "trigger": "TRIG_25"
+    },
+    "command": "echo 'HUD_25'"
+  },
+  {
+    "id": 26,
+    "name": "CYBERPUNK_OP_026",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 26,
+      "trigger": "TRIG_26"
+    },
+    "command": "echo 'HUD_26'"
+  },
+  {
+    "id": 27,
+    "name": "CYBERPUNK_OP_027",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 27,
+      "trigger": "TRIG_27"
+    },
+    "command": "echo 'HUD_27'"
+  },
+  {
+    "id": 28,
+    "name": "CYBERPUNK_OP_028",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 28,
+      "trigger": "TRIG_28"
+    },
+    "command": "echo 'HUD_28'"
+  },
+  {
+    "id": 29,
+    "name": "CYBERPUNK_OP_029",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 29,
+      "trigger": "TRIG_29"
+    },
+    "command": "echo 'HUD_29'"
+  },
+  {
+    "id": 30,
+    "name": "CYBERPUNK_OP_030",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 30,
+      "trigger": "TRIG_30"
+    },
+    "command": "echo 'HUD_30'"
+  },
+  {
+    "id": 31,
+    "name": "CYBERPUNK_OP_031",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 31,
+      "trigger": "TRIG_31"
+    },
+    "command": "echo 'HUD_31'"
+  },
+  {
+    "id": 32,
+    "name": "CYBERPUNK_OP_032",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 32,
+      "trigger": "TRIG_32"
+    },
+    "command": "echo 'HUD_32'"
+  },
+  {
+    "id": 33,
+    "name": "CYBERPUNK_OP_033",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 33,
+      "trigger": "TRIG_33"
+    },
+    "command": "echo 'HUD_33'"
+  },
+  {
+    "id": 34,
+    "name": "CYBERPUNK_OP_034",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 34,
+      "trigger": "TRIG_34"
+    },
+    "command": "echo 'HUD_34'"
+  },
+  {
+    "id": 35,
+    "name": "CYBERPUNK_OP_035",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 35,
+      "trigger": "TRIG_35"
+    },
+    "command": "echo 'HUD_35'"
+  },
+  {
+    "id": 36,
+    "name": "CYBERPUNK_OP_036",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 36,
+      "trigger": "TRIG_36"
+    },
+    "command": "echo 'HUD_36'"
+  },
+  {
+    "id": 37,
+    "name": "CYBERPUNK_OP_037",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 37,
+      "trigger": "TRIG_37"
+    },
+    "command": "echo 'HUD_37'"
+  },
+  {
+    "id": 38,
+    "name": "CYBERPUNK_OP_038",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 38,
+      "trigger": "TRIG_38"
+    },
+    "command": "echo 'HUD_38'"
+  },
+  {
+    "id": 39,
+    "name": "CYBERPUNK_OP_039",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 39,
+      "trigger": "TRIG_39"
+    },
+    "command": "echo 'HUD_39'"
+  },
+  {
+    "id": 40,
+    "name": "CYBERPUNK_OP_040",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 40,
+      "trigger": "TRIG_40"
+    },
+    "command": "echo 'HUD_40'"
+  },
+  {
+    "id": 41,
+    "name": "CYBERPUNK_OP_041",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 41,
+      "trigger": "TRIG_41"
+    },
+    "command": "echo 'HUD_41'"
+  },
+  {
+    "id": 42,
+    "name": "CYBERPUNK_OP_042",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 42,
+      "trigger": "TRIG_42"
+    },
+    "command": "echo 'HUD_42'"
+  },
+  {
+    "id": 43,
+    "name": "CYBERPUNK_OP_043",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 43,
+      "trigger": "TRIG_43"
+    },
+    "command": "echo 'HUD_43'"
+  },
+  {
+    "id": 44,
+    "name": "CYBERPUNK_OP_044",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 44,
+      "trigger": "TRIG_44"
+    },
+    "command": "echo 'HUD_44'"
+  },
+  {
+    "id": 45,
+    "name": "CYBERPUNK_OP_045",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 45,
+      "trigger": "TRIG_45"
+    },
+    "command": "echo 'HUD_45'"
+  },
+  {
+    "id": 46,
+    "name": "CYBERPUNK_OP_046",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 46,
+      "trigger": "TRIG_46"
+    },
+    "command": "echo 'HUD_46'"
+  },
+  {
+    "id": 47,
+    "name": "CYBERPUNK_OP_047",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 47,
+      "trigger": "TRIG_47"
+    },
+    "command": "echo 'HUD_47'"
+  },
+  {
+    "id": 48,
+    "name": "CYBERPUNK_OP_048",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 48,
+      "trigger": "TRIG_48"
+    },
+    "command": "echo 'HUD_48'"
+  },
+  {
+    "id": 49,
+    "name": "CYBERPUNK_OP_049",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 49,
+      "trigger": "TRIG_49"
+    },
+    "command": "echo 'HUD_49'"
+  },
+  {
+    "id": 50,
+    "name": "CYBERPUNK_OP_050",
+    "module": "Cyberpunk HUD Aesthetics & Kinetic Layouts",
+    "payload": {
+      "module": 1,
+      "feature": 50,
+      "trigger": "TRIG_50"
+    },
+    "command": "echo 'HUD_50'"
+  },
+  {
+    "id": 51,
+    "name": "ZERO-COST_OP_051",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 51,
+      "trigger": "TRIG_51"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_51'"
+  },
+  {
+    "id": 52,
+    "name": "ZERO-COST_OP_052",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 52,
+      "trigger": "TRIG_52"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_52'"
+  },
+  {
+    "id": 53,
+    "name": "ZERO-COST_OP_053",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 53,
+      "trigger": "TRIG_53"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_53'"
+  },
+  {
+    "id": 54,
+    "name": "ZERO-COST_OP_054",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 54,
+      "trigger": "TRIG_54"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_54'"
+  },
+  {
+    "id": 55,
+    "name": "ZERO-COST_OP_055",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 55,
+      "trigger": "TRIG_55"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_55'"
+  },
+  {
+    "id": 56,
+    "name": "ZERO-COST_OP_056",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 56,
+      "trigger": "TRIG_56"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_56'"
+  },
+  {
+    "id": 57,
+    "name": "ZERO-COST_OP_057",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 57,
+      "trigger": "TRIG_57"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_57'"
+  },
+  {
+    "id": 58,
+    "name": "ZERO-COST_OP_058",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 58,
+      "trigger": "TRIG_58"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_58'"
+  },
+  {
+    "id": 59,
+    "name": "ZERO-COST_OP_059",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 59,
+      "trigger": "TRIG_59"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_59'"
+  },
+  {
+    "id": 60,
+    "name": "ZERO-COST_OP_060",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 60,
+      "trigger": "TRIG_60"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_60'"
+  },
+  {
+    "id": 61,
+    "name": "ZERO-COST_OP_061",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 61,
+      "trigger": "TRIG_61"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_61'"
+  },
+  {
+    "id": 62,
+    "name": "ZERO-COST_OP_062",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 62,
+      "trigger": "TRIG_62"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_62'"
+  },
+  {
+    "id": 63,
+    "name": "ZERO-COST_OP_063",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 63,
+      "trigger": "TRIG_63"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_63'"
+  },
+  {
+    "id": 64,
+    "name": "ZERO-COST_OP_064",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 64,
+      "trigger": "TRIG_64"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_64'"
+  },
+  {
+    "id": 65,
+    "name": "ZERO-COST_OP_065",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 65,
+      "trigger": "TRIG_65"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_65'"
+  },
+  {
+    "id": 66,
+    "name": "ZERO-COST_OP_066",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 66,
+      "trigger": "TRIG_66"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_66'"
+  },
+  {
+    "id": 67,
+    "name": "ZERO-COST_OP_067",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 67,
+      "trigger": "TRIG_67"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_67'"
+  },
+  {
+    "id": 68,
+    "name": "ZERO-COST_OP_068",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 68,
+      "trigger": "TRIG_68"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_68'"
+  },
+  {
+    "id": 69,
+    "name": "ZERO-COST_OP_069",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 69,
+      "trigger": "TRIG_69"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_69'"
+  },
+  {
+    "id": 70,
+    "name": "ZERO-COST_OP_070",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 70,
+      "trigger": "TRIG_70"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_70'"
+  },
+  {
+    "id": 71,
+    "name": "ZERO-COST_OP_071",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 71,
+      "trigger": "TRIG_71"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_71'"
+  },
+  {
+    "id": 72,
+    "name": "ZERO-COST_OP_072",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 72,
+      "trigger": "TRIG_72"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_72'"
+  },
+  {
+    "id": 73,
+    "name": "ZERO-COST_OP_073",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 73,
+      "trigger": "TRIG_73"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_73'"
+  },
+  {
+    "id": 74,
+    "name": "ZERO-COST_OP_074",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 74,
+      "trigger": "TRIG_74"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_74'"
+  },
+  {
+    "id": 75,
+    "name": "ZERO-COST_OP_075",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 75,
+      "trigger": "TRIG_75"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_75'"
+  },
+  {
+    "id": 76,
+    "name": "ZERO-COST_OP_076",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 76,
+      "trigger": "TRIG_76"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_76'"
+  },
+  {
+    "id": 77,
+    "name": "ZERO-COST_OP_077",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 77,
+      "trigger": "TRIG_77"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_77'"
+  },
+  {
+    "id": 78,
+    "name": "ZERO-COST_OP_078",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 78,
+      "trigger": "TRIG_78"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_78'"
+  },
+  {
+    "id": 79,
+    "name": "ZERO-COST_OP_079",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 79,
+      "trigger": "TRIG_79"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_79'"
+  },
+  {
+    "id": 80,
+    "name": "ZERO-COST_OP_080",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 80,
+      "trigger": "TRIG_80"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_80'"
+  },
+  {
+    "id": 81,
+    "name": "ZERO-COST_OP_081",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 81,
+      "trigger": "TRIG_81"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_81'"
+  },
+  {
+    "id": 82,
+    "name": "ZERO-COST_OP_082",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 82,
+      "trigger": "TRIG_82"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_82'"
+  },
+  {
+    "id": 83,
+    "name": "ZERO-COST_OP_083",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 83,
+      "trigger": "TRIG_83"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_83'"
+  },
+  {
+    "id": 84,
+    "name": "ZERO-COST_OP_084",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 84,
+      "trigger": "TRIG_84"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_84'"
+  },
+  {
+    "id": 85,
+    "name": "ZERO-COST_OP_085",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 85,
+      "trigger": "TRIG_85"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_85'"
+  },
+  {
+    "id": 86,
+    "name": "ZERO-COST_OP_086",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 86,
+      "trigger": "TRIG_86"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_86'"
+  },
+  {
+    "id": 87,
+    "name": "ZERO-COST_OP_087",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 87,
+      "trigger": "TRIG_87"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_87'"
+  },
+  {
+    "id": 88,
+    "name": "ZERO-COST_OP_088",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 88,
+      "trigger": "TRIG_88"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_88'"
+  },
+  {
+    "id": 89,
+    "name": "ZERO-COST_OP_089",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 89,
+      "trigger": "TRIG_89"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_89'"
+  },
+  {
+    "id": 90,
+    "name": "ZERO-COST_OP_090",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 90,
+      "trigger": "TRIG_90"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_90'"
+  },
+  {
+    "id": 91,
+    "name": "ZERO-COST_OP_091",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 91,
+      "trigger": "TRIG_91"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_91'"
+  },
+  {
+    "id": 92,
+    "name": "ZERO-COST_OP_092",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 92,
+      "trigger": "TRIG_92"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_92'"
+  },
+  {
+    "id": 93,
+    "name": "ZERO-COST_OP_093",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 93,
+      "trigger": "TRIG_93"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_93'"
+  },
+  {
+    "id": 94,
+    "name": "ZERO-COST_OP_094",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 94,
+      "trigger": "TRIG_94"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_94'"
+  },
+  {
+    "id": 95,
+    "name": "ZERO-COST_OP_095",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 95,
+      "trigger": "TRIG_95"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_95'"
+  },
+  {
+    "id": 96,
+    "name": "ZERO-COST_OP_096",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 96,
+      "trigger": "TRIG_96"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_96'"
+  },
+  {
+    "id": 97,
+    "name": "ZERO-COST_OP_097",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 97,
+      "trigger": "TRIG_97"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_97'"
+  },
+  {
+    "id": 98,
+    "name": "ZERO-COST_OP_098",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 98,
+      "trigger": "TRIG_98"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_98'"
+  },
+  {
+    "id": 99,
+    "name": "ZERO-COST_OP_099",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 99,
+      "trigger": "TRIG_99"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_99'"
+  },
+  {
+    "id": 100,
+    "name": "ZERO-COST_OP_100",
+    "module": "Zero-Cost Local IoT & Spatial Automations",
+    "payload": {
+      "module": 51,
+      "feature": 100,
+      "trigger": "TRIG_100"
+    },
+    "command": "arp-scan --localnet | grep 'MAC_0'"
+  },
+  {
+    "id": 101,
+    "name": "LOW-LEVEL_OP_101",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 101,
+      "trigger": "TRIG_101"
+    },
+    "command": "xdotool key 'F1'"
+  },
+  {
+    "id": 102,
+    "name": "LOW-LEVEL_OP_102",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 102,
+      "trigger": "TRIG_102"
+    },
+    "command": "xdotool key 'F2'"
+  },
+  {
+    "id": 103,
+    "name": "LOW-LEVEL_OP_103",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 103,
+      "trigger": "TRIG_103"
+    },
+    "command": "xdotool key 'F3'"
+  },
+  {
+    "id": 104,
+    "name": "LOW-LEVEL_OP_104",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 104,
+      "trigger": "TRIG_104"
+    },
+    "command": "xdotool key 'F4'"
+  },
+  {
+    "id": 105,
+    "name": "LOW-LEVEL_OP_105",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 105,
+      "trigger": "TRIG_105"
+    },
+    "command": "xdotool key 'F5'"
+  },
+  {
+    "id": 106,
+    "name": "LOW-LEVEL_OP_106",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 106,
+      "trigger": "TRIG_106"
+    },
+    "command": "xdotool key 'F6'"
+  },
+  {
+    "id": 107,
+    "name": "LOW-LEVEL_OP_107",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 107,
+      "trigger": "TRIG_107"
+    },
+    "command": "xdotool key 'F7'"
+  },
+  {
+    "id": 108,
+    "name": "LOW-LEVEL_OP_108",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 108,
+      "trigger": "TRIG_108"
+    },
+    "command": "xdotool key 'F8'"
+  },
+  {
+    "id": 109,
+    "name": "LOW-LEVEL_OP_109",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 109,
+      "trigger": "TRIG_109"
+    },
+    "command": "xdotool key 'F9'"
+  },
+  {
+    "id": 110,
+    "name": "LOW-LEVEL_OP_110",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 110,
+      "trigger": "TRIG_110"
+    },
+    "command": "xdotool key 'F10'"
+  },
+  {
+    "id": 111,
+    "name": "LOW-LEVEL_OP_111",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 111,
+      "trigger": "TRIG_111"
+    },
+    "command": "xdotool key 'F11'"
+  },
+  {
+    "id": 112,
+    "name": "LOW-LEVEL_OP_112",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 112,
+      "trigger": "TRIG_112"
+    },
+    "command": "xdotool key 'F12'"
+  },
+  {
+    "id": 113,
+    "name": "LOW-LEVEL_OP_113",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 113,
+      "trigger": "TRIG_113"
+    },
+    "command": "xdotool key 'F13'"
+  },
+  {
+    "id": 114,
+    "name": "LOW-LEVEL_OP_114",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 114,
+      "trigger": "TRIG_114"
+    },
+    "command": "xdotool key 'F14'"
+  },
+  {
+    "id": 115,
+    "name": "LOW-LEVEL_OP_115",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 115,
+      "trigger": "TRIG_115"
+    },
+    "command": "xdotool key 'F15'"
+  },
+  {
+    "id": 116,
+    "name": "LOW-LEVEL_OP_116",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 116,
+      "trigger": "TRIG_116"
+    },
+    "command": "xdotool key 'F16'"
+  },
+  {
+    "id": 117,
+    "name": "LOW-LEVEL_OP_117",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 117,
+      "trigger": "TRIG_117"
+    },
+    "command": "xdotool key 'F17'"
+  },
+  {
+    "id": 118,
+    "name": "LOW-LEVEL_OP_118",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 118,
+      "trigger": "TRIG_118"
+    },
+    "command": "xdotool key 'F18'"
+  },
+  {
+    "id": 119,
+    "name": "LOW-LEVEL_OP_119",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 119,
+      "trigger": "TRIG_119"
+    },
+    "command": "xdotool key 'F19'"
+  },
+  {
+    "id": 120,
+    "name": "LOW-LEVEL_OP_120",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 120,
+      "trigger": "TRIG_120"
+    },
+    "command": "xdotool key 'F20'"
+  },
+  {
+    "id": 121,
+    "name": "LOW-LEVEL_OP_121",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 121,
+      "trigger": "TRIG_121"
+    },
+    "command": "xdotool key 'F21'"
+  },
+  {
+    "id": 122,
+    "name": "LOW-LEVEL_OP_122",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 122,
+      "trigger": "TRIG_122"
+    },
+    "command": "xdotool key 'F22'"
+  },
+  {
+    "id": 123,
+    "name": "LOW-LEVEL_OP_123",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 123,
+      "trigger": "TRIG_123"
+    },
+    "command": "xdotool key 'F23'"
+  },
+  {
+    "id": 124,
+    "name": "LOW-LEVEL_OP_124",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 124,
+      "trigger": "TRIG_124"
+    },
+    "command": "xdotool key 'F24'"
+  },
+  {
+    "id": 125,
+    "name": "LOW-LEVEL_OP_125",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 125,
+      "trigger": "TRIG_125"
+    },
+    "command": "xdotool key 'F25'"
+  },
+  {
+    "id": 126,
+    "name": "LOW-LEVEL_OP_126",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 126,
+      "trigger": "TRIG_126"
+    },
+    "command": "xdotool key 'F26'"
+  },
+  {
+    "id": 127,
+    "name": "LOW-LEVEL_OP_127",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 127,
+      "trigger": "TRIG_127"
+    },
+    "command": "xdotool key 'F27'"
+  },
+  {
+    "id": 128,
+    "name": "LOW-LEVEL_OP_128",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 128,
+      "trigger": "TRIG_128"
+    },
+    "command": "xdotool key 'F28'"
+  },
+  {
+    "id": 129,
+    "name": "LOW-LEVEL_OP_129",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 129,
+      "trigger": "TRIG_129"
+    },
+    "command": "xdotool key 'F29'"
+  },
+  {
+    "id": 130,
+    "name": "LOW-LEVEL_OP_130",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 130,
+      "trigger": "TRIG_130"
+    },
+    "command": "xdotool key 'F30'"
+  },
+  {
+    "id": 131,
+    "name": "LOW-LEVEL_OP_131",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 131,
+      "trigger": "TRIG_131"
+    },
+    "command": "xdotool key 'F31'"
+  },
+  {
+    "id": 132,
+    "name": "LOW-LEVEL_OP_132",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 132,
+      "trigger": "TRIG_132"
+    },
+    "command": "xdotool key 'F32'"
+  },
+  {
+    "id": 133,
+    "name": "LOW-LEVEL_OP_133",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 133,
+      "trigger": "TRIG_133"
+    },
+    "command": "xdotool key 'F33'"
+  },
+  {
+    "id": 134,
+    "name": "LOW-LEVEL_OP_134",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 134,
+      "trigger": "TRIG_134"
+    },
+    "command": "xdotool key 'F34'"
+  },
+  {
+    "id": 135,
+    "name": "LOW-LEVEL_OP_135",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 135,
+      "trigger": "TRIG_135"
+    },
+    "command": "xdotool key 'F35'"
+  },
+  {
+    "id": 136,
+    "name": "LOW-LEVEL_OP_136",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 136,
+      "trigger": "TRIG_136"
+    },
+    "command": "xdotool key 'F36'"
+  },
+  {
+    "id": 137,
+    "name": "LOW-LEVEL_OP_137",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 137,
+      "trigger": "TRIG_137"
+    },
+    "command": "xdotool key 'F37'"
+  },
+  {
+    "id": 138,
+    "name": "LOW-LEVEL_OP_138",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 138,
+      "trigger": "TRIG_138"
+    },
+    "command": "xdotool key 'F38'"
+  },
+  {
+    "id": 139,
+    "name": "LOW-LEVEL_OP_139",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 139,
+      "trigger": "TRIG_139"
+    },
+    "command": "xdotool key 'F39'"
+  },
+  {
+    "id": 140,
+    "name": "LOW-LEVEL_OP_140",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 140,
+      "trigger": "TRIG_140"
+    },
+    "command": "xdotool key 'F40'"
+  },
+  {
+    "id": 141,
+    "name": "LOW-LEVEL_OP_141",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 141,
+      "trigger": "TRIG_141"
+    },
+    "command": "xdotool key 'F41'"
+  },
+  {
+    "id": 142,
+    "name": "LOW-LEVEL_OP_142",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 142,
+      "trigger": "TRIG_142"
+    },
+    "command": "xdotool key 'F42'"
+  },
+  {
+    "id": 143,
+    "name": "LOW-LEVEL_OP_143",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 143,
+      "trigger": "TRIG_143"
+    },
+    "command": "xdotool key 'F43'"
+  },
+  {
+    "id": 144,
+    "name": "LOW-LEVEL_OP_144",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 144,
+      "trigger": "TRIG_144"
+    },
+    "command": "xdotool key 'F44'"
+  },
+  {
+    "id": 145,
+    "name": "LOW-LEVEL_OP_145",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 145,
+      "trigger": "TRIG_145"
+    },
+    "command": "xdotool key 'F45'"
+  },
+  {
+    "id": 146,
+    "name": "LOW-LEVEL_OP_146",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 146,
+      "trigger": "TRIG_146"
+    },
+    "command": "xdotool key 'F46'"
+  },
+  {
+    "id": 147,
+    "name": "LOW-LEVEL_OP_147",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 147,
+      "trigger": "TRIG_147"
+    },
+    "command": "xdotool key 'F47'"
+  },
+  {
+    "id": 148,
+    "name": "LOW-LEVEL_OP_148",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 148,
+      "trigger": "TRIG_148"
+    },
+    "command": "xdotool key 'F48'"
+  },
+  {
+    "id": 149,
+    "name": "LOW-LEVEL_OP_149",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 149,
+      "trigger": "TRIG_149"
+    },
+    "command": "xdotool key 'F49'"
+  },
+  {
+    "id": 150,
+    "name": "LOW-LEVEL_OP_150",
+    "module": "Low-Level Linux Subsystem Control",
+    "payload": {
+      "module": 101,
+      "feature": 150,
+      "trigger": "TRIG_150"
+    },
+    "command": "xdotool key 'F50'"
+  },
+  {
+    "id": 151,
+    "name": "ADVANCED_OP_151",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 151,
+      "trigger": "TRIG_151"
+    },
+    "command": "amixer set Master 51%"
+  },
+  {
+    "id": 152,
+    "name": "ADVANCED_OP_152",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 152,
+      "trigger": "TRIG_152"
+    },
+    "command": "amixer set Master 52%"
+  },
+  {
+    "id": 153,
+    "name": "ADVANCED_OP_153",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 153,
+      "trigger": "TRIG_153"
+    },
+    "command": "amixer set Master 53%"
+  },
+  {
+    "id": 154,
+    "name": "ADVANCED_OP_154",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 154,
+      "trigger": "TRIG_154"
+    },
+    "command": "amixer set Master 54%"
+  },
+  {
+    "id": 155,
+    "name": "ADVANCED_OP_155",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 155,
+      "trigger": "TRIG_155"
+    },
+    "command": "amixer set Master 55%"
+  },
+  {
+    "id": 156,
+    "name": "ADVANCED_OP_156",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 156,
+      "trigger": "TRIG_156"
+    },
+    "command": "amixer set Master 56%"
+  },
+  {
+    "id": 157,
+    "name": "ADVANCED_OP_157",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 157,
+      "trigger": "TRIG_157"
+    },
+    "command": "amixer set Master 57%"
+  },
+  {
+    "id": 158,
+    "name": "ADVANCED_OP_158",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 158,
+      "trigger": "TRIG_158"
+    },
+    "command": "amixer set Master 58%"
+  },
+  {
+    "id": 159,
+    "name": "ADVANCED_OP_159",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 159,
+      "trigger": "TRIG_159"
+    },
+    "command": "amixer set Master 59%"
+  },
+  {
+    "id": 160,
+    "name": "ADVANCED_OP_160",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 160,
+      "trigger": "TRIG_160"
+    },
+    "command": "amixer set Master 60%"
+  },
+  {
+    "id": 161,
+    "name": "ADVANCED_OP_161",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 161,
+      "trigger": "TRIG_161"
+    },
+    "command": "amixer set Master 61%"
+  },
+  {
+    "id": 162,
+    "name": "ADVANCED_OP_162",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 162,
+      "trigger": "TRIG_162"
+    },
+    "command": "amixer set Master 62%"
+  },
+  {
+    "id": 163,
+    "name": "ADVANCED_OP_163",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 163,
+      "trigger": "TRIG_163"
+    },
+    "command": "amixer set Master 63%"
+  },
+  {
+    "id": 164,
+    "name": "ADVANCED_OP_164",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 164,
+      "trigger": "TRIG_164"
+    },
+    "command": "amixer set Master 64%"
+  },
+  {
+    "id": 165,
+    "name": "ADVANCED_OP_165",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 165,
+      "trigger": "TRIG_165"
+    },
+    "command": "amixer set Master 65%"
+  },
+  {
+    "id": 166,
+    "name": "ADVANCED_OP_166",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 166,
+      "trigger": "TRIG_166"
+    },
+    "command": "amixer set Master 66%"
+  },
+  {
+    "id": 167,
+    "name": "ADVANCED_OP_167",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 167,
+      "trigger": "TRIG_167"
+    },
+    "command": "amixer set Master 67%"
+  },
+  {
+    "id": 168,
+    "name": "ADVANCED_OP_168",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 168,
+      "trigger": "TRIG_168"
+    },
+    "command": "amixer set Master 68%"
+  },
+  {
+    "id": 169,
+    "name": "ADVANCED_OP_169",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 169,
+      "trigger": "TRIG_169"
+    },
+    "command": "amixer set Master 69%"
+  },
+  {
+    "id": 170,
+    "name": "ADVANCED_OP_170",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 170,
+      "trigger": "TRIG_170"
+    },
+    "command": "amixer set Master 70%"
+  },
+  {
+    "id": 171,
+    "name": "ADVANCED_OP_171",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 171,
+      "trigger": "TRIG_171"
+    },
+    "command": "amixer set Master 71%"
+  },
+  {
+    "id": 172,
+    "name": "ADVANCED_OP_172",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 172,
+      "trigger": "TRIG_172"
+    },
+    "command": "amixer set Master 72%"
+  },
+  {
+    "id": 173,
+    "name": "ADVANCED_OP_173",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 173,
+      "trigger": "TRIG_173"
+    },
+    "command": "amixer set Master 73%"
+  },
+  {
+    "id": 174,
+    "name": "ADVANCED_OP_174",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 174,
+      "trigger": "TRIG_174"
+    },
+    "command": "amixer set Master 74%"
+  },
+  {
+    "id": 175,
+    "name": "ADVANCED_OP_175",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 175,
+      "trigger": "TRIG_175"
+    },
+    "command": "amixer set Master 75%"
+  },
+  {
+    "id": 176,
+    "name": "ADVANCED_OP_176",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 176,
+      "trigger": "TRIG_176"
+    },
+    "command": "amixer set Master 76%"
+  },
+  {
+    "id": 177,
+    "name": "ADVANCED_OP_177",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 177,
+      "trigger": "TRIG_177"
+    },
+    "command": "amixer set Master 77%"
+  },
+  {
+    "id": 178,
+    "name": "ADVANCED_OP_178",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 178,
+      "trigger": "TRIG_178"
+    },
+    "command": "amixer set Master 78%"
+  },
+  {
+    "id": 179,
+    "name": "ADVANCED_OP_179",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 179,
+      "trigger": "TRIG_179"
+    },
+    "command": "amixer set Master 79%"
+  },
+  {
+    "id": 180,
+    "name": "ADVANCED_OP_180",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 180,
+      "trigger": "TRIG_180"
+    },
+    "command": "amixer set Master 80%"
+  },
+  {
+    "id": 181,
+    "name": "ADVANCED_OP_181",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 181,
+      "trigger": "TRIG_181"
+    },
+    "command": "amixer set Master 81%"
+  },
+  {
+    "id": 182,
+    "name": "ADVANCED_OP_182",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 182,
+      "trigger": "TRIG_182"
+    },
+    "command": "amixer set Master 82%"
+  },
+  {
+    "id": 183,
+    "name": "ADVANCED_OP_183",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 183,
+      "trigger": "TRIG_183"
+    },
+    "command": "amixer set Master 83%"
+  },
+  {
+    "id": 184,
+    "name": "ADVANCED_OP_184",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 184,
+      "trigger": "TRIG_184"
+    },
+    "command": "amixer set Master 84%"
+  },
+  {
+    "id": 185,
+    "name": "ADVANCED_OP_185",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 185,
+      "trigger": "TRIG_185"
+    },
+    "command": "amixer set Master 85%"
+  },
+  {
+    "id": 186,
+    "name": "ADVANCED_OP_186",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 186,
+      "trigger": "TRIG_186"
+    },
+    "command": "amixer set Master 86%"
+  },
+  {
+    "id": 187,
+    "name": "ADVANCED_OP_187",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 187,
+      "trigger": "TRIG_187"
+    },
+    "command": "amixer set Master 87%"
+  },
+  {
+    "id": 188,
+    "name": "ADVANCED_OP_188",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 188,
+      "trigger": "TRIG_188"
+    },
+    "command": "amixer set Master 88%"
+  },
+  {
+    "id": 189,
+    "name": "ADVANCED_OP_189",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 189,
+      "trigger": "TRIG_189"
+    },
+    "command": "amixer set Master 89%"
+  },
+  {
+    "id": 190,
+    "name": "ADVANCED_OP_190",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 190,
+      "trigger": "TRIG_190"
+    },
+    "command": "amixer set Master 90%"
+  },
+  {
+    "id": 191,
+    "name": "ADVANCED_OP_191",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 191,
+      "trigger": "TRIG_191"
+    },
+    "command": "amixer set Master 91%"
+  },
+  {
+    "id": 192,
+    "name": "ADVANCED_OP_192",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 192,
+      "trigger": "TRIG_192"
+    },
+    "command": "amixer set Master 92%"
+  },
+  {
+    "id": 193,
+    "name": "ADVANCED_OP_193",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 193,
+      "trigger": "TRIG_193"
+    },
+    "command": "amixer set Master 93%"
+  },
+  {
+    "id": 194,
+    "name": "ADVANCED_OP_194",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 194,
+      "trigger": "TRIG_194"
+    },
+    "command": "amixer set Master 94%"
+  },
+  {
+    "id": 195,
+    "name": "ADVANCED_OP_195",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 195,
+      "trigger": "TRIG_195"
+    },
+    "command": "amixer set Master 95%"
+  },
+  {
+    "id": 196,
+    "name": "ADVANCED_OP_196",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 196,
+      "trigger": "TRIG_196"
+    },
+    "command": "amixer set Master 96%"
+  },
+  {
+    "id": 197,
+    "name": "ADVANCED_OP_197",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 197,
+      "trigger": "TRIG_197"
+    },
+    "command": "amixer set Master 97%"
+  },
+  {
+    "id": 198,
+    "name": "ADVANCED_OP_198",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 198,
+      "trigger": "TRIG_198"
+    },
+    "command": "amixer set Master 98%"
+  },
+  {
+    "id": 199,
+    "name": "ADVANCED_OP_199",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 199,
+      "trigger": "TRIG_199"
+    },
+    "command": "amixer set Master 99%"
+  },
+  {
+    "id": 200,
+    "name": "ADVANCED_OP_200",
+    "module": "Advanced Acoustic DSP & Ambient Audio Intelligence",
+    "payload": {
+      "module": 151,
+      "feature": 200,
+      "trigger": "TRIG_200"
+    },
+    "command": "amixer set Master 0%"
+  },
+  {
+    "id": 201,
+    "name": "LOCAL_OP_201",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 201,
+      "trigger": "TRIG_201"
+    },
+    "command": "ollama run llama3 'INTENT_1'"
+  },
+  {
+    "id": 202,
+    "name": "LOCAL_OP_202",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 202,
+      "trigger": "TRIG_202"
+    },
+    "command": "ollama run llama3 'INTENT_2'"
+  },
+  {
+    "id": 203,
+    "name": "LOCAL_OP_203",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 203,
+      "trigger": "TRIG_203"
+    },
+    "command": "ollama run llama3 'INTENT_3'"
+  },
+  {
+    "id": 204,
+    "name": "LOCAL_OP_204",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 204,
+      "trigger": "TRIG_204"
+    },
+    "command": "ollama run llama3 'INTENT_4'"
+  },
+  {
+    "id": 205,
+    "name": "LOCAL_OP_205",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 205,
+      "trigger": "TRIG_205"
+    },
+    "command": "ollama run llama3 'INTENT_5'"
+  },
+  {
+    "id": 206,
+    "name": "LOCAL_OP_206",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 206,
+      "trigger": "TRIG_206"
+    },
+    "command": "ollama run llama3 'INTENT_6'"
+  },
+  {
+    "id": 207,
+    "name": "LOCAL_OP_207",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 207,
+      "trigger": "TRIG_207"
+    },
+    "command": "ollama run llama3 'INTENT_7'"
+  },
+  {
+    "id": 208,
+    "name": "LOCAL_OP_208",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 208,
+      "trigger": "TRIG_208"
+    },
+    "command": "ollama run llama3 'INTENT_8'"
+  },
+  {
+    "id": 209,
+    "name": "LOCAL_OP_209",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 209,
+      "trigger": "TRIG_209"
+    },
+    "command": "ollama run llama3 'INTENT_9'"
+  },
+  {
+    "id": 210,
+    "name": "LOCAL_OP_210",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 210,
+      "trigger": "TRIG_210"
+    },
+    "command": "ollama run llama3 'INTENT_10'"
+  },
+  {
+    "id": 211,
+    "name": "LOCAL_OP_211",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 211,
+      "trigger": "TRIG_211"
+    },
+    "command": "ollama run llama3 'INTENT_11'"
+  },
+  {
+    "id": 212,
+    "name": "LOCAL_OP_212",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 212,
+      "trigger": "TRIG_212"
+    },
+    "command": "ollama run llama3 'INTENT_12'"
+  },
+  {
+    "id": 213,
+    "name": "LOCAL_OP_213",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 213,
+      "trigger": "TRIG_213"
+    },
+    "command": "ollama run llama3 'INTENT_13'"
+  },
+  {
+    "id": 214,
+    "name": "LOCAL_OP_214",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 214,
+      "trigger": "TRIG_214"
+    },
+    "command": "ollama run llama3 'INTENT_14'"
+  },
+  {
+    "id": 215,
+    "name": "LOCAL_OP_215",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 215,
+      "trigger": "TRIG_215"
+    },
+    "command": "ollama run llama3 'INTENT_15'"
+  },
+  {
+    "id": 216,
+    "name": "LOCAL_OP_216",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 216,
+      "trigger": "TRIG_216"
+    },
+    "command": "ollama run llama3 'INTENT_16'"
+  },
+  {
+    "id": 217,
+    "name": "LOCAL_OP_217",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 217,
+      "trigger": "TRIG_217"
+    },
+    "command": "ollama run llama3 'INTENT_17'"
+  },
+  {
+    "id": 218,
+    "name": "LOCAL_OP_218",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 218,
+      "trigger": "TRIG_218"
+    },
+    "command": "ollama run llama3 'INTENT_18'"
+  },
+  {
+    "id": 219,
+    "name": "LOCAL_OP_219",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 219,
+      "trigger": "TRIG_219"
+    },
+    "command": "ollama run llama3 'INTENT_19'"
+  },
+  {
+    "id": 220,
+    "name": "LOCAL_OP_220",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 220,
+      "trigger": "TRIG_220"
+    },
+    "command": "ollama run llama3 'INTENT_20'"
+  },
+  {
+    "id": 221,
+    "name": "LOCAL_OP_221",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 221,
+      "trigger": "TRIG_221"
+    },
+    "command": "ollama run llama3 'INTENT_21'"
+  },
+  {
+    "id": 222,
+    "name": "LOCAL_OP_222",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 222,
+      "trigger": "TRIG_222"
+    },
+    "command": "ollama run llama3 'INTENT_22'"
+  },
+  {
+    "id": 223,
+    "name": "LOCAL_OP_223",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 223,
+      "trigger": "TRIG_223"
+    },
+    "command": "ollama run llama3 'INTENT_23'"
+  },
+  {
+    "id": 224,
+    "name": "LOCAL_OP_224",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 224,
+      "trigger": "TRIG_224"
+    },
+    "command": "ollama run llama3 'INTENT_24'"
+  },
+  {
+    "id": 225,
+    "name": "LOCAL_OP_225",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 225,
+      "trigger": "TRIG_225"
+    },
+    "command": "ollama run llama3 'INTENT_25'"
+  },
+  {
+    "id": 226,
+    "name": "LOCAL_OP_226",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 226,
+      "trigger": "TRIG_226"
+    },
+    "command": "ollama run llama3 'INTENT_26'"
+  },
+  {
+    "id": 227,
+    "name": "LOCAL_OP_227",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 227,
+      "trigger": "TRIG_227"
+    },
+    "command": "ollama run llama3 'INTENT_27'"
+  },
+  {
+    "id": 228,
+    "name": "LOCAL_OP_228",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 228,
+      "trigger": "TRIG_228"
+    },
+    "command": "ollama run llama3 'INTENT_28'"
+  },
+  {
+    "id": 229,
+    "name": "LOCAL_OP_229",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 229,
+      "trigger": "TRIG_229"
+    },
+    "command": "ollama run llama3 'INTENT_29'"
+  },
+  {
+    "id": 230,
+    "name": "LOCAL_OP_230",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 230,
+      "trigger": "TRIG_230"
+    },
+    "command": "ollama run llama3 'INTENT_30'"
+  },
+  {
+    "id": 231,
+    "name": "LOCAL_OP_231",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 231,
+      "trigger": "TRIG_231"
+    },
+    "command": "ollama run llama3 'INTENT_31'"
+  },
+  {
+    "id": 232,
+    "name": "LOCAL_OP_232",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 232,
+      "trigger": "TRIG_232"
+    },
+    "command": "ollama run llama3 'INTENT_32'"
+  },
+  {
+    "id": 233,
+    "name": "LOCAL_OP_233",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 233,
+      "trigger": "TRIG_233"
+    },
+    "command": "ollama run llama3 'INTENT_33'"
+  },
+  {
+    "id": 234,
+    "name": "LOCAL_OP_234",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 234,
+      "trigger": "TRIG_234"
+    },
+    "command": "ollama run llama3 'INTENT_34'"
+  },
+  {
+    "id": 235,
+    "name": "LOCAL_OP_235",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 235,
+      "trigger": "TRIG_235"
+    },
+    "command": "ollama run llama3 'INTENT_35'"
+  },
+  {
+    "id": 236,
+    "name": "LOCAL_OP_236",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 236,
+      "trigger": "TRIG_236"
+    },
+    "command": "ollama run llama3 'INTENT_36'"
+  },
+  {
+    "id": 237,
+    "name": "LOCAL_OP_237",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 237,
+      "trigger": "TRIG_237"
+    },
+    "command": "ollama run llama3 'INTENT_37'"
+  },
+  {
+    "id": 238,
+    "name": "LOCAL_OP_238",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 238,
+      "trigger": "TRIG_238"
+    },
+    "command": "ollama run llama3 'INTENT_38'"
+  },
+  {
+    "id": 239,
+    "name": "LOCAL_OP_239",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 239,
+      "trigger": "TRIG_239"
+    },
+    "command": "ollama run llama3 'INTENT_39'"
+  },
+  {
+    "id": 240,
+    "name": "LOCAL_OP_240",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 240,
+      "trigger": "TRIG_240"
+    },
+    "command": "ollama run llama3 'INTENT_40'"
+  },
+  {
+    "id": 241,
+    "name": "LOCAL_OP_241",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 241,
+      "trigger": "TRIG_241"
+    },
+    "command": "ollama run llama3 'INTENT_41'"
+  },
+  {
+    "id": 242,
+    "name": "LOCAL_OP_242",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 242,
+      "trigger": "TRIG_242"
+    },
+    "command": "ollama run llama3 'INTENT_42'"
+  },
+  {
+    "id": 243,
+    "name": "LOCAL_OP_243",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 243,
+      "trigger": "TRIG_243"
+    },
+    "command": "ollama run llama3 'INTENT_43'"
+  },
+  {
+    "id": 244,
+    "name": "LOCAL_OP_244",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 244,
+      "trigger": "TRIG_244"
+    },
+    "command": "ollama run llama3 'INTENT_44'"
+  },
+  {
+    "id": 245,
+    "name": "LOCAL_OP_245",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 245,
+      "trigger": "TRIG_245"
+    },
+    "command": "ollama run llama3 'INTENT_45'"
+  },
+  {
+    "id": 246,
+    "name": "LOCAL_OP_246",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 246,
+      "trigger": "TRIG_246"
+    },
+    "command": "ollama run llama3 'INTENT_46'"
+  },
+  {
+    "id": 247,
+    "name": "LOCAL_OP_247",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 247,
+      "trigger": "TRIG_247"
+    },
+    "command": "ollama run llama3 'INTENT_47'"
+  },
+  {
+    "id": 248,
+    "name": "LOCAL_OP_248",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 248,
+      "trigger": "TRIG_248"
+    },
+    "command": "ollama run llama3 'INTENT_48'"
+  },
+  {
+    "id": 249,
+    "name": "LOCAL_OP_249",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 249,
+      "trigger": "TRIG_249"
+    },
+    "command": "ollama run llama3 'INTENT_49'"
+  },
+  {
+    "id": 250,
+    "name": "LOCAL_OP_250",
+    "module": "Local AI Core Integration & Conversational Hooks",
+    "payload": {
+      "module": 201,
+      "feature": 250,
+      "trigger": "TRIG_250"
+    },
+    "command": "ollama run llama3 'INTENT_50'"
+  },
+  {
+    "id": 251,
+    "name": "HARDWARE_OP_251",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 251,
+      "trigger": "TRIG_251"
+    },
+    "command": "systemctl 51"
+  },
+  {
+    "id": 252,
+    "name": "HARDWARE_OP_252",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 252,
+      "trigger": "TRIG_252"
+    },
+    "command": "systemctl 52"
+  },
+  {
+    "id": 253,
+    "name": "HARDWARE_OP_253",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 253,
+      "trigger": "TRIG_253"
+    },
+    "command": "systemctl 53"
+  },
+  {
+    "id": 254,
+    "name": "HARDWARE_OP_254",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 254,
+      "trigger": "TRIG_254"
+    },
+    "command": "systemctl 54"
+  },
+  {
+    "id": 255,
+    "name": "HARDWARE_OP_255",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 255,
+      "trigger": "TRIG_255"
+    },
+    "command": "systemctl 55"
+  },
+  {
+    "id": 256,
+    "name": "HARDWARE_OP_256",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 256,
+      "trigger": "TRIG_256"
+    },
+    "command": "systemctl 56"
+  },
+  {
+    "id": 257,
+    "name": "HARDWARE_OP_257",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 257,
+      "trigger": "TRIG_257"
+    },
+    "command": "systemctl 57"
+  },
+  {
+    "id": 258,
+    "name": "HARDWARE_OP_258",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 258,
+      "trigger": "TRIG_258"
+    },
+    "command": "systemctl 58"
+  },
+  {
+    "id": 259,
+    "name": "HARDWARE_OP_259",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 259,
+      "trigger": "TRIG_259"
+    },
+    "command": "systemctl 59"
+  },
+  {
+    "id": 260,
+    "name": "HARDWARE_OP_260",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 260,
+      "trigger": "TRIG_260"
+    },
+    "command": "systemctl 60"
+  },
+  {
+    "id": 261,
+    "name": "HARDWARE_OP_261",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 261,
+      "trigger": "TRIG_261"
+    },
+    "command": "systemctl 61"
+  },
+  {
+    "id": 262,
+    "name": "HARDWARE_OP_262",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 262,
+      "trigger": "TRIG_262"
+    },
+    "command": "systemctl 62"
+  },
+  {
+    "id": 263,
+    "name": "HARDWARE_OP_263",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 263,
+      "trigger": "TRIG_263"
+    },
+    "command": "systemctl 63"
+  },
+  {
+    "id": 264,
+    "name": "HARDWARE_OP_264",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 264,
+      "trigger": "TRIG_264"
+    },
+    "command": "systemctl 64"
+  },
+  {
+    "id": 265,
+    "name": "HARDWARE_OP_265",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 265,
+      "trigger": "TRIG_265"
+    },
+    "command": "systemctl 65"
+  },
+  {
+    "id": 266,
+    "name": "HARDWARE_OP_266",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 266,
+      "trigger": "TRIG_266"
+    },
+    "command": "systemctl 66"
+  },
+  {
+    "id": 267,
+    "name": "HARDWARE_OP_267",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 267,
+      "trigger": "TRIG_267"
+    },
+    "command": "systemctl 67"
+  },
+  {
+    "id": 268,
+    "name": "HARDWARE_OP_268",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 268,
+      "trigger": "TRIG_268"
+    },
+    "command": "systemctl 68"
+  },
+  {
+    "id": 269,
+    "name": "HARDWARE_OP_269",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 269,
+      "trigger": "TRIG_269"
+    },
+    "command": "systemctl 69"
+  },
+  {
+    "id": 270,
+    "name": "HARDWARE_OP_270",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 270,
+      "trigger": "TRIG_270"
+    },
+    "command": "systemctl 70"
+  },
+  {
+    "id": 271,
+    "name": "HARDWARE_OP_271",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 271,
+      "trigger": "TRIG_271"
+    },
+    "command": "systemctl 71"
+  },
+  {
+    "id": 272,
+    "name": "HARDWARE_OP_272",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 272,
+      "trigger": "TRIG_272"
+    },
+    "command": "systemctl 72"
+  },
+  {
+    "id": 273,
+    "name": "HARDWARE_OP_273",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 273,
+      "trigger": "TRIG_273"
+    },
+    "command": "systemctl 73"
+  },
+  {
+    "id": 274,
+    "name": "HARDWARE_OP_274",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 274,
+      "trigger": "TRIG_274"
+    },
+    "command": "systemctl 74"
+  },
+  {
+    "id": 275,
+    "name": "HARDWARE_OP_275",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 275,
+      "trigger": "TRIG_275"
+    },
+    "command": "systemctl 75"
+  },
+  {
+    "id": 276,
+    "name": "HARDWARE_OP_276",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 276,
+      "trigger": "TRIG_276"
+    },
+    "command": "systemctl 76"
+  },
+  {
+    "id": 277,
+    "name": "HARDWARE_OP_277",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 277,
+      "trigger": "TRIG_277"
+    },
+    "command": "systemctl 77"
+  },
+  {
+    "id": 278,
+    "name": "HARDWARE_OP_278",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 278,
+      "trigger": "TRIG_278"
+    },
+    "command": "systemctl 78"
+  },
+  {
+    "id": 279,
+    "name": "HARDWARE_OP_279",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 279,
+      "trigger": "TRIG_279"
+    },
+    "command": "systemctl 79"
+  },
+  {
+    "id": 280,
+    "name": "HARDWARE_OP_280",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 280,
+      "trigger": "TRIG_280"
+    },
+    "command": "systemctl 80"
+  },
+  {
+    "id": 281,
+    "name": "HARDWARE_OP_281",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 281,
+      "trigger": "TRIG_281"
+    },
+    "command": "systemctl 81"
+  },
+  {
+    "id": 282,
+    "name": "HARDWARE_OP_282",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 282,
+      "trigger": "TRIG_282"
+    },
+    "command": "systemctl 82"
+  },
+  {
+    "id": 283,
+    "name": "HARDWARE_OP_283",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 283,
+      "trigger": "TRIG_283"
+    },
+    "command": "systemctl 83"
+  },
+  {
+    "id": 284,
+    "name": "HARDWARE_OP_284",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 284,
+      "trigger": "TRIG_284"
+    },
+    "command": "systemctl 84"
+  },
+  {
+    "id": 285,
+    "name": "HARDWARE_OP_285",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 285,
+      "trigger": "TRIG_285"
+    },
+    "command": "systemctl 85"
+  },
+  {
+    "id": 286,
+    "name": "HARDWARE_OP_286",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 286,
+      "trigger": "TRIG_286"
+    },
+    "command": "systemctl 86"
+  },
+  {
+    "id": 287,
+    "name": "HARDWARE_OP_287",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 287,
+      "trigger": "TRIG_287"
+    },
+    "command": "systemctl 87"
+  },
+  {
+    "id": 288,
+    "name": "HARDWARE_OP_288",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 288,
+      "trigger": "TRIG_288"
+    },
+    "command": "systemctl 88"
+  },
+  {
+    "id": 289,
+    "name": "HARDWARE_OP_289",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 289,
+      "trigger": "TRIG_289"
+    },
+    "command": "systemctl 89"
+  },
+  {
+    "id": 290,
+    "name": "HARDWARE_OP_290",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 290,
+      "trigger": "TRIG_290"
+    },
+    "command": "systemctl 90"
+  },
+  {
+    "id": 291,
+    "name": "HARDWARE_OP_291",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 291,
+      "trigger": "TRIG_291"
+    },
+    "command": "systemctl 91"
+  },
+  {
+    "id": 292,
+    "name": "HARDWARE_OP_292",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 292,
+      "trigger": "TRIG_292"
+    },
+    "command": "systemctl 92"
+  },
+  {
+    "id": 293,
+    "name": "HARDWARE_OP_293",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 293,
+      "trigger": "TRIG_293"
+    },
+    "command": "systemctl 93"
+  },
+  {
+    "id": 294,
+    "name": "HARDWARE_OP_294",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 294,
+      "trigger": "TRIG_294"
+    },
+    "command": "systemctl 94"
+  },
+  {
+    "id": 295,
+    "name": "HARDWARE_OP_295",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 295,
+      "trigger": "TRIG_295"
+    },
+    "command": "systemctl 95"
+  },
+  {
+    "id": 296,
+    "name": "HARDWARE_OP_296",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 296,
+      "trigger": "TRIG_296"
+    },
+    "command": "systemctl 96"
+  },
+  {
+    "id": 297,
+    "name": "HARDWARE_OP_297",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 297,
+      "trigger": "TRIG_297"
+    },
+    "command": "systemctl 97"
+  },
+  {
+    "id": 298,
+    "name": "HARDWARE_OP_298",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 298,
+      "trigger": "TRIG_298"
+    },
+    "command": "systemctl 98"
+  },
+  {
+    "id": 299,
+    "name": "HARDWARE_OP_299",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 299,
+      "trigger": "TRIG_299"
+    },
+    "command": "systemctl 99"
+  },
+  {
+    "id": 300,
+    "name": "HARDWARE_OP_300",
+    "module": "Hardware Key Chording & Morse Subsystems",
+    "payload": {
+      "module": 251,
+      "feature": 300,
+      "trigger": "TRIG_300"
+    },
+    "command": "systemctl 0"
+  },
+  {
+    "id": 301,
+    "name": "SPATIAL_OP_301",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 301,
+      "trigger": "TRIG_301"
+    },
+    "command": "xdotool mousemove_relative 1 1"
+  },
+  {
+    "id": 302,
+    "name": "SPATIAL_OP_302",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 302,
+      "trigger": "TRIG_302"
+    },
+    "command": "xdotool mousemove_relative 2 2"
+  },
+  {
+    "id": 303,
+    "name": "SPATIAL_OP_303",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 303,
+      "trigger": "TRIG_303"
+    },
+    "command": "xdotool mousemove_relative 3 3"
+  },
+  {
+    "id": 304,
+    "name": "SPATIAL_OP_304",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 304,
+      "trigger": "TRIG_304"
+    },
+    "command": "xdotool mousemove_relative 4 4"
+  },
+  {
+    "id": 305,
+    "name": "SPATIAL_OP_305",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 305,
+      "trigger": "TRIG_305"
+    },
+    "command": "xdotool mousemove_relative 5 5"
+  },
+  {
+    "id": 306,
+    "name": "SPATIAL_OP_306",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 306,
+      "trigger": "TRIG_306"
+    },
+    "command": "xdotool mousemove_relative 6 6"
+  },
+  {
+    "id": 307,
+    "name": "SPATIAL_OP_307",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 307,
+      "trigger": "TRIG_307"
+    },
+    "command": "xdotool mousemove_relative 7 7"
+  },
+  {
+    "id": 308,
+    "name": "SPATIAL_OP_308",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 308,
+      "trigger": "TRIG_308"
+    },
+    "command": "xdotool mousemove_relative 8 8"
+  },
+  {
+    "id": 309,
+    "name": "SPATIAL_OP_309",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 309,
+      "trigger": "TRIG_309"
+    },
+    "command": "xdotool mousemove_relative 9 9"
+  },
+  {
+    "id": 310,
+    "name": "SPATIAL_OP_310",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 310,
+      "trigger": "TRIG_310"
+    },
+    "command": "xdotool mousemove_relative 10 10"
+  },
+  {
+    "id": 311,
+    "name": "SPATIAL_OP_311",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 311,
+      "trigger": "TRIG_311"
+    },
+    "command": "xdotool mousemove_relative 11 11"
+  },
+  {
+    "id": 312,
+    "name": "SPATIAL_OP_312",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 312,
+      "trigger": "TRIG_312"
+    },
+    "command": "xdotool mousemove_relative 12 12"
+  },
+  {
+    "id": 313,
+    "name": "SPATIAL_OP_313",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 313,
+      "trigger": "TRIG_313"
+    },
+    "command": "xdotool mousemove_relative 13 13"
+  },
+  {
+    "id": 314,
+    "name": "SPATIAL_OP_314",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 314,
+      "trigger": "TRIG_314"
+    },
+    "command": "xdotool mousemove_relative 14 14"
+  },
+  {
+    "id": 315,
+    "name": "SPATIAL_OP_315",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 315,
+      "trigger": "TRIG_315"
+    },
+    "command": "xdotool mousemove_relative 15 15"
+  },
+  {
+    "id": 316,
+    "name": "SPATIAL_OP_316",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 316,
+      "trigger": "TRIG_316"
+    },
+    "command": "xdotool mousemove_relative 16 16"
+  },
+  {
+    "id": 317,
+    "name": "SPATIAL_OP_317",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 317,
+      "trigger": "TRIG_317"
+    },
+    "command": "xdotool mousemove_relative 17 17"
+  },
+  {
+    "id": 318,
+    "name": "SPATIAL_OP_318",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 318,
+      "trigger": "TRIG_318"
+    },
+    "command": "xdotool mousemove_relative 18 18"
+  },
+  {
+    "id": 319,
+    "name": "SPATIAL_OP_319",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 319,
+      "trigger": "TRIG_319"
+    },
+    "command": "xdotool mousemove_relative 19 19"
+  },
+  {
+    "id": 320,
+    "name": "SPATIAL_OP_320",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 320,
+      "trigger": "TRIG_320"
+    },
+    "command": "xdotool mousemove_relative 20 20"
+  },
+  {
+    "id": 321,
+    "name": "SPATIAL_OP_321",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 321,
+      "trigger": "TRIG_321"
+    },
+    "command": "xdotool mousemove_relative 21 21"
+  },
+  {
+    "id": 322,
+    "name": "SPATIAL_OP_322",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 322,
+      "trigger": "TRIG_322"
+    },
+    "command": "xdotool mousemove_relative 22 22"
+  },
+  {
+    "id": 323,
+    "name": "SPATIAL_OP_323",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 323,
+      "trigger": "TRIG_323"
+    },
+    "command": "xdotool mousemove_relative 23 23"
+  },
+  {
+    "id": 324,
+    "name": "SPATIAL_OP_324",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 324,
+      "trigger": "TRIG_324"
+    },
+    "command": "xdotool mousemove_relative 24 24"
+  },
+  {
+    "id": 325,
+    "name": "SPATIAL_OP_325",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 325,
+      "trigger": "TRIG_325"
+    },
+    "command": "xdotool mousemove_relative 25 25"
+  },
+  {
+    "id": 326,
+    "name": "SPATIAL_OP_326",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 326,
+      "trigger": "TRIG_326"
+    },
+    "command": "xdotool mousemove_relative 26 26"
+  },
+  {
+    "id": 327,
+    "name": "SPATIAL_OP_327",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 327,
+      "trigger": "TRIG_327"
+    },
+    "command": "xdotool mousemove_relative 27 27"
+  },
+  {
+    "id": 328,
+    "name": "SPATIAL_OP_328",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 328,
+      "trigger": "TRIG_328"
+    },
+    "command": "xdotool mousemove_relative 28 28"
+  },
+  {
+    "id": 329,
+    "name": "SPATIAL_OP_329",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 329,
+      "trigger": "TRIG_329"
+    },
+    "command": "xdotool mousemove_relative 29 29"
+  },
+  {
+    "id": 330,
+    "name": "SPATIAL_OP_330",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 330,
+      "trigger": "TRIG_330"
+    },
+    "command": "xdotool mousemove_relative 30 30"
+  },
+  {
+    "id": 331,
+    "name": "SPATIAL_OP_331",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 331,
+      "trigger": "TRIG_331"
+    },
+    "command": "xdotool mousemove_relative 31 31"
+  },
+  {
+    "id": 332,
+    "name": "SPATIAL_OP_332",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 332,
+      "trigger": "TRIG_332"
+    },
+    "command": "xdotool mousemove_relative 32 32"
+  },
+  {
+    "id": 333,
+    "name": "SPATIAL_OP_333",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 333,
+      "trigger": "TRIG_333"
+    },
+    "command": "xdotool mousemove_relative 33 33"
+  },
+  {
+    "id": 334,
+    "name": "SPATIAL_OP_334",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 334,
+      "trigger": "TRIG_334"
+    },
+    "command": "xdotool mousemove_relative 34 34"
+  },
+  {
+    "id": 335,
+    "name": "SPATIAL_OP_335",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 335,
+      "trigger": "TRIG_335"
+    },
+    "command": "xdotool mousemove_relative 35 35"
+  },
+  {
+    "id": 336,
+    "name": "SPATIAL_OP_336",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 336,
+      "trigger": "TRIG_336"
+    },
+    "command": "xdotool mousemove_relative 36 36"
+  },
+  {
+    "id": 337,
+    "name": "SPATIAL_OP_337",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 337,
+      "trigger": "TRIG_337"
+    },
+    "command": "xdotool mousemove_relative 37 37"
+  },
+  {
+    "id": 338,
+    "name": "SPATIAL_OP_338",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 338,
+      "trigger": "TRIG_338"
+    },
+    "command": "xdotool mousemove_relative 38 38"
+  },
+  {
+    "id": 339,
+    "name": "SPATIAL_OP_339",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 339,
+      "trigger": "TRIG_339"
+    },
+    "command": "xdotool mousemove_relative 39 39"
+  },
+  {
+    "id": 340,
+    "name": "SPATIAL_OP_340",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 340,
+      "trigger": "TRIG_340"
+    },
+    "command": "xdotool mousemove_relative 40 40"
+  },
+  {
+    "id": 341,
+    "name": "SPATIAL_OP_341",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 341,
+      "trigger": "TRIG_341"
+    },
+    "command": "xdotool mousemove_relative 41 41"
+  },
+  {
+    "id": 342,
+    "name": "SPATIAL_OP_342",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 342,
+      "trigger": "TRIG_342"
+    },
+    "command": "xdotool mousemove_relative 42 42"
+  },
+  {
+    "id": 343,
+    "name": "SPATIAL_OP_343",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 343,
+      "trigger": "TRIG_343"
+    },
+    "command": "xdotool mousemove_relative 43 43"
+  },
+  {
+    "id": 344,
+    "name": "SPATIAL_OP_344",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 344,
+      "trigger": "TRIG_344"
+    },
+    "command": "xdotool mousemove_relative 44 44"
+  },
+  {
+    "id": 345,
+    "name": "SPATIAL_OP_345",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 345,
+      "trigger": "TRIG_345"
+    },
+    "command": "xdotool mousemove_relative 45 45"
+  },
+  {
+    "id": 346,
+    "name": "SPATIAL_OP_346",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 346,
+      "trigger": "TRIG_346"
+    },
+    "command": "xdotool mousemove_relative 46 46"
+  },
+  {
+    "id": 347,
+    "name": "SPATIAL_OP_347",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 347,
+      "trigger": "TRIG_347"
+    },
+    "command": "xdotool mousemove_relative 47 47"
+  },
+  {
+    "id": 348,
+    "name": "SPATIAL_OP_348",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 348,
+      "trigger": "TRIG_348"
+    },
+    "command": "xdotool mousemove_relative 48 48"
+  },
+  {
+    "id": 349,
+    "name": "SPATIAL_OP_349",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 349,
+      "trigger": "TRIG_349"
+    },
+    "command": "xdotool mousemove_relative 49 49"
+  },
+  {
+    "id": 350,
+    "name": "SPATIAL_OP_350",
+    "module": "Spatial Kinetics & Gyro-Vectoring",
+    "payload": {
+      "module": 301,
+      "feature": 350,
+      "trigger": "TRIG_350"
+    },
+    "command": "xdotool mousemove_relative 50 50"
+  },
+  {
+    "id": 351,
+    "name": "SUBNET_OP_351",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 351,
+      "trigger": "TRIG_351"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_51'"
+  },
+  {
+    "id": 352,
+    "name": "SUBNET_OP_352",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 352,
+      "trigger": "TRIG_352"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_52'"
+  },
+  {
+    "id": 353,
+    "name": "SUBNET_OP_353",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 353,
+      "trigger": "TRIG_353"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_53'"
+  },
+  {
+    "id": 354,
+    "name": "SUBNET_OP_354",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 354,
+      "trigger": "TRIG_354"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_54'"
+  },
+  {
+    "id": 355,
+    "name": "SUBNET_OP_355",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 355,
+      "trigger": "TRIG_355"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_55'"
+  },
+  {
+    "id": 356,
+    "name": "SUBNET_OP_356",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 356,
+      "trigger": "TRIG_356"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_56'"
+  },
+  {
+    "id": 357,
+    "name": "SUBNET_OP_357",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 357,
+      "trigger": "TRIG_357"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_57'"
+  },
+  {
+    "id": 358,
+    "name": "SUBNET_OP_358",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 358,
+      "trigger": "TRIG_358"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_58'"
+  },
+  {
+    "id": 359,
+    "name": "SUBNET_OP_359",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 359,
+      "trigger": "TRIG_359"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_59'"
+  },
+  {
+    "id": 360,
+    "name": "SUBNET_OP_360",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 360,
+      "trigger": "TRIG_360"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_60'"
+  },
+  {
+    "id": 361,
+    "name": "SUBNET_OP_361",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 361,
+      "trigger": "TRIG_361"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_61'"
+  },
+  {
+    "id": 362,
+    "name": "SUBNET_OP_362",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 362,
+      "trigger": "TRIG_362"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_62'"
+  },
+  {
+    "id": 363,
+    "name": "SUBNET_OP_363",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 363,
+      "trigger": "TRIG_363"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_63'"
+  },
+  {
+    "id": 364,
+    "name": "SUBNET_OP_364",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 364,
+      "trigger": "TRIG_364"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_64'"
+  },
+  {
+    "id": 365,
+    "name": "SUBNET_OP_365",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 365,
+      "trigger": "TRIG_365"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_65'"
+  },
+  {
+    "id": 366,
+    "name": "SUBNET_OP_366",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 366,
+      "trigger": "TRIG_366"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_66'"
+  },
+  {
+    "id": 367,
+    "name": "SUBNET_OP_367",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 367,
+      "trigger": "TRIG_367"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_67'"
+  },
+  {
+    "id": 368,
+    "name": "SUBNET_OP_368",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 368,
+      "trigger": "TRIG_368"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_68'"
+  },
+  {
+    "id": 369,
+    "name": "SUBNET_OP_369",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 369,
+      "trigger": "TRIG_369"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_69'"
+  },
+  {
+    "id": 370,
+    "name": "SUBNET_OP_370",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 370,
+      "trigger": "TRIG_370"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_70'"
+  },
+  {
+    "id": 371,
+    "name": "SUBNET_OP_371",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 371,
+      "trigger": "TRIG_371"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_71'"
+  },
+  {
+    "id": 372,
+    "name": "SUBNET_OP_372",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 372,
+      "trigger": "TRIG_372"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_72'"
+  },
+  {
+    "id": 373,
+    "name": "SUBNET_OP_373",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 373,
+      "trigger": "TRIG_373"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_73'"
+  },
+  {
+    "id": 374,
+    "name": "SUBNET_OP_374",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 374,
+      "trigger": "TRIG_374"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_74'"
+  },
+  {
+    "id": 375,
+    "name": "SUBNET_OP_375",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 375,
+      "trigger": "TRIG_375"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_75'"
+  },
+  {
+    "id": 376,
+    "name": "SUBNET_OP_376",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 376,
+      "trigger": "TRIG_376"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_76'"
+  },
+  {
+    "id": 377,
+    "name": "SUBNET_OP_377",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 377,
+      "trigger": "TRIG_377"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_77'"
+  },
+  {
+    "id": 378,
+    "name": "SUBNET_OP_378",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 378,
+      "trigger": "TRIG_378"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_78'"
+  },
+  {
+    "id": 379,
+    "name": "SUBNET_OP_379",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 379,
+      "trigger": "TRIG_379"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_79'"
+  },
+  {
+    "id": 380,
+    "name": "SUBNET_OP_380",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 380,
+      "trigger": "TRIG_380"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_80'"
+  },
+  {
+    "id": 381,
+    "name": "SUBNET_OP_381",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 381,
+      "trigger": "TRIG_381"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_81'"
+  },
+  {
+    "id": 382,
+    "name": "SUBNET_OP_382",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 382,
+      "trigger": "TRIG_382"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_82'"
+  },
+  {
+    "id": 383,
+    "name": "SUBNET_OP_383",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 383,
+      "trigger": "TRIG_383"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_83'"
+  },
+  {
+    "id": 384,
+    "name": "SUBNET_OP_384",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 384,
+      "trigger": "TRIG_384"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_84'"
+  },
+  {
+    "id": 385,
+    "name": "SUBNET_OP_385",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 385,
+      "trigger": "TRIG_385"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_85'"
+  },
+  {
+    "id": 386,
+    "name": "SUBNET_OP_386",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 386,
+      "trigger": "TRIG_386"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_86'"
+  },
+  {
+    "id": 387,
+    "name": "SUBNET_OP_387",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 387,
+      "trigger": "TRIG_387"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_87'"
+  },
+  {
+    "id": 388,
+    "name": "SUBNET_OP_388",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 388,
+      "trigger": "TRIG_388"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_88'"
+  },
+  {
+    "id": 389,
+    "name": "SUBNET_OP_389",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 389,
+      "trigger": "TRIG_389"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_89'"
+  },
+  {
+    "id": 390,
+    "name": "SUBNET_OP_390",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 390,
+      "trigger": "TRIG_390"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_90'"
+  },
+  {
+    "id": 391,
+    "name": "SUBNET_OP_391",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 391,
+      "trigger": "TRIG_391"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_91'"
+  },
+  {
+    "id": 392,
+    "name": "SUBNET_OP_392",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 392,
+      "trigger": "TRIG_392"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_92'"
+  },
+  {
+    "id": 393,
+    "name": "SUBNET_OP_393",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 393,
+      "trigger": "TRIG_393"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_93'"
+  },
+  {
+    "id": 394,
+    "name": "SUBNET_OP_394",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 394,
+      "trigger": "TRIG_394"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_94'"
+  },
+  {
+    "id": 395,
+    "name": "SUBNET_OP_395",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 395,
+      "trigger": "TRIG_395"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_95'"
+  },
+  {
+    "id": 396,
+    "name": "SUBNET_OP_396",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 396,
+      "trigger": "TRIG_396"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_96'"
+  },
+  {
+    "id": 397,
+    "name": "SUBNET_OP_397",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 397,
+      "trigger": "TRIG_397"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_97'"
+  },
+  {
+    "id": 398,
+    "name": "SUBNET_OP_398",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 398,
+      "trigger": "TRIG_398"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_98'"
+  },
+  {
+    "id": 399,
+    "name": "SUBNET_OP_399",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 399,
+      "trigger": "TRIG_399"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_99'"
+  },
+  {
+    "id": 400,
+    "name": "SUBNET_OP_400",
+    "module": "Subnet Reconnaissance & Network Security Shields",
+    "payload": {
+      "module": 351,
+      "feature": 400,
+      "trigger": "TRIG_400"
+    },
+    "command": "notify-send 'ALERT' 'INTRUSION_0'"
+  },
+  {
+    "id": 401,
+    "name": "COMPUTER_OP_401",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 401,
+      "trigger": "TRIG_401"
+    },
+    "command": "xset dpms force 1"
+  },
+  {
+    "id": 402,
+    "name": "COMPUTER_OP_402",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 402,
+      "trigger": "TRIG_402"
+    },
+    "command": "xset dpms force 2"
+  },
+  {
+    "id": 403,
+    "name": "COMPUTER_OP_403",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 403,
+      "trigger": "TRIG_403"
+    },
+    "command": "xset dpms force 3"
+  },
+  {
+    "id": 404,
+    "name": "COMPUTER_OP_404",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 404,
+      "trigger": "TRIG_404"
+    },
+    "command": "xset dpms force 4"
+  },
+  {
+    "id": 405,
+    "name": "COMPUTER_OP_405",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 405,
+      "trigger": "TRIG_405"
+    },
+    "command": "xset dpms force 5"
+  },
+  {
+    "id": 406,
+    "name": "COMPUTER_OP_406",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 406,
+      "trigger": "TRIG_406"
+    },
+    "command": "xset dpms force 6"
+  },
+  {
+    "id": 407,
+    "name": "COMPUTER_OP_407",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 407,
+      "trigger": "TRIG_407"
+    },
+    "command": "xset dpms force 7"
+  },
+  {
+    "id": 408,
+    "name": "COMPUTER_OP_408",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 408,
+      "trigger": "TRIG_408"
+    },
+    "command": "xset dpms force 8"
+  },
+  {
+    "id": 409,
+    "name": "COMPUTER_OP_409",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 409,
+      "trigger": "TRIG_409"
+    },
+    "command": "xset dpms force 9"
+  },
+  {
+    "id": 410,
+    "name": "COMPUTER_OP_410",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 410,
+      "trigger": "TRIG_410"
+    },
+    "command": "xset dpms force 10"
+  },
+  {
+    "id": 411,
+    "name": "COMPUTER_OP_411",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 411,
+      "trigger": "TRIG_411"
+    },
+    "command": "xset dpms force 11"
+  },
+  {
+    "id": 412,
+    "name": "COMPUTER_OP_412",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 412,
+      "trigger": "TRIG_412"
+    },
+    "command": "xset dpms force 12"
+  },
+  {
+    "id": 413,
+    "name": "COMPUTER_OP_413",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 413,
+      "trigger": "TRIG_413"
+    },
+    "command": "xset dpms force 13"
+  },
+  {
+    "id": 414,
+    "name": "COMPUTER_OP_414",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 414,
+      "trigger": "TRIG_414"
+    },
+    "command": "xset dpms force 14"
+  },
+  {
+    "id": 415,
+    "name": "COMPUTER_OP_415",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 415,
+      "trigger": "TRIG_415"
+    },
+    "command": "xset dpms force 15"
+  },
+  {
+    "id": 416,
+    "name": "COMPUTER_OP_416",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 416,
+      "trigger": "TRIG_416"
+    },
+    "command": "xset dpms force 16"
+  },
+  {
+    "id": 417,
+    "name": "COMPUTER_OP_417",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 417,
+      "trigger": "TRIG_417"
+    },
+    "command": "xset dpms force 17"
+  },
+  {
+    "id": 418,
+    "name": "COMPUTER_OP_418",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 418,
+      "trigger": "TRIG_418"
+    },
+    "command": "xset dpms force 18"
+  },
+  {
+    "id": 419,
+    "name": "COMPUTER_OP_419",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 419,
+      "trigger": "TRIG_419"
+    },
+    "command": "xset dpms force 19"
+  },
+  {
+    "id": 420,
+    "name": "COMPUTER_OP_420",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 420,
+      "trigger": "TRIG_420"
+    },
+    "command": "xset dpms force 20"
+  },
+  {
+    "id": 421,
+    "name": "COMPUTER_OP_421",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 421,
+      "trigger": "TRIG_421"
+    },
+    "command": "xset dpms force 21"
+  },
+  {
+    "id": 422,
+    "name": "COMPUTER_OP_422",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 422,
+      "trigger": "TRIG_422"
+    },
+    "command": "xset dpms force 22"
+  },
+  {
+    "id": 423,
+    "name": "COMPUTER_OP_423",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 423,
+      "trigger": "TRIG_423"
+    },
+    "command": "xset dpms force 23"
+  },
+  {
+    "id": 424,
+    "name": "COMPUTER_OP_424",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 424,
+      "trigger": "TRIG_424"
+    },
+    "command": "xset dpms force 24"
+  },
+  {
+    "id": 425,
+    "name": "COMPUTER_OP_425",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 425,
+      "trigger": "TRIG_425"
+    },
+    "command": "xset dpms force 25"
+  },
+  {
+    "id": 426,
+    "name": "COMPUTER_OP_426",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 426,
+      "trigger": "TRIG_426"
+    },
+    "command": "xset dpms force 26"
+  },
+  {
+    "id": 427,
+    "name": "COMPUTER_OP_427",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 427,
+      "trigger": "TRIG_427"
+    },
+    "command": "xset dpms force 27"
+  },
+  {
+    "id": 428,
+    "name": "COMPUTER_OP_428",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 428,
+      "trigger": "TRIG_428"
+    },
+    "command": "xset dpms force 28"
+  },
+  {
+    "id": 429,
+    "name": "COMPUTER_OP_429",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 429,
+      "trigger": "TRIG_429"
+    },
+    "command": "xset dpms force 29"
+  },
+  {
+    "id": 430,
+    "name": "COMPUTER_OP_430",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 430,
+      "trigger": "TRIG_430"
+    },
+    "command": "xset dpms force 30"
+  },
+  {
+    "id": 431,
+    "name": "COMPUTER_OP_431",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 431,
+      "trigger": "TRIG_431"
+    },
+    "command": "xset dpms force 31"
+  },
+  {
+    "id": 432,
+    "name": "COMPUTER_OP_432",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 432,
+      "trigger": "TRIG_432"
+    },
+    "command": "xset dpms force 32"
+  },
+  {
+    "id": 433,
+    "name": "COMPUTER_OP_433",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 433,
+      "trigger": "TRIG_433"
+    },
+    "command": "xset dpms force 33"
+  },
+  {
+    "id": 434,
+    "name": "COMPUTER_OP_434",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 434,
+      "trigger": "TRIG_434"
+    },
+    "command": "xset dpms force 34"
+  },
+  {
+    "id": 435,
+    "name": "COMPUTER_OP_435",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 435,
+      "trigger": "TRIG_435"
+    },
+    "command": "xset dpms force 35"
+  },
+  {
+    "id": 436,
+    "name": "COMPUTER_OP_436",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 436,
+      "trigger": "TRIG_436"
+    },
+    "command": "xset dpms force 36"
+  },
+  {
+    "id": 437,
+    "name": "COMPUTER_OP_437",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 437,
+      "trigger": "TRIG_437"
+    },
+    "command": "xset dpms force 37"
+  },
+  {
+    "id": 438,
+    "name": "COMPUTER_OP_438",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 438,
+      "trigger": "TRIG_438"
+    },
+    "command": "xset dpms force 38"
+  },
+  {
+    "id": 439,
+    "name": "COMPUTER_OP_439",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 439,
+      "trigger": "TRIG_439"
+    },
+    "command": "xset dpms force 39"
+  },
+  {
+    "id": 440,
+    "name": "COMPUTER_OP_440",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 440,
+      "trigger": "TRIG_440"
+    },
+    "command": "xset dpms force 40"
+  },
+  {
+    "id": 441,
+    "name": "COMPUTER_OP_441",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 441,
+      "trigger": "TRIG_441"
+    },
+    "command": "xset dpms force 41"
+  },
+  {
+    "id": 442,
+    "name": "COMPUTER_OP_442",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 442,
+      "trigger": "TRIG_442"
+    },
+    "command": "xset dpms force 42"
+  },
+  {
+    "id": 443,
+    "name": "COMPUTER_OP_443",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 443,
+      "trigger": "TRIG_443"
+    },
+    "command": "xset dpms force 43"
+  },
+  {
+    "id": 444,
+    "name": "COMPUTER_OP_444",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 444,
+      "trigger": "TRIG_444"
+    },
+    "command": "xset dpms force 44"
+  },
+  {
+    "id": 445,
+    "name": "COMPUTER_OP_445",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 445,
+      "trigger": "TRIG_445"
+    },
+    "command": "xset dpms force 45"
+  },
+  {
+    "id": 446,
+    "name": "COMPUTER_OP_446",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 446,
+      "trigger": "TRIG_446"
+    },
+    "command": "xset dpms force 46"
+  },
+  {
+    "id": 447,
+    "name": "COMPUTER_OP_447",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 447,
+      "trigger": "TRIG_447"
+    },
+    "command": "xset dpms force 47"
+  },
+  {
+    "id": 448,
+    "name": "COMPUTER_OP_448",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 448,
+      "trigger": "TRIG_448"
+    },
+    "command": "xset dpms force 48"
+  },
+  {
+    "id": 449,
+    "name": "COMPUTER_OP_449",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 449,
+      "trigger": "TRIG_449"
+    },
+    "command": "xset dpms force 49"
+  },
+  {
+    "id": 450,
+    "name": "COMPUTER_OP_450",
+    "module": "Computer Vision & Gaze Tracking",
+    "payload": {
+      "module": 401,
+      "feature": 450,
+      "trigger": "TRIG_450"
+    },
+    "command": "xset dpms force 50"
+  },
+  {
+    "id": 451,
+    "name": "OPTICAL_OP_451",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 451,
+      "trigger": "TRIG_451"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_51.jpg"
+  },
+  {
+    "id": 452,
+    "name": "OPTICAL_OP_452",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 452,
+      "trigger": "TRIG_452"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_52.jpg"
+  },
+  {
+    "id": 453,
+    "name": "OPTICAL_OP_453",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 453,
+      "trigger": "TRIG_453"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_53.jpg"
+  },
+  {
+    "id": 454,
+    "name": "OPTICAL_OP_454",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 454,
+      "trigger": "TRIG_454"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_54.jpg"
+  },
+  {
+    "id": 455,
+    "name": "OPTICAL_OP_455",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 455,
+      "trigger": "TRIG_455"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_55.jpg"
+  },
+  {
+    "id": 456,
+    "name": "OPTICAL_OP_456",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 456,
+      "trigger": "TRIG_456"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_56.jpg"
+  },
+  {
+    "id": 457,
+    "name": "OPTICAL_OP_457",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 457,
+      "trigger": "TRIG_457"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_57.jpg"
+  },
+  {
+    "id": 458,
+    "name": "OPTICAL_OP_458",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 458,
+      "trigger": "TRIG_458"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_58.jpg"
+  },
+  {
+    "id": 459,
+    "name": "OPTICAL_OP_459",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 459,
+      "trigger": "TRIG_459"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_59.jpg"
+  },
+  {
+    "id": 460,
+    "name": "OPTICAL_OP_460",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 460,
+      "trigger": "TRIG_460"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_60.jpg"
+  },
+  {
+    "id": 461,
+    "name": "OPTICAL_OP_461",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 461,
+      "trigger": "TRIG_461"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_61.jpg"
+  },
+  {
+    "id": 462,
+    "name": "OPTICAL_OP_462",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 462,
+      "trigger": "TRIG_462"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_62.jpg"
+  },
+  {
+    "id": 463,
+    "name": "OPTICAL_OP_463",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 463,
+      "trigger": "TRIG_463"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_63.jpg"
+  },
+  {
+    "id": 464,
+    "name": "OPTICAL_OP_464",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 464,
+      "trigger": "TRIG_464"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_64.jpg"
+  },
+  {
+    "id": 465,
+    "name": "OPTICAL_OP_465",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 465,
+      "trigger": "TRIG_465"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_65.jpg"
+  },
+  {
+    "id": 466,
+    "name": "OPTICAL_OP_466",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 466,
+      "trigger": "TRIG_466"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_66.jpg"
+  },
+  {
+    "id": 467,
+    "name": "OPTICAL_OP_467",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 467,
+      "trigger": "TRIG_467"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_67.jpg"
+  },
+  {
+    "id": 468,
+    "name": "OPTICAL_OP_468",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 468,
+      "trigger": "TRIG_468"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_68.jpg"
+  },
+  {
+    "id": 469,
+    "name": "OPTICAL_OP_469",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 469,
+      "trigger": "TRIG_469"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_69.jpg"
+  },
+  {
+    "id": 470,
+    "name": "OPTICAL_OP_470",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 470,
+      "trigger": "TRIG_470"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_70.jpg"
+  },
+  {
+    "id": 471,
+    "name": "OPTICAL_OP_471",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 471,
+      "trigger": "TRIG_471"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_71.jpg"
+  },
+  {
+    "id": 472,
+    "name": "OPTICAL_OP_472",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 472,
+      "trigger": "TRIG_472"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_72.jpg"
+  },
+  {
+    "id": 473,
+    "name": "OPTICAL_OP_473",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 473,
+      "trigger": "TRIG_473"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_73.jpg"
+  },
+  {
+    "id": 474,
+    "name": "OPTICAL_OP_474",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 474,
+      "trigger": "TRIG_474"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_74.jpg"
+  },
+  {
+    "id": 475,
+    "name": "OPTICAL_OP_475",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 475,
+      "trigger": "TRIG_475"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_75.jpg"
+  },
+  {
+    "id": 476,
+    "name": "OPTICAL_OP_476",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 476,
+      "trigger": "TRIG_476"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_76.jpg"
+  },
+  {
+    "id": 477,
+    "name": "OPTICAL_OP_477",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 477,
+      "trigger": "TRIG_477"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_77.jpg"
+  },
+  {
+    "id": 478,
+    "name": "OPTICAL_OP_478",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 478,
+      "trigger": "TRIG_478"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_78.jpg"
+  },
+  {
+    "id": 479,
+    "name": "OPTICAL_OP_479",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 479,
+      "trigger": "TRIG_479"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_79.jpg"
+  },
+  {
+    "id": 480,
+    "name": "OPTICAL_OP_480",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 480,
+      "trigger": "TRIG_480"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_80.jpg"
+  },
+  {
+    "id": 481,
+    "name": "OPTICAL_OP_481",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 481,
+      "trigger": "TRIG_481"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_81.jpg"
+  },
+  {
+    "id": 482,
+    "name": "OPTICAL_OP_482",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 482,
+      "trigger": "TRIG_482"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_82.jpg"
+  },
+  {
+    "id": 483,
+    "name": "OPTICAL_OP_483",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 483,
+      "trigger": "TRIG_483"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_83.jpg"
+  },
+  {
+    "id": 484,
+    "name": "OPTICAL_OP_484",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 484,
+      "trigger": "TRIG_484"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_84.jpg"
+  },
+  {
+    "id": 485,
+    "name": "OPTICAL_OP_485",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 485,
+      "trigger": "TRIG_485"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_85.jpg"
+  },
+  {
+    "id": 486,
+    "name": "OPTICAL_OP_486",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 486,
+      "trigger": "TRIG_486"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_86.jpg"
+  },
+  {
+    "id": 487,
+    "name": "OPTICAL_OP_487",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 487,
+      "trigger": "TRIG_487"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_87.jpg"
+  },
+  {
+    "id": 488,
+    "name": "OPTICAL_OP_488",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 488,
+      "trigger": "TRIG_488"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_88.jpg"
+  },
+  {
+    "id": 489,
+    "name": "OPTICAL_OP_489",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 489,
+      "trigger": "TRIG_489"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_89.jpg"
+  },
+  {
+    "id": 490,
+    "name": "OPTICAL_OP_490",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 490,
+      "trigger": "TRIG_490"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_90.jpg"
+  },
+  {
+    "id": 491,
+    "name": "OPTICAL_OP_491",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 491,
+      "trigger": "TRIG_491"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_91.jpg"
+  },
+  {
+    "id": 492,
+    "name": "OPTICAL_OP_492",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 492,
+      "trigger": "TRIG_492"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_92.jpg"
+  },
+  {
+    "id": 493,
+    "name": "OPTICAL_OP_493",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 493,
+      "trigger": "TRIG_493"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_93.jpg"
+  },
+  {
+    "id": 494,
+    "name": "OPTICAL_OP_494",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 494,
+      "trigger": "TRIG_494"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_94.jpg"
+  },
+  {
+    "id": 495,
+    "name": "OPTICAL_OP_495",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 495,
+      "trigger": "TRIG_495"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_95.jpg"
+  },
+  {
+    "id": 496,
+    "name": "OPTICAL_OP_496",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 496,
+      "trigger": "TRIG_496"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_96.jpg"
+  },
+  {
+    "id": 497,
+    "name": "OPTICAL_OP_497",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 497,
+      "trigger": "TRIG_497"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_97.jpg"
+  },
+  {
+    "id": 498,
+    "name": "OPTICAL_OP_498",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 498,
+      "trigger": "TRIG_498"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_98.jpg"
+  },
+  {
+    "id": 499,
+    "name": "OPTICAL_OP_499",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 499,
+      "trigger": "TRIG_499"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_99.jpg"
+  },
+  {
+    "id": 500,
+    "name": "OPTICAL_OP_500",
+    "module": "Optical Telemetry & Environment Scanning",
+    "payload": {
+      "module": 451,
+      "feature": 500,
+      "trigger": "TRIG_500"
+    },
+    "command": "fswebcam -r 1920x1080 /tmp/scan_0.jpg"
+  }
+]

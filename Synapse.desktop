@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Synapse OS
+Comment=God-Mode Rig
+Exec=bash -c "cd /home/tia/synapse && npm start"
+Icon=/home/tia/synapse/icon.png
+Terminal=false
+Type=Application
+Categories=Utility;

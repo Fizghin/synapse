@@ -1,0 +1,400 @@
+#001
+Wireless screen mirror (tab→PC)
+Stream the tablet display to your PC over WiFi using scrcpy or custom H.265 pipeline.
+Core
+#002
+Wireless screen mirror (PC→tab)
+Mirror your PC desktop onto the tablet screen as a second monitor.
+Core
+#003
+Dual-display layout manager
+Drag windows to snap between PC and tablet displays from one UI.
+High
+#004
+Adaptive bitrate streaming
+Auto-adjust video bitrate based on current WiFi signal strength.
+High
+#005
+Display resolution profiles
+Save and switch between resolution/FPS presets (performance vs quality).
+Medium
+#006
+Always-on-top window mode
+Pin the tablet mirror window above all other PC windows.
+High
+#007
+Rotate display remotely
+Change the tablet screen orientation from the PC app.
+Medium
+#008
+Screenshot from either device
+Capture a screenshot of the tablet or PC screen from the other device.
+High
+#009
+Screen recording with sync
+Record the streamed display with audio and save to PC.
+Medium
+#010
+Picture-in-picture mode
+Float a small tablet preview in the corner of your PC screen.
+Nice
+#011
+Night mode / color filter sync
+Sync blue-light filter settings between both devices simultaneously.
+Nice
+#012
+Stream latency monitor
+Overlay showing current round-trip latency of the video stream in ms.
+Medium
+#013
+Universal mouse sharing
+Move your PC mouse off-screen edge to seamlessly control the tablet.
+Core
+#014
+Universal keyboard sharing
+Type on your PC keyboard and have input routed to whichever device is focused.
+Core
+#015
+Gamepad/controller passthrough
+Forward DS4 or Xbox controller input from PC to tablet apps or vice versa.
+High
+#016
+Touch event injection from PC
+Click on the tablet mirror window on PC and inject a real touch event on the tablet.
+Core
+#017
+Swipe gesture macros
+Define custom swipe patterns on the PC that get injected as gestures on the tablet.
+Medium
+#018
+Keyboard shortcut remapper
+Map PC hotkeys to tablet app actions (e.g. Ctrl+1 = switch chat room in Orbit).
+High
+#019
+Touch blocker toggle
+Instantly disable/enable the tablet touchscreen via a PC hotkey.
+High
+#020
+Mouse pointer speed sync
+Match pointer speed on both devices from one settings slider.
+Medium
+#021
+Multi-device focus switcher
+Click a device indicator on the taskbar to direct all keyboard/mouse input there.
+High
+#022
+Macro recorder
+Record a sequence of actions on one device and replay them on demand.
+Medium
+#023
+Voice command passthrough
+Speak into PC mic and have voice commands execute on the tablet.
+Nice
+#024
+Scroll wheel on tablet scroller
+Use PC mouse scroll wheel to scroll content on the mirrored tablet screen.
+High
+#025
+Universal clipboard sync
+Copy on PC, paste on tablet (and vice versa) automatically in real time.
+Core
+#026
+Drag-and-drop file transfer
+Drag a file from PC desktop onto the tablet mirror window to transfer it.
+High
+#027
+Shared file drop zone
+A folder visible on both devices — drop files in from either side.
+High
+#028
+Transfer progress indicator
+Show a progress bar and speed readout for file transfers between devices.
+High
+#029
+Image clipboard preview
+When an image is copied, show a thumbnail preview in the app panel.
+Medium
+#030
+Clipboard history
+Keep a scrollable history of the last 20 clipboard entries from both devices.
+Medium
+#031
+Auto photo sync
+Any new photo taken on the tablet auto-syncs to a folder on the PC.
+Medium
+#032
+Pastebin-style quick share
+Paste text on PC and instantly have a shareable temp link for the tablet browser.
+Nice
+#033
+Transfer queue manager
+Queue multiple file transfers and manage them with pause/resume/cancel.
+Medium
+#034
+Live CPU/RAM dashboard
+Real-time CPU and RAM usage for both devices shown side-by-side.
+High
+#035
+Battery level monitor (tab)
+Show tablet battery % and charging status on the PC app at all times.
+High
+#036
+Controller battery monitor
+Show DS4/controller battery level with low-battery desktop notification.
+High
+#037
+WiFi signal strength meter
+Show current WiFi RSSI for both devices to diagnose streaming issues.
+Medium
+#038
+Network throughput graph
+Live graph of MB/s being used by the rig stream and transfers.
+Medium
+#039
+Tablet storage overview
+Show used/free storage on the tablet's internal and SD card.
+Medium
+#040
+Running processes list (tab)
+List of apps currently running on the tablet with RAM usage per app.
+Medium
+#041
+Connection health score
+A single 0-100 score summarizing ADB stability, latency, and packet loss.
+High
+#042
+Rig uptime counter
+Show how long the current session has been running without a disconnect.
+Nice
+#043
+Temperature monitor (tab)
+Show tablet CPU temperature to detect thermal throttling risk.
+Medium
+#044
+Auto-kill RAM hog on tab
+Automatically kill the highest RAM-consuming app on the tablet when free RAM is low.
+High
+#045
+Mirror tab notifications to PC
+All Android notifications from the tablet appear as desktop notifications on PC.
+Core
+#046
+Reply to messages from PC
+Click a notification on PC and type a reply that sends from the tablet.
+High
+#047
+Notification filter rules
+Whitelist or blacklist apps whose notifications get mirrored to PC.
+Medium
+#048
+Battery low alert
+Pop-up on PC when tablet battery drops below a set threshold.
+High
+#049
+ADB disconnect alert
+Instant desktop notification when the ADB connection drops.
+High
+#050
+Stream quality degradation alert
+Notify when video bitrate drops significantly due to WiFi congestion.
+Medium
+#051
+Ghost touch re-detection warning
+Alert if touch events are detected despite the dd silencer being active.
+High
+#052
+App crash alert (tab)
+Get a PC notification if an app on the tablet crashes.
+Medium
+#053
+Scheduled reminder push
+Set a reminder on PC that fires as a notification on the tablet.
+Nice
+#054
+Remote app launcher
+Browse and launch any installed app on the tablet from the PC app.
+High
+#055
+One-click rig startup
+Single button that connects ADB, starts dd silencer, and launches scrcpy.
+Core
+#056
+Saved session profiles
+Save different rig configurations (dev mode, media mode, etc.) and switch instantly.
+High
+#057
+Auto-reconnect on disconnect
+App automatically re-establishes ADB and restarts all services after a drop.
+Core
+#058
+Wake-on-LAN for tablet
+Send a magic packet to wake the tablet from sleep mode remotely.
+Medium
+#059
+Remote reboot / shutdown (tab)
+Reboot or power off the tablet from the PC app.
+Medium
+#060
+ADB command console
+A built-in ADB shell terminal in the app for running custom commands.
+High
+#061
+Package manager (tab)
+Install, uninstall, and disable APKs on the tablet from the PC app.
+High
+#062
+Workflow automation scripts
+Write and run bash scripts that affect both devices from one place.
+Medium
+#063
+Multi-device task queue
+Queue a list of actions across both devices and run them sequentially.
+Nice
+#064
+Session log / activity history
+Keep a log of every action, connection event, and transfer in the session.
+Medium
+#065
+Quick-launch bookmarks
+Pin frequently used ADB commands or app launches to a quick-access bar.
+Medium
+#066
+Stream tablet audio to PC speakers
+Forward all audio output from the tablet and play it on PC speakers.
+High
+#067
+Stream PC audio to tablet
+Route PC audio to the tablet's speaker for a wireless speaker setup.
+Medium
+#068
+Mic passthrough (PC→tab)
+Use the PC microphone as the active input for tablet apps like voice chat.
+Medium
+#069
+Volume sync
+Changing volume on one device mirrors the change on the other.
+Medium
+#070
+Audio visualizer overlay
+Lightweight spectrum visualizer overlay on the streaming window.
+Nice
+#071
+Mute tablet remotely
+Instantly mute/unmute the tablet from a PC hotkey.
+High
+#072
+Audio codec selector
+Choose between Opus, AAC, or raw PCM for the audio stream depending on latency needs.
+Medium
+#073
+Device pairing with PIN
+First-time connection requires confirming a PIN on both devices.
+Core
+#074
+Encrypted data channel
+All transferred files and clipboard data encrypted in transit with AES-256.
+High
+#075
+Screen privacy mode
+Blur or black out the tablet stream on PC with a hotkey when needed.
+High
+#076
+Connection allowlist
+Only allow specific PC IP addresses to connect to the tablet.
+High
+#077
+Auto-lock on disconnect
+Lock the tablet screen automatically when the PC app disconnects.
+Medium
+#078
+Session timeout
+Auto-disconnect after a configurable idle period.
+Medium
+#079
+No-cloud architecture
+All data stays on LAN — no external servers, no cloud relay.
+Core
+#080
+Access log
+Full log of every device that connected, when, and what was transferred.
+Medium
+#081
+Live localhost tunnel to tablet
+Automatically expose PC localhost:3000 to the tablet browser on the same URL.
+Core
+#082
+HMR health indicator
+Show whether Next.js hot module replacement is active and delivering updates.
+High
+#083
+Remote browser DevTools
+Open Chrome DevTools on PC connected to the browser running on the tablet.
+High
+#084
+ADB logcat viewer
+Stream and filter Android logcat output in a panel inside the app.
+High
+#085
+React DevTools bridge
+Automatically bridge the standalone React DevTools to the tablet's browser.
+High
+#086
+Port forwarding manager
+GUI for managing ADB forward and reverse port mappings between devices.
+Medium
+#087
+Crash log collector
+Automatically capture and display crash logs from the tablet app.
+High
+#088
+Network request inspector
+Inspect HTTP requests made by apps on the tablet (like Charles Proxy, on-device).
+Medium
+#089
+APK sideload from PC
+Drag-drop an APK onto the app to instantly install it on the tablet.
+High
+#090
+Performance profiler
+Measure frame rate, jank, and CPU time for apps running on the tablet.
+Medium
+#091
+Gamepad API test panel
+Visualize DS4 button presses and axis values in real time for debugging.
+Medium
+#092
+Dark / light theme
+Full dark and light mode for the app UI itself.
+High
+#093
+Custom accent color
+Choose your app accent color to match your rig aesthetic.
+Nice
+#094
+Compact / expanded layout modes
+Switch between a minimal tray-style UI and a full dashboard view.
+Medium
+#095
+Hotkey customizer
+Rebind every app hotkey from a settings panel.
+High
+#096
+System tray / menu bar mode
+Minimize the app to system tray with quick-access menu for common actions.
+High
+#097
+Widget dashboard
+Drag-and-drop panel of widgets: battery, CPU, connection status, clipboard.
+Medium
+#098
+Startup behavior config
+Choose whether the app auto-starts with the OS and auto-connects on launch.
+High
+#099
+Connection indicator LED
+Color-coded status dot (green/yellow/red) for connection health always visible.
+High
+#100
+Export config to file
+Export your entire rig config (IPs, profiles, hotkeys) to a JSON file to restore later.
+Medium

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SYNAPSE_OS v5.0</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap');
+:root {
+  --bg:#0B0F19;
+  --panel:#111827;
+  --card:#1E293B80;
+  --card-h:#1E293BCC;
+  --bdr:rgba(255,255,255,0.06);
+  --bdr2:rgba(255,255,255,0.12);
+  --cyan:#6366F1; /* Indigo primary */
+  --green:#10B981; /* Emerald green */
+  --red:#EF4444; /* Rose red */
+  --amber:#F59E0B; /* Amber */
+  --purple:#8B5CF6; /* Violet */
+  --blue:#3B82F6; /* Blue */
+  --t1:#F8FAFC;
+  --t2:#94A3B8;
+  --t3:#64748B;
+  --sans:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden}
+body{background:var(--bg);font-family:var(--sans);color:var(--t1);display:flex;flex-direction:column}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--bdr2);border-radius:3px}
+
+.titlebar{-webkit-app-region:drag;height:44px;background:var(--panel);border-bottom:1px solid var(--bdr);display:flex;align-items:center;padding:0 20px;gap:12px;flex-shrink:0}
+.titlebar-dots{display:flex;gap:8px;-webkit-app-region:no-drag}
+.dot{width:13px;height:13px;border-radius:50%;cursor:pointer;transition:.2s}.dot:hover{filter:brightness(1.2)}
+.titlebar-label{font-family:var(--sans);font-weight:700;font-size:14px;color:var(--t1);letter-spacing:1px;flex:1;text-align:center}
+
+.status-bar{height:38px;background:var(--panel);border-bottom:1px solid var(--bdr);display:flex;align-items:center;padding:0 20px;gap:20px;flex-shrink:0;font-family:var(--sans);font-size:12px;color:var(--t2)}
+.si{display:flex;align-items:center;gap:6px}
+.sd{width:8px;height:8px;border-radius:50%;animation:pulse 2s ease-in-out infinite}
+.sd.on{background:var(--green);box-shadow:0 0 10px rgba(16,185,129,.4)}.sd.off{background:var(--red);box-shadow:0 0 10px rgba(239,68,68,.4)}.sd.wait{background:var(--amber);box-shadow:0 0 10px rgba(245,158,11,.4)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.spacer{flex:1}
+.badge{background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.24);border-radius:20px;padding:2px 10px;font-size:10px;font-weight:700;color:var(--cyan);text-transform:uppercase}
+
+.main{flex:1;display:flex;overflow:hidden}
+
+/* LEFT: Hardware + Log */
+.left{width:360px;min-width:360px;display:flex;flex-direction:column;border-right:1px solid var(--bdr);overflow:hidden;background:rgba(17,24,39,0.2)}
+.section{padding:16px;border-bottom:1px solid var(--bdr)}
+.sh{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.sh-title{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:0.5px;color:var(--t1);text-transform:uppercase}
+.sh-badge{margin-left:auto;font-family:var(--sans);font-weight:600;font-size:10px;padding:2px 8px;border-radius:20px}
+
+.stats{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.chip{display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--bdr);border-radius:20px;padding:6px 12px;transition:.2s}.chip:hover{background:var(--card-h)}
+.chip-l{font-family:var(--sans);font-weight:700;font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:.5px}
+.chip-v{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--cyan)}
+
+.hw-cards{display:flex;flex-direction:column;gap:8px}
+.hw{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:14px;transition:.3s;position:relative;overflow:hidden}
+.hw.active{border-color:rgba(99,102,241,.3);box-shadow:0 4px 20px rgba(99,102,241,.05)}
+.hw-name{font-family:var(--sans);font-weight:700;font-size:10px;color:var(--t2);letter-spacing:0.5px;text-transform:uppercase;margin-bottom:6px}
+.hw-row{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600}
+.hw-detail{font-family:var(--sans);font-size:11px;color:var(--t3);margin-top:6px}
+.ip-input{background:rgba(0,0,0,.2);border:1px solid var(--bdr);border-radius:8px;color:var(--t1);font-family:var(--sans);font-size:11px;padding:6px 10px;width:100%;margin-top:8px;outline:none;transition:.2s}
+.ip-input:focus{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(99,102,241,.15)}
+
+/* Terminal */
+.term-wrap{flex:1;display:flex;flex-direction:column;overflow:hidden;padding:12px}
+.term{flex:1;background:#05070C;border:1px solid var(--bdr);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.term-head{display:flex;align-items:center;padding:8px 14px;background:rgba(255,255,255,.02);border-bottom:1px solid var(--bdr);gap:8px}
+.term-tab{font-family:var(--sans);font-weight:700;font-size:11px;color:var(--t2)}
+.term-count{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--t3)}
+.term-body{flex:1;overflow-y:auto;padding:10px 14px;font-family:var(--mono);font-size:11px;line-height:1.6}
+.ll{white-space:pre-wrap;word-break:break-all;margin-bottom:4px}.ll .ts{color:var(--t3)}
+.ll.LOG{color:var(--t2)}.ll.SYS{color:var(--cyan)}.ll.ERR{color:var(--red)}
+
+/* RIGHT: Feature Command Center */
+.right{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.feat-header{padding:16px 20px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:12px}
+.feat-search{flex:1;background:var(--card);border:1px solid var(--bdr);border-radius:24px;color:var(--t1);font-family:var(--sans);font-size:13px;padding:10px 16px;outline:none;transition:.2s}
+.feat-search:focus{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(99,102,241,.15)}
+.feat-search::placeholder{color:var(--t3)}
+.feat-count{font-family:var(--sans);font-weight:600;font-size:11px;color:var(--t3)}
+
+.feat-body{flex:1;overflow-y:auto;padding:12px 20px}
+.mod-group{margin-bottom:8px}
+.mod-head{display:flex;align-items:center;padding:10px 14px;background:var(--card);border:1px solid var(--bdr);border-radius:12px;cursor:pointer;transition:.2s;user-select:none}
+.mod-head:hover{background:var(--card-h);border-color:var(--bdr2)}
+.mod-name{font-family:var(--sans);font-size:12px;font-weight:700;color:var(--cyan);flex:1;letter-spacing:.25px}
+.mod-count{font-family:var(--mono);font-size:10px;color:var(--t3);margin-right:8px}
+.mod-arrow{font-family:var(--mono);font-size:10px;color:var(--t3);transition:.2s}
+.mod-items{display:none;padding:6px 0 6px 12px}
+.mod-items.open{display:block}
+.feat-item{display:flex;align-items:center;gap:12px;padding:9px 14px;border-radius:8px;cursor:pointer;transition:.15s;border:1px solid transparent}
+.feat-item:hover{background:rgba(99,102,241,.06);border-color:rgba(99,102,241,.12)}
+.feat-item:active{background:rgba(99,102,241,.12)}
+.feat-icon{font-size:16px;width:32px;text-align:center}
+.feat-info{flex:1;min-width:0}
+.feat-name{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.feat-desc{font-size:11px;color:var(--t3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.feat-fire{font-family:var(--sans);font-weight:700;font-size:10px;color:var(--cyan);opacity:0;transition:.15s}
+.feat-item:hover .feat-fire{opacity:1}
+
+/* Sensor bar */
+.sensor-row{display:flex;gap:8px;padding:12px 20px;border-bottom:1px solid var(--bdr)}
+.sensor{flex:1;background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:10px 14px}
+.sensor-l{font-family:var(--sans);font-weight:700;font-size:9px;color:var(--t3);letter-spacing:0.5px;text-transform:uppercase;margin-bottom:6px}
+.sensor-v{font-family:var(--mono);font-size:15px;font-weight:700}
+.sbar{height:4px;background:var(--bdr2);border-radius:2px;margin-top:6px;overflow:hidden}
+.sbar-f{height:100%;border-radius:2px;transition:width .4s}
+.sbar-f.b{background:linear-gradient(90deg,rgba(99,102,241,0.2),var(--cyan))}.sbar-f.g{background:linear-gradient(90deg,rgba(16,185,129,0.2),var(--green))}
+.sbar-f.r{background:linear-gradient(90deg,rgba(239,68,68,0.2),var(--red))}.sbar-f.p{background:linear-gradient(90deg,rgba(139,92,246,0.2),var(--purple))}
+
+.gesture-tags{padding:8px 20px;border-bottom:1px solid var(--bdr);display:flex;flex-wrap:wrap;gap:6px}
+.gtag{font-family:var(--sans);font-weight:700;font-size:10px;padding:3px 10px;border-radius:20px;background:rgba(99,102,241,.08);color:var(--cyan);border:1px solid rgba(99,102,241,.15);transition:.3s}
+.gtag.active{background:rgba(99,102,241,.25);animation:flash .5s}
+@keyframes flash{0%{background:rgba(99,102,241,.5)}100%{background:rgba(99,102,241,.25)}}
+
+/* Toast */
+#toast{position:fixed;top:-70px;left:50%;transform:translateX(-50%);background:var(--panel);border:1px solid var(--green);border-radius:12px;padding:14px 28px;font-family:var(--sans);font-weight:600;font-size:13px;color:var(--green);z-index:1000;box-shadow:0 4px 24px rgba(16,185,129,.2);transition:top .5s cubic-bezier(.34,1.56,.64,1);pointer-events:none}
+</style>
+</head>
+<body>
+
+<div class="titlebar">
+  <div class="titlebar-dots">
+    <div class="dot" style="background:#f85149" onclick="window.close()"></div>
+    <div class="dot" style="background:#d29922" onclick="require('electron').ipcRenderer.send('minimize')"></div>
+    <div class="dot" style="background:#3fb950" onclick="require('electron').ipcRenderer.send('maximize')"></div>
+  </div>
+  <span class="titlebar-label">SYNAPSE_OS</span>
+  <span style="font-family:var(--mono);font-size:10px;color:var(--t3)">v5.0</span>
+</div>
+
+<div class="status-bar">
+  <div class="si"><div class="sd on" id="ws-dot"></div><span>WS :8085</span></div>
+  <div class="si"><div class="sd wait" id="tab-dot"></div><span id="tab-label">TABLET</span></div>
+  <div class="si"><div class="sd wait" id="ps4-dot"></div><span>PS4</span></div>
+  <div class="si"><div class="sd wait" id="ds4-dot"></div><span>DS4</span></div>
+  <div class="spacer"></div>
+  <div class="si"><span id="ws-clients">0 clients</span></div>
+  <div class="badge" id="enc-badge">AES OFF</div>
+  <div class="si" id="transport-info" style="color:var(--amber)">⚡ DETECTING</div>
+  <div class="si"><span id="uptime-label">00:00:00</span></div>
+</div>
+
+<div class="main">
+  <!-- LEFT PANEL -->
+  <div class="left">
+    <div class="section">
+      <div class="sh"><span style="font-size:12px">⬡</span><span class="sh-title">Hardware</span></div>
+      <div class="stats">
+        <div class="chip"><span class="chip-l">CPU</span><span class="chip-v" id="cpu-val">0%</span></div>
+        <div class="chip"><span class="chip-l">RAM</span><span class="chip-v" id="ram-val">0%</span></div>
+        <div class="chip"><span class="chip-l">Ping</span><span class="chip-v" id="ping-val">0ms</span></div>
+        <div class="chip"><span class="chip-l">DS4🔋</span><span class="chip-v" id="ds4-bat">—</span></div>
+      </div>
+      <div class="hw-cards">
+        <div class="hw" id="hw-tablet">
+          <div class="hw-name">Samsung Tab SM-T515</div>
+          <div class="hw-row"><div class="sd wait" id="hw-tab-dot"></div><span id="hw-tab-status">Detecting</span></div>
+          <div class="hw-detail" id="hw-tab-detail">Scanning USB & WiFi...</div>
+          <input type="text" id="tablet-ip-input" class="ip-input" placeholder="Tablet IP" />
+        </div>
+        <div class="hw">
+          <div class="hw-name">PS4 Slim</div>
+          <div class="hw-row"><div class="sd wait"></div><span>Standby</span></div>
+          <div class="hw-detail">UDP :987</div>
+        </div>
+      </div>
+    </div>
+    <div class="term-wrap">
+      <div class="sh" style="padding:0 0 6px 0"><span style="font-size:12px">▸</span><span class="sh-title">System Log</span><span class="sh-badge" style="background:rgba(248,81,73,.1);color:var(--red);border:1px solid rgba(248,81,73,.2);margin-left:auto" id="err-count">0 errors</span></div>
+      <div class="term">
+        <div class="term-head"><span class="term-tab">● stdout/stderr</span><span class="term-count" id="log-count">0 lines</span></div>
+        <div class="term-body" id="log-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: COMMAND CENTER -->
+  <div class="right">
+    <div class="sensor-row">
+      <div class="sensor"><div class="sensor-l">Head (Pitch/Yaw)</div><div class="sensor-v" id="head-val">0° / 0°</div><div class="sbar"><div class="sbar-f b" id="head-bar" style="width:0%"></div></div></div>
+      <div class="sensor"><div class="sensor-l">Gyroscope Tilt</div><div class="sensor-v" id="gyro-val">0.0°</div><div class="sbar"><div class="sbar-f p" id="gyro-bar" style="width:0%"></div></div></div>
+      <div class="sensor"><div class="sensor-l">Mic (dB)</div><div class="sensor-v" id="mic-val">—</div><div class="sbar"><div class="sbar-f r" id="mic-bar" style="width:0%"></div></div></div>
+      <div class="sensor"><div class="sensor-l">Volume</div><div class="sensor-v" id="vol-val">—</div><div class="sbar"><div class="sbar-f g" id="vol-bar" style="width:0%"></div></div></div>
+    </div>
+    <div class="gesture-tags">
+      <span class="gtag" id="g-head">HEAD</span><span class="gtag" id="g-pinch">PINCH</span><span class="gtag" id="g-palm">PALM</span>
+      <span class="gtag" id="g-gyro">GYRO</span><span class="gtag" id="g-mic">MIC</span><span class="gtag" id="g-vol">VOLUME</span><span class="gtag" id="g-ghost">GHOST</span>
+    </div>
+    <div class="feat-header">
+      <input type="text" class="feat-search" id="feat-search" placeholder="⌕ Search 400 commands..." />
+      <span class="feat-count" id="feat-total">0 features</span>
+    </div>
+    <div class="feat-body" id="feat-body"></div>
+  </div>
+</div>
+
+<div id="toast"><span id="toast-text">✓ Done</span></div>
+
+<script>
+const { ipcRenderer } = require('electron');
+let logLines=0,errCount=0,allFeatures=[];
+const startTime=Date.now();
+const gestureTimers={};
+
+// Uptime
+setInterval(()=>{const s=Math.floor((Date.now()-startTime)/1000);const h=String(Math.floor(s/3600)).padStart(2,'0');const m=String(Math.floor((s%3600)/60)).padStart(2,'0');const sec=String(s%60).padStart(2,'0');document.getElementById('uptime-label').textContent=`${h}:${m}:${sec}`},1000);
+
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function appendLog(msg,type){const b=document.getElementById('log-body');const d=document.createElement('div');d.className=`ll ${type}`;const ts=new Date().toLocaleTimeString('en-IN',{hour12:false});d.innerHTML=`<span class="ts">${ts}</span>  ${esc(msg)}`;b.appendChild(d);logLines++;if(logLines>500)b.removeChild(b.firstChild);b.scrollTop=b.scrollHeight;document.getElementById('log-count').textContent=`${logLines} lines`;if(type==='ERR'){errCount++;document.getElementById('err-count').textContent=`${errCount} errors`}}
+
+function flashGesture(id){const el=document.getElementById(id);if(!el)return;el.classList.add('active');clearTimeout(gestureTimers[id]);gestureTimers[id]=setTimeout(()=>el.classList.remove('active'),800)}
+
+function showToast(msg,ok){const t=document.getElementById('toast');const tx=document.getElementById('toast-text');t.style.borderColor=ok?'var(--green)':'var(--red)';tx.style.color=ok?'var(--green)':'var(--red)';tx.textContent=msg;t.style.top='16px';setTimeout(()=>{t.style.top='-70px'},3500)}
+
+function getIconEmoji(name) {
+  const map = {
+    volume: '🔊',
+    settings: '⚙️',
+    mic: '🎙️',
+    play: '▶️',
+    crosshair: '🎯',
+    lock: '🔒',
+    wifi: '📡',
+    battery: '🔋',
+    power: '🔌',
+    brightness: '☀️',
+    display: '🖥️',
+    music: '🎵',
+    keyboard: '⌨️',
+    mouse: '🖱️',
+    search: '🔍',
+    camera: '📷',
+    folder: '📁',
+    file: '📄',
+    terminal: '💻',
+    alert: '⚠️',
+    info: 'ℹ️',
+    globe: '🌐',
+    cpu: '🧠',
+    ram: '💾',
+    ping: '📶',
+    bluetooth: '🌀'
+  };
+  return map[name] || name || '⚡';
+}
+
+// Build feature UI
+function renderFeatures(features,filter=''){
+  const body=document.getElementById('feat-body');
+  body.innerHTML='';
+  const mods={};
+  features.forEach(f=>{
+    if(filter){const q=filter.toLowerCase();if(!f.name.toLowerCase().includes(q)&&!(f.module||'').toLowerCase().includes(q)&&!(f.description||'').toLowerCase().includes(q))return}
+    const m=f.module||'Other';
+    if(!mods[m])mods[m]=[];
+    mods[m].push(f);
+  });
+  const keys=Object.keys(mods).sort();
+  let shown=0;
+  keys.forEach(mod=>{
+    const items=mods[mod];shown+=items.length;
+    const grp=document.createElement('div');grp.className='mod-group';
+    const head=document.createElement('div');head.className='mod-head';
+    const hasOpen = filter ? ' open' : '';
+    head.innerHTML=`<span class="mod-name">${esc(mod)}</span><span class="mod-count">${items.length}</span><span class="mod-arrow">${filter ? '▾' : '▸'}</span>`;
+    const list=document.createElement('div');list.className='mod-items' + hasOpen;
+    head.onclick=()=>{const open=list.classList.toggle('open');head.querySelector('.mod-arrow').textContent=open?'▾':'▸'};
+    items.forEach(f=>{
+      const row=document.createElement('div');row.className='feat-item';
+      row.innerHTML=`<span class="feat-icon">${getIconEmoji(f.ui_icon)}</span><div class="feat-info"><div class="feat-name">${esc(f.name)}</div><div class="feat-desc">${esc(f.description||'')}</div></div><span class="feat-fire">▶ FIRE</span>`;
+      row.onclick=()=>{
+        ipcRenderer.send('fire-feature-from-ui',f);
+        appendLog(`[CMD] ▶ ${f.name}`,'SYS');
+        row.style.background='rgba(56,189,248,.15)';setTimeout(()=>{row.style.background=''},300);
+      };
+      list.appendChild(row);
+    });
+    grp.appendChild(head);grp.appendChild(list);body.appendChild(grp);
+  });
+  document.getElementById('feat-total').textContent=`${shown}/${features.length} features`;
+}
+
+// IPC
+ipcRenderer.on('log-message',(e,{msg,type})=>appendLog(msg,type));
+ipcRenderer.on('update-pc-stats',(e,{ram,cpu,ping,ds4})=>{document.getElementById('cpu-val').textContent=`${cpu}%`;document.getElementById('ram-val').textContent=`${ram}%`;document.getElementById('ping-val').textContent=`${ping}ms`;document.getElementById('ds4-bat').textContent=`${ds4}%`});
+ipcRenderer.on('ws-client-count',(e,c)=>{document.getElementById('ws-clients').textContent=`${c} client${c!==1?'s':''}`});
+ipcRenderer.on('hw-status',(e,{device,status})=>{
+  if(device==='tablet'){
+    const d=document.getElementById('hw-tab-dot'),l=document.getElementById('hw-tab-status'),dt=document.getElementById('hw-tab-detail'),card=document.getElementById('hw-tablet'),td=document.getElementById('tab-dot');
+    if(status==='connected'){d.className='sd on';td.className='sd on';l.textContent='WS Connected';dt.textContent='Spatial engine active';card.classList.add('active')}
+    else{d.className='sd off';td.className='sd off';l.textContent='Disconnected';dt.textContent='Awaiting reconnection...';card.classList.remove('active')}
+  }
+});
+ipcRenderer.on('adb-transport',(e,{transport,serial})=>{
+  const info=document.getElementById('transport-info');
+  const d=document.getElementById('hw-tab-dot'),l=document.getElementById('hw-tab-status'),dt=document.getElementById('hw-tab-detail'),card=document.getElementById('hw-tablet'),td=document.getElementById('tab-dot');
+  if(transport==='usb'){info.innerHTML='<span style="color:var(--green)">⚡ USB '+serial+'</span>';d.className='sd on';td.className='sd on';l.textContent='USB Connected';dt.textContent='USB direct • '+serial;card.classList.add('active')}
+  else if(transport==='wifi'){info.innerHTML='<span style="color:var(--cyan)">📡 WiFi '+serial+'</span>';d.className='sd on';td.className='sd on';l.textContent='WiFi Connected';dt.textContent='Wireless ADB • '+serial;card.classList.add('active')}
+  else{info.innerHTML='<span style="color:var(--red)">✗ NO DEVICE</span>';d.className='sd off';td.className='sd off';l.textContent='Disconnected';dt.textContent='No USB or WiFi';card.classList.remove('active')}
+});
+ipcRenderer.on('deploy-status',(e,{success,message})=>{showToast(success?'✓ '+message:'✗ '+message,success);appendLog(success?`[DEPLOY] ✓ ${message}`:`[DEPLOY] ✗ ${message}`,success?'SYS':'ERR')});
+ipcRenderer.on('init-config',(e,cfg)=>{if(cfg&&cfg.TABLET_IP)document.getElementById('tablet-ip-input').value=cfg.TABLET_IP});
+ipcRenderer.on('init-features',(e,features)=>{allFeatures=features||[];renderFeatures(allFeatures);appendLog(`[INIT] Loaded ${allFeatures.length} features.`,'SYS')});
+ipcRenderer.on('spatial-track',(e,data)=>{
+  switch(data.gesture){
+    case'HEAD_TRACK':document.getElementById('head-val').textContent=`${(data.dx||0).toFixed(1)}° / ${(data.dy||0).toFixed(1)}°`;document.getElementById('head-bar').style.width=Math.min(100,(Math.abs(data.dx||0)+Math.abs(data.dy||0))*2)+'%';flashGesture('g-head');break;
+    case'PINCH_CLICK':flashGesture('g-pinch');break;case'PALM_LOCK':flashGesture('g-palm');break;
+    case'GYRO_SCROLL':document.getElementById('gyro-val').textContent=`${(data.pitch||0).toFixed(1)}°`;document.getElementById('gyro-bar').style.width=Math.min(100,Math.abs(data.pitch||0)*2)+'%';flashGesture('g-gyro');break;
+    case'MIC_SPIKE':document.getElementById('mic-val').textContent=`${(data.db||0).toFixed(0)} dB`;document.getElementById('mic-bar').style.width=Math.min(100,data.db||0)+'%';flashGesture('g-mic');break;
+    case'AIR_VOLUME':document.getElementById('vol-val').textContent=`${Math.round(data.volume||0)}%`;document.getElementById('vol-bar').style.width=(data.volume||0)+'%';flashGesture('g-vol');break;
+    case'GHOST_PROTOCOL':flashGesture('g-ghost');break;
+  }
+});
+ipcRenderer.on('update-clipboard',(e,text)=>{appendLog(`[CLIP] ${text.substring(0,80)}${text.length>80?'...':''}`,'SYS')});
+ipcRenderer.on('telemetry-update',(e,{vehicle,speed,gear,rpm})=>{appendLog(`[TELEM] ${vehicle} | ${speed.toFixed(1)} km/h | G${gear} | ${rpm} RPM`,'LOG')});
+ipcRenderer.on('subtitle',(e,text)=>{appendLog(`[SUB] ${text}`,'SYS')});
+
+document.getElementById('tablet-ip-input').addEventListener('change',e=>{const ip=e.target.value.trim();if(ip)ipcRenderer.send('update-ip',ip)});
+document.getElementById('feat-search').addEventListener('input',e=>{renderFeatures(allFeatures,e.target.value)});
+
+appendLog('SYNAPSE_OS v5.0 — Control Panel initialized.','SYS');
+appendLog('WebSocket server LIVE on port 8085.','SYS');
+appendLog('Awaiting tablet connection (USB/WiFi auto-detect)...','LOG');
+</script>
+</body>
+</html>

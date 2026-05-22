@@ -1,0 +1,72 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:1.5rem 0}
+.card{display:flex;flex-direction:column;align-items:center;gap:14px}
+.icon-wrap{width:200px;height:200px;border-radius:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.label{font-size:13px;color:var(--color-text-secondary);text-align:center;line-height:1.5}
+.label strong{display:block;font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:2px}
+</style>
+
+<div class="grid">
+
+<div class="card">
+  <div class="icon-wrap" style="background:#111318">
+    <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M55 18 L55 38" stroke="white" stroke-width="5" stroke-linecap="round"/>
+      <path d="M55 72 L55 92" stroke="white" stroke-width="5" stroke-linecap="round"/>
+      <path d="M18 55 L38 55" stroke="white" stroke-width="5" stroke-linecap="round"/>
+      <path d="M72 55 L92 55" stroke="white" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="55" cy="55" r="14" fill="white"/>
+      <circle cx="55" cy="55" r="7" fill="#111318"/>
+      <path d="M30 30 L42 42" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+      <path d="M68 68 L80 80" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+      <path d="M80 30 L68 42" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+      <path d="M30 80 L42 68" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+    </svg>
+  </div>
+  <div class="label"><strong>Pulse</strong>Radial signal mark. Cardinal axes anchor the center. Diagonals fade. Pure geometry.</div>
+</div>
+
+<div class="card">
+  <div class="icon-wrap" style="background:#0E1117">
+    <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 55 Q20 20 55 20 Q90 20 90 55" stroke="white" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+      <path d="M32 72 Q32 88 55 88 Q78 88 78 72" stroke="white" stroke-width="5.5" stroke-linecap="round" fill="none" opacity="0.45"/>
+      <circle cx="55" cy="55" r="8" fill="white"/>
+      <circle cx="55" cy="55" r="3.5" fill="#0E1117"/>
+      <line x1="55" y1="47" x2="55" y2="20" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.25"/>
+    </svg>
+  </div>
+  <div class="label"><strong>Arc</strong>Two arcs — awareness above, echo below. Single dot at convergence. Asymmetric tension.</div>
+</div>
+
+<div class="card">
+  <div class="icon-wrap" style="background:#13111A">
+    <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="24" y="38" width="62" height="6" rx="3" fill="white"/>
+      <rect x="24" y="52" width="40" height="6" rx="3" fill="white" opacity="0.5"/>
+      <rect x="24" y="66" width="52" height="6" rx="3" fill="white" opacity="0.25"/>
+      <circle cx="82" cy="68" r="11" fill="#5B8DEF"/>
+      <circle cx="82" cy="68" r="5.5" fill="#13111A"/>
+    </svg>
+  </div>
+  <div class="label"><strong>Signal</strong>Three horizontal bars — a data readout. Blue active dot at bottom-right. HUD-native language.</div>
+</div>
+
+<div class="card">
+  <div class="icon-wrap" style="background:#0F1218">
+    <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M55 22 C34 22 22 34 22 55 C22 76 34 88 55 88" stroke="white" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <path d="M55 22 C76 22 88 34 88 55 C88 76 76 88 55 88" stroke="white" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.28"/>
+      <circle cx="55" cy="55" r="9.5" fill="white"/>
+      <circle cx="55" cy="55" r="4" fill="#0F1218"/>
+      <circle cx="55" cy="22" r="4" fill="white"/>
+      <circle cx="55" cy="88" r="4" fill="white" opacity="0.28"/>
+    </svg>
+  </div>
+  <div class="label"><strong>Axis</strong>Strong left arc, ghost right arc. Endpoint dots mark the poles. Duality in one mark.</div>
+</div>
+
+</div>

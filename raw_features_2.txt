@@ -1,0 +1,463 @@
+#001
+Animated connection pulse
+A living, breathing ring animation around the connection status dot — pulses green on healthy link, turns red and throbs on disconnect.
+Aesthetic
+#002
+Glassmorphism card glow on active module
+When a module fires, its card briefly glows with a colored halo using CSS box-shadow animation.
+Aesthetic
+#003
+20+ professional UI themes
+Cyber Matrix, Stealth Dark, Sunset Fusion, Arctic White, Blood Orange, Deep Ocean, Vaporwave, Tokyo Night, and more — switchable live.
+Aesthetic
+UX
+#004
+Custom wallpaper engine for PC app
+Set an animated or static wallpaper behind the glassmorphic panels — syncs with theme selection.
+Aesthetic
+#005
+Particle network background
+A slow-moving particle mesh background that reacts to system CPU load — busier particles = higher CPU.
+Aesthetic
+Audio/Visual
+#006
+Live color extraction from scrcpy feed
+Sample dominant color from the current tablet screen and shift the UI accent color to match in real time.
+Aesthetic
+AI
+#007
+Neon scan-line overlay mode
+Optional retro CRT scan-line overlay on the scrcpy mirror window for aesthetic.
+Aesthetic
+#008
+Module grid customizer
+Drag-and-drop rearrange the 100 module cards into your preferred layout. Saved per profile.
+Aesthetic
+UX
+#009
+Status LED strip simulator
+A horizontal LED strip UI element at the top of the app that shows device states in color-coded lights.
+Aesthetic
+#010
+Font selector (10 monospace options)
+Switch between fonts: JetBrains Mono, Fira Code, Cascadia, IBM Plex Mono, etc. Applied globally across the app.
+Aesthetic
+UX
+#011
+Holographic module card style
+Cards render with a subtle rainbow iridescent sheen on hover — like holographic trading cards.
+Aesthetic
+#012
+Custom icon pack system
+Replace module icons with curated Tabler, Lucide, or custom SVG icon packs per theme.
+Aesthetic
+UX
+#013
+Module fire ripple animation
+When any module executes, a ripple wave radiates outward from that card across the grid.
+Aesthetic
+UX
+#014
+Data stream waterfall visualization
+A Matrix-style character waterfall on the side panel when data is being transferred at high speed.
+Aesthetic
+Audio/Visual
+#015
+Connection handshake animation
+On successful ADB link, an animated handshake sequence plays with device icons connecting.
+Aesthetic
+UX
+#016
+Telemetry graph with physics springs
+CPU/RAM graphs use spring physics — values bounce to their new position instead of jumping.
+Aesthetic
+Performance
+#017
+Smooth theme transition morphing
+Switching themes cross-fades all colors simultaneously over 400ms instead of instant swap.
+Aesthetic
+UX
+#018
+File transfer particle burst
+When a file transfer completes, a burst of particles explodes from the transfer card.
+Aesthetic
+#019
+Keyboard shortcut ghost trail
+When a hotkey fires, ghost key labels float up and fade out at the top of the screen.
+Aesthetic
+UX
+#020
+Boot sequence cinematic intro
+On app launch, a 2-second cinematic boot sequence plays: SYNAPSE logo assembles from particles, then UI fades in.
+Aesthetic
+#021
+Module cooldown radial timer
+After firing a module, a radial progress ring shows the cooldown before it can fire again.
+UX
+#022
+Disconnect earthquake shake
+When ADB drops, the entire UI briefly shakes like an earthquake — impossible to miss.
+UX
+Aesthetic
+#023
+UI sound design pack
+Every button click, module fire, and alert has a distinct, satisfying sound effect. 3 sound packs: Cyber, Minimal, Retro.
+Audio/Visual
+UX
+#024
+Connection success chime
+A clean 3-note ascending chime plays when ADB handshake completes.
+Audio/Visual
+UX
+#025
+Alert siren with custom pitch
+Disconnect or ghost-touch re-detection triggers a rising siren — pitch and volume configurable.
+Audio/Visual
+UX
+#026
+Bidirectional audio stream
+Stream tablet audio to PC speakers AND PC audio back to tablet — full duplex over ADB.
+Audio/Visual
+Performance
+#027
+Audio spectrum visualizer panel
+Real-time FFT spectrum visualizer for the audio stream — bars react to frequencies.
+Audio/Visual
+Aesthetic
+#028
+Voice command activation
+Say 'Synapse, fire module 47' and the app executes it via Web Speech API on the PC.
+Audio/Visual
+AI
+#029
+Volume crossfader
+A DJ-style crossfader slider to blend PC and tablet audio levels in real time.
+Audio/Visual
+UX
+#030
+Sound pack creator
+Record your own UI sounds and save them as a custom sound pack.
+Audio/Visual
+UX
+#031
+Beat-reactive UI mode
+UI accent colors pulse in sync with the beat of whatever audio is playing on the system.
+Audio/Visual
+Aesthetic
+#032
+Mute all hotkey with visual confirmation
+Single hotkey mutes both devices simultaneously — a large MUTED badge overlays the screen briefly.
+Audio/Visual
+UX
+#033
+Persistent mini HUD overlay
+A always-on-top translucent strip at screen edge showing: connection status, CPU%, RAM%, battery, latency. Never goes away.
+UX
+Aesthetic
+#034
+Streaming latency counter overlay
+ms latency counter overlaid directly on the scrcpy mirror window like a game FPS counter.
+Performance
+UX
+#035
+Touch coordinate crosshair
+When tablet touch coordinates are sent to PC, a crosshair appears on the PC screen showing exactly where the click lands.
+UX
+Dev Tool
+#036
+Ghost touch detector HUD
+A live event counter overlay showing how many ghost touch events are being silenced per second.
+UX
+Dev Tool
+#037
+Dual device battery bar
+Side-by-side battery indicators for PC (if laptop), tablet, and DS4 controller — always visible.
+UX
+#038
+Network signal quality ring
+A circular signal strength indicator that fills/empties like a speedometer dial.
+Aesthetic
+UX
+#039
+Clipboard preview toast
+When clipboard syncs, a toast popup shows a preview of what just synced — text snippet or image thumbnail.
+UX
+#040
+Active module indicator ribbon
+A horizontal ribbon at the bottom listing the last 5 modules fired with timestamps.
+UX
+#041
+Fullscreen takeover alert mode
+Critical alerts (disconnect, ghost touch return) trigger a full-screen red overlay that demands acknowledgment.
+UX
+#042
+PiP tablet mirror anywhere
+Float a small live tablet mirror as a Picture-in-Picture window over any app on the PC.
+UX
+Performance
+#043
+DS4 button map HUD
+An overlay showing the current DS4 button → action mapping so you never forget your hotkeys.
+UX
+#044
+Session timeline scrubber
+A visual timeline of everything that happened in the session — scroll back through events like a git log.
+UX
+Dev Tool
+#045
+AI anomaly detector
+Machine learning model trained on your normal CPU/RAM patterns — alerts you when something looks off.
+AI
+Performance
+#046
+Smart module suggester
+Based on your usage patterns, the app suggests which modules you're likely to fire next.
+AI
+UX
+#047
+Natural language ADB commands
+Type 'disable all Samsung bloatware' and AI translates it into the right ADB pm disable commands.
+AI
+Dev Tool
+#048
+Auto bitrate optimizer
+AI continuously tunes scrcpy bitrate and FPS based on current WiFi interference patterns.
+AI
+Performance
+#049
+Predictive disconnect prevention
+Detects early signs of ADB instability (rising latency, packet patterns) and pre-reconnects before it drops.
+AI
+Performance
+#050
+Usage heatmap
+Visualize which modules you fire most as a color heatmap over the module grid.
+AI
+UX
+#051
+Session summary AI report
+At end of session, AI generates a plain-English summary: what was done, issues encountered, uptime.
+AI
+Dev Tool
+#052
+Smart clipboard filter
+AI detects when clipboard contains a password or sensitive data and blocks it from syncing to tablet.
+AI
+Security
+#053
+Ghost touch pattern learning
+AI learns the unique ghost touch signature of your broken digitizer and ignores only those exact patterns.
+AI
+Performance
+#054
+Voice-to-ADB command
+Speak a full English sentence, AI converts it to an ADB shell command and executes it.
+AI
+Dev Tool
+#055
+Zero-copy clipboard pipeline
+Clipboard sync uses shared memory instead of WebSocket serialization — microsecond latency.
+Performance
+#056
+H.265 hardware encoder selection
+Automatically select the fastest hardware H.265 encoder available (VAAPI, NVENC, etc.).
+Performance
+#057
+USB 3.0 throughput mode
+Detect USB 3.0 connection and unlock higher ADB transfer speed caps automatically.
+Performance
+#058
+Parallel module execution
+Fire up to 5 modules simultaneously via multi-threaded child_process workers instead of sequential queuing.
+Performance
+Dev Tool
+#059
+Pre-warmed ADB command cache
+Common ADB commands are pre-executed and cached — module response time drops to near-zero.
+Performance
+#060
+RAM usage optimizer (PC side)
+Electron memory profiler that auto-garbage-collects when PC app RAM exceeds a set threshold.
+Performance
+#061
+Differential screen update streaming
+Only transmit pixels that changed between frames — drastically cuts bandwidth on static screens.
+Performance
+#062
+Network QoS tagging
+Mark Synapse traffic with DSCP QoS tags so your router prioritizes it over other traffic.
+Performance
+#063
+Startup time under 2 seconds
+Aggressive lazy-loading and pre-fork worker pool to get from cold launch to connected in under 2s.
+Performance
+UX
+#064
+Benchmark mode
+Run a full performance benchmark of the rig — measures stream latency, transfer speed, input lag — and generates a score.
+Performance
+Dev Tool
+#065
+Built-in ADB shell terminal
+A full interactive ADB shell terminal inside the app with syntax highlighting and command history.
+Dev Tool
+#066
+Live logcat stream with color filters
+Stream Android logcat with color-coded log levels and regex filter support.
+Dev Tool
+#067
+React DevTools auto-bridge
+Automatically detect and bridge the standalone React DevTools to the tablet's Expo app.
+Dev Tool
+#068
+Next.js HMR health panel
+Show HMR connection status, last update time, and module hot-swap speed.
+Dev Tool
+#069
+APK drag-and-drop installer
+Drop an APK file onto the Synapse window and it auto-installs on the tablet via adb install.
+Dev Tool
+UX
+#070
+Port forward manager GUI
+Visual GUI for all active adb forward and reverse tunnels — add/remove without CLI.
+Dev Tool
+UX
+#071
+Network request inspector
+Intercept and display HTTP requests made by apps on the tablet — like Charles Proxy built-in.
+Dev Tool
+#072
+Crash log auto-collector
+Automatically capture tombstone crash logs from the tablet and display them formatted in the app.
+Dev Tool
+#073
+Gamepad API visualizer
+Real-time visual of all DS4 axis values and button states — essential for debugging Gamepad API code.
+Dev Tool
+UX
+#074
+Multi-device Chrome DevTools
+Open remote debugging Chrome DevTools from PC connected to the tablet browser over ADB.
+Dev Tool
+#075
+Scrcpy flag builder GUI
+Visual GUI to construct scrcpy launch flags — sliders for FPS, bitrate, size with live preview of the command.
+Dev Tool
+UX
+#076
+ADB command library
+Searchable database of 200+ useful ADB commands — click to execute instantly.
+Dev Tool
+UX
+#077
+End-to-end AES-256 channel
+All WebSocket traffic encrypted with AES-256-GCM — clipboard, files, commands, everything.
+Security
+#078
+Device fingerprint pairing
+First connection requires matching a cryptographic device fingerprint on both screens simultaneously.
+Security
+UX
+#079
+Screen privacy blur hotkey
+One hotkey instantly blurs the scrcpy mirror — for when someone walks behind you.
+Security
+UX
+#080
+IP allowlist with live editor
+Only whitelisted IPs can connect. Edit the list live from the app without restarting.
+Security
+#081
+Auto-lock on idle
+After configurable idle time, lock both devices and require PIN to resume the session.
+Security
+UX
+#082
+Clipboard encryption in transit
+Clipboard contents are AES-encrypted before going over the WebSocket — decrypted only on receipt.
+Security
+#083
+Stealth mode
+Hide the Synapse app from the taskbar and Alt+Tab switcher — accessible only via system tray or hotkey.
+Security
+UX
+#084
+Full audit trail export
+Export a cryptographically signed log of every action, connection, and file transfer to a JSON file.
+Security
+Dev Tool
+#085
+DS4 rumble on module fire
+Trigger left/right motor rumble on the DS4 controller when a module executes successfully.
+UX
+Aesthetic
+#086
+DS4 lightbar status indicator
+DS4 lightbar color reflects rig status: blue=connected, green=all good, red=error/disconnect.
+Aesthetic
+UX
+#087
+Tablet vibration on PC alert
+When PC fires a critical alert, the tablet vibrates via adb shell cmd vibrator_manager.
+UX
+#088
+Haptic pattern library
+Choose from 10 rumble patterns for different event types — short tap, double pulse, long buzz, etc.
+UX
+Aesthetic
+#089
+DS4 touchpad gesture library
+Map DS4 touchpad swipes (up/down/left/right/tap) to custom Synapse actions.
+UX
+Dev Tool
+#090
+Battery critical vibration pattern
+When tablet battery hits critical level, DS4 fires a distinct urgent rumble pattern.
+UX
+#091
+Macro recorder & replayer
+Record any sequence of module fires, delays, and commands — save and replay with one click.
+UX
+Dev Tool
+#092
+Scheduled automation tasks
+Schedule any module to fire at a specific time — e.g. auto-clear RAM every 30 mins.
+UX
+Dev Tool
+#093
+If-this-then-that rule engine
+Build conditional logic: 'If RAM < 200MB then fire module 41 and notify me'.
+Dev Tool
+AI
+#094
+Session profile hot-swap
+Save the full rig state as a named profile (Dev Mode, Media Mode, Presentation Mode) and switch in one click.
+UX
+#095
+Morning startup sequence
+A configurable boot sequence that fires a chain of modules automatically when Synapse launches.
+UX
+Dev Tool
+#096
+Webhook integration
+Trigger any module externally via HTTP webhook — lets you automate from other tools.
+Dev Tool
+#097
+CLI mode
+Run Synapse headlessly from terminal with full module control: synapse fire 47 --device tab
+Dev Tool
+#098
+GitHub Actions integration
+Fire Synapse modules as steps in a GitHub Actions CI/CD workflow — e.g. auto-install APK on push.
+Dev Tool
+#099
+Config version control
+Every config change is versioned internally — roll back to any previous rig configuration.
+Dev Tool
+UX
+#100
+Synapse Cloud Sync (LAN only)
+Sync your profiles, macros, and configs between multiple PC workstations over LAN — zero cloud dependency.
+UX
+Security

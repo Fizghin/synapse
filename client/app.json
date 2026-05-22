@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "SYNAPSE",
+    "slug": "synapse-client",
+    "version": "5.0.0",
+    "orientation": "landscape",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#0e1116"
+    },
+    "android": {
+      "package": "com.synapse.client",
+      "adaptiveIcon": {
+        "backgroundColor": "#0e1116"
+      },
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "ACCESS_FINE_LOCATION",
+        "INTERNET",
+        "VIBRATE",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "SYNAPSE needs camera for spatial tracking."
+        }
+      ],
+      [
+        "expo-av",
+        {
+          "microphonePermission": "SYNAPSE needs microphone for voice commands and acoustic monitoring."
+        }
+      ],
+      "expo-asset"
+    ],
+    "ios": {
+      "bundleIdentifier": "com.synapse.client"
+    }
+  }
+}

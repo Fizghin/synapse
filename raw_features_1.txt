@@ -1,0 +1,1000 @@
+#1
+Physical button wake/sleep cycle
+Map power button long-press to xdotool key super+l for screen lock. Zero latency, 100% reliable.
+Hardware Keys
+Phase 1
+#2
+Volume-up single press → scroll up
+Use evdev/udev rules to intercept volume key events and pipe to xdotool key Page_Up. Native Linux, <5ms latency.
+Hardware Keys
+Phase 1
+#3
+Volume-down single press → scroll down
+Mirror of scroll up. xdotool key Page_Down on volume- event. Solid tactile feedback loop.
+Hardware Keys
+Phase 1
+#4
+Volume-up hold → master volume raise
+evdev hold detection + amixer set Master 5%+ via systemd oneshot. Instant, no vision overhead.
+Hardware Keys
+Phase 1
+#5
+Volume-down hold → master volume lower
+amixer set Master 5%- on sustained keydown. Pure shell, zero CPU cost.
+Hardware Keys
+Phase 1
+#6
+Double volume-up → next track
+Debounce two rapid presses in Node.js event buffer → playerctl next. Reliable, <10ms.
+Hardware Keys
+Phase 1
+#7
+Double volume-down → previous track
+Same debounce logic → playerctl previous. Clean and battle-tested.
+Hardware Keys
+Phase 1
+#8
+Power + volume-up chord → brightness up
+Chord detection in evdev listener → xrandr --brightness increment. Hardware-native.
+Hardware Keys
+Phase 1
+#9
+Power + volume-down chord → brightness down
+xrandr --brightness decrement on chord. Works fully offline, no camera.
+Hardware Keys
+Phase 1
+#10
+Triple volume-up → play/pause toggle
+Three-press burst → playerctl play-pause. Tactile, deterministic, zero false positives.
+Hardware Keys
+Phase 1
+#11
+WebSocket heartbeat ping
+Node.js server sends a JSON ping every 2s. Client JS ACKs. Detects disconnect in <4s. Foundation for all WS features.
+Network/WS
+Phase 1
+#12
+Push notification overlay
+Ubuntu sends notify-send; Node.js mirrors payload over WS → client renders a toast div. Dead simple, instant.
+Network/WS
+Phase 1
+#13
+Clipboard sync
+xclip -selection clipboard piped over WS to Android clipboard API. Bidirectional text sharing.
+Network/WS
+Phase 1
+#14
+Active window title display
+wmctrl -l polled every 500ms, diff detected, pushed over WS. Client shows current active app in HUD bar.
+Network/WS
+Phase 1
+#15
+System CPU/RAM meter HUD
+/proc/stat and /proc/meminfo read every 2s, JSON-pushed to client. Renders a live gauge on tablet.
+Network/WS
+Phase 1
+#16
+Media metadata display
+playerctl metadata piped over WS every second. Shows track name, artist, album on HUD.
+Network/WS
+Phase 1
+#17
+Battery level display
+upower -i /org/freedesktop/UPower/devices/battery polled, pushed as JSON. Simple HUD widget.
+Network/WS
+Phase 1
+#18
+Network speed meter
+Parse /proc/net/dev at 1s intervals, compute delta bytes/s, push to tablet HUD. Zero overhead.
+Network/WS
+Phase 1
+#19
+Orientation-based screen rotation
+Gyroscope on tablet → if pitch > 80° → send WS command → host runs xrandr --rotate. Instant, reliable.
+Device Physics
+Phase 1
+#20
+Shake gesture → mute toggle
+Accelerometer detects >3g burst across 200ms → amixer set Master toggle. Very low false positive on a desk.
+Device Physics
+Phase 1
+#21
+Tilt left → previous workspace
+Roll angle < -25° sustained 400ms → wmctrl -n + wmctrl -s (prev desktop). Clean, low CPU.
+Device Physics
+Phase 1
+#22
+Tilt right → next workspace
+Roll angle > 25° sustained 400ms → wmctrl -s (next desktop). Mirror of tilt-left.
+Device Physics
+Phase 1
+#23
+Lay flat → screen dim
+Pitch near 0° for 5s → xrandr --brightness 0.2. Saves burn-in when user walks away.
+Device Physics
+Phase 1
+#24
+Stand upright → screen restore
+Pitch returns to 60-90° → xrandr --brightness 1.0. Paired with lay-flat dim.
+Device Physics
+Phase 1
+#25
+Clap detection → play/pause
+Mic amplitude threshold crossing twice in <600ms via Web Audio API. Simple, low CPU, reliable in quiet room.
+Acoustic
+Phase 1
+#26
+Voice keyword → run script
+Browser SpeechRecognition API detects keyword (e.g. 'synapse run') → sends WS command. No offline model needed.
+Voice
+Phase 1
+#27
+Voice keyword → mute mic
+'Synapse mute' → amixer set Capture nocap. Instant via SpeechRecognition.
+Voice
+Phase 1
+#28
+Presence detection → screen on
+Front camera luma average rises above threshold → host exits screensaver. Simple frame diff, low overhead.
+Vision
+Phase 1
+#29
+Absence detection → screen off
+No face detected for 30s → xset dpms force off. Companion to presence detection.
+Vision
+Phase 1
+#30
+QR code scan → open URL on host
+Rear camera + jsQR library → decoded URL sent over WS → host runs xdg-open. Zero extra model overhead.
+Vision
+Phase 1
+#31
+Barcode scan → clipboard paste
+jsQR/zxing-js detects 1D barcode on rear cam → pushes string over WS → xdotool type on host.
+Vision
+Phase 1
+#32
+Flashlight mode → rear LED on
+Host sends torch command → tablet JS enables rear camera torch track constraint. Useful HUD utility.
+Vision
+Phase 1
+#33
+Ambient light reading → auto-brightness
+Front camera average brightness sampled every 5s → xrandr --brightness scaled linearly.
+Vision
+Phase 1
+#34
+WS command: open application
+Tablet sends {cmd:'launch', app:'firefox'} → server runs xdg-open or direct binary. Clean RPC.
+Network/WS
+Phase 1
+#35
+WS command: close active window
+Tablet sends close_active → server runs wmctrl -c :ACTIVE:. Simple.
+Network/WS
+Phase 1
+#36
+WS command: type text
+Tablet sends {cmd:'type', text:'...'} → xdotool type --delay 20 -- "text". Universal input injection.
+Network/WS
+Phase 1
+#37
+WS command: move mouse to coords
+Tablet sends {cmd:'mouse', x:400, y:300} → xdotool mousemove. Foundation for all pointer control.
+Network/WS
+Phase 1
+#38
+WS command: left click
+xdotool click 1 on server side. Pairs with mouse move for full pointer control.
+Network/WS
+Phase 1
+#39
+WS command: right click
+xdotool click 3. Menu access without touch.
+Network/WS
+Phase 1
+#40
+WS command: scroll wheel
+xdotool click 4/5 for scroll up/down. Infinite scroll without touch input.
+Network/WS
+Phase 1
+#41
+Hand wave → next slide
+MediaPipe Hands detects leftward swipe velocity > threshold → WS → xdotool key Right. 200-400ms latency.
+Vision
+Phase 1
+#42
+Thumbs up gesture → confirm action
+MediaPipe Hands thumbs-up classifier → sends confirm signal over WS. Moderate CPU on MediaPipe loop.
+Vision
+Phase 1
+#43
+Thumbs down gesture → cancel action
+MediaPipe Hands thumbs-down classifier → cancel WS event. Same overhead as thumbs-up.
+Vision
+Phase 1
+#44
+Open palm → pause all media
+MediaPipe Hands: all 5 fingers extended → playerctl pause. Good semantics, moderate CPU.
+Vision
+Phase 1
+#45
+Fist gesture → stop script
+MediaPipe Hands: 0 fingers extended → sends kill signal over WS. Needs reliable fist classifier.
+Vision
+Phase 1
+#46
+Two-finger point → mouse warp
+MediaPipe Hands index+middle extended, tracks normalized tip position → maps to xdotool mousemove. Requires calibration.
+Vision
+Phase 1
+#47
+Head nod → confirm
+MediaPipe Face Mesh: Y-delta of nose tip landmark across 3 frames → confirm WS event.
+Vision
+Phase 1
+#48
+Head shake → cancel
+MediaPipe Face Mesh: X-delta oscillation across 4 frames → cancel event. False positives on normal head movement.
+Vision
+Phase 1
+#49
+Gaze left zone → focus left monitor
+MediaPipe iris tracking: gaze vector points left of center → wmctrl move window to left display.
+Vision
+Phase 1
+#50
+Gaze right zone → focus right monitor
+Mirror of gaze-left. Requires proper iris model, moderate CPU.
+Vision
+Phase 1
+#51
+Gaze up → scroll up
+Iris Y-offset above neutral band → continuous xdotool scroll. Needs per-user calibration.
+Vision
+Phase 1
+#52
+Gaze down → scroll down
+Iris Y-offset below neutral → xdotool scroll down. Paired with gaze-up.
+Vision
+Phase 1
+#53
+Eye blink left → back
+MediaPipe left-eye EAR drops below 0.2 for 80-200ms → xdotool key alt+Left browser back.
+Vision
+Phase 1
+#54
+Eye blink right → forward
+Right-eye EAR metric → xdotool key alt+Right. Hard to distinguish from natural blink without calibration.
+Vision
+Phase 1
+#55
+Double blink → screenshot
+Two rapid blinks <600ms apart → scrot ~/screenshot.png + notify. Timing window is tricky.
+Vision
+Phase 1
+#56
+Pose: arms raised → fullscreen toggle
+MediaPipe Pose: both wrists above shoulder Y → xdotool key F11. Dramatic but semantically clear.
+Vision
+Phase 1
+#57
+Pose: lean forward → zoom in
+Face bounding box area increases 15%+ → xdotool key ctrl+plus. Requires stable distance baseline.
+Vision
+Phase 1
+#58
+Pose: lean back → zoom out
+Face bbox area decreases 15%+ → xdotool key ctrl+minus. Mirror of lean-forward.
+Vision
+Phase 1
+#59
+Voice command: open named app
+Whisper tiny model offline inference → parsed command → exec. 400-800ms per utterance on host CPU.
+Voice
+Phase 1
+#60
+Voice command: navigate URL
+Whisper parses 'go to [site]' → constructs URL → xdg-open. Needs good transcription accuracy.
+Voice
+Phase 1
+#61
+Voice dictation mode
+Whisper streaming → accumulated buffer → xdotool type result. Latency makes real-time use hard.
+Voice
+Phase 1
+#62
+Voice command: window layout
+'Synapse tile left' → wmctrl reposition current window. Requires reliable parse.
+Voice
+Phase 1
+#63
+Voice trigger: run bash script by name
+Whisper transcribes script name → server maps to /scripts/ dir → executes. Powerful but needs lexicon.
+Voice
+Phase 1
+#64
+Ambient noise level meter → alert
+Web Audio FFT: if dB above threshold for 10s → notify-send 'loud environment'. Simple FFT, mod overhead.
+Acoustic
+Phase 1
+#65
+Knock pattern on desk → trigger macro
+Mic detects low-frequency knock pattern via autocorrelation. Moderate DSP, decent reliability on hard desk.
+Acoustic
+Phase 1
+#66
+Finger snap → dismiss notification
+Mic detects broadband transient with fast attack → dismisses current toast. Works in quiet room.
+Acoustic
+Phase 1
+#67
+Whistle detection → custom event
+FFT dominant frequency 1-3kHz sustained 200ms → WS event. Works but sensitive to HVAC noise.
+Acoustic
+Phase 1
+#68
+Speech pause detection → auto-paragraph
+VAD detects >1.5s silence in dictation → injects newline via xdotool. Useful for dictation workflows.
+Acoustic
+Phase 1
+#69
+Face recognition → user profile switch
+dlib face_recognition lib: identifies user → loads profile-specific keybinds and layouts. CPU-heavy setup.
+Vision
+Phase 1
+#70
+Face distance monitor → posture alert
+Face bbox width exceeds threshold (too close) → notify-send posture warning. Useful, needs calibration.
+Vision
+Phase 1
+#71
+Color card detection → macro trigger
+Rear cam detects dominant HSV color of held card → maps to preset action. Fun, moderate precision.
+Vision
+Phase 1
+#72
+Object presence trigger
+YOLO-nano rear cam: detects specific object (coffee mug, book) → triggers corresponding macro.
+Vision
+Phase 1
+#73
+BLE device proximity → lock/unlock
+Bluetooth LE RSSI of paired device (phone/watch) → if RSSI < -85dBm, lock host. Solid BLE concept.
+Network/WS
+Phase 1
+#74
+BLE device appears → auto-launch app
+bluetoothctl monitor detects known MAC → triggers app launch. Reliable with known devices.
+Network/WS
+Phase 1
+#75
+Wi-Fi SSID change → environment mode
+iwgetid polls SSID → 'office' SSID triggers work profile, 'home' triggers home profile.
+Network/WS
+Phase 1
+#76
+Local LAN device count → occupancy indicator
+nmap -sn sweep counts active IPs → displays room occupancy estimate on HUD.
+Network/WS
+Phase 1
+#77
+Port scan script trigger over WS
+Tablet sends scan request → server runs nmap → returns open services JSON to HUD.
+Network/WS
+Phase 1
+#78
+Gyro tap-tap detection → enter key
+Accelerometer detects double-tap physical surface event via high-pass filter → xdotool key Return.
+Device Physics
+Phase 1
+#79
+Rotation rate threshold → undo
+Gyro detects rapid twist (>200°/s) → xdotool key ctrl+z. Hard to distinguish accidental bumps.
+Device Physics
+Phase 1
+#80
+Free-fall detection → emergency lock
+Accelerometer magnitude < 0.5g for 100ms → instant xset dpms force off + lock. Device safety feature.
+Device Physics
+Phase 1
+#81
+Full air mouse pointer via hand tracking
+MediaPipe Hands: index tip 3D coords → normalized to screen → continuous xdotool mousemove. CPU-saturating loop, high jitter.
+Vision
+Phase 1
+#82
+Air typing keyboard via finger tracking
+10-finger position tracking → virtual keyboard collision detection. Extreme CPU, sub-50% accuracy realistically.
+Vision
+Phase 1
+#83
+Lip reading → text input
+MediaPipe Face Mesh lip landmarks → phoneme classifier → text. State-of-the-art models still <80% accuracy.
+Vision
+Phase 1
+#84
+Emotion detection → adaptive UI
+Facial AU classifier → detects stress/focus/boredom → adjusts HUD theme. High CPU, ethically complex.
+Vision
+Phase 1
+#85
+Full-body skeleton macro control
+MediaPipe Pose 33-landmark full skeleton → pose library matching. 300ms+ latency, heavy CPU.
+Vision
+Phase 1
+#86
+Eye-only mouse cursor (no calibration)
+Iris tracking for fine mouse control without calibration is extremely inaccurate without eye tracker hardware.
+Vision
+Phase 1
+#87
+Real-time OCR of real-world documents
+Rear cam → tesseract OCR in real time → parse structured data. CPU-heavy, highly sensitive to lighting.
+Vision
+Phase 1
+#88
+Depth estimation from monocular camera
+MiDaS monocular depth → used for gesture depth gating. Requires GPU-class inference, unusable on Tab CPU.
+Vision
+Phase 1
+#89
+3D room mapping via camera sweep
+ORB-SLAM or similar via rear cam → map room layout. Computationally absurd for this hardware.
+Vision
+Phase 1
+#90
+Speaker diarization → per-person commands
+Real-time speaker ID + command routing. pyannote.audio requires significant RAM and compute.
+Voice
+Phase 1
+#91
+Continuous emotion from voice tone
+Prosody analysis every 500ms → maps to mood → adapts interface. Latency + accuracy make it impractical.
+Voice
+Phase 1
+#92
+Musical note vocalization → MIDI control
+Mic pitch detection → MIDI CC → DAW control. Hilarious in practice, requires perfect pitch vocalization.
+Acoustic
+Phase 1
+#93
+Heartbeat detection via front camera
+rPPG (remote PPG) from face color micro-variations. Requires ideal lighting, prone to noise.
+Vision
+Phase 1
+#94
+Stress level biometric HUD
+Combines rPPG + facial AU + voice tone into stress score. Three unreliable inputs compounded.
+Vision
+Phase 1
+#95
+Hand geometry biometric unlock
+Rear cam hand silhouette ratio comparison → authentication. Too many false positives for security use.
+Vision
+Phase 1
+#96
+Subliminal sound frequency control
+Mic detects 18-20kHz ultrasonic tones as control signals. Android mic hardware typically rolls off above 16kHz.
+Acoustic
+Phase 1
+#97
+Ambient soundscape classification
+Audio CNN classifies room environment (cafe, office, home) in real time → adjusts profile. 200ms+ inference.
+Acoustic
+Phase 1
+#98
+Crowd density estimation via rear cam
+YOLO person detection → density map. Only useful in unusual HUD deployments, heavy CPU.
+Vision
+Phase 1
+#99
+Gait recognition for user ID
+MediaPipe Pose gait cycle analysis → person identity from walk pattern. Computationally extreme.
+Vision
+Phase 1
+#100
+Neural style transfer for UI theming
+Apply artistic style transfer to UI screenshots in real-time. GPU-only, completely impractical on Tab.
+Vision
+Phase 1
+#101
+Vol-up triple hold → emergency SOS WS broadcast
+3s hold on vol-up → Node.js broadcasts SOS JSON to all WS clients on LAN. Instant hardware-based alert.
+Hardware Keys
+Phase 2
+#102
+Vol-down triple hold → start screen recorder
+ffmpeg -f x11grab launched via WS command on 3s vol-down hold. Zero camera, pure hardware trigger.
+Hardware Keys
+Phase 2
+#103
+Power double-tap → toggle do-not-disturb
+Rapid power presses → dunstctl set-paused toggle. Silences all Ubuntu notifications instantly.
+Hardware Keys
+Phase 2
+#104
+Vol-up then vol-down rapid sequence → toggle Wi-Fi
+Alternating button pattern → nmcli radio wifi toggle on host. Morse-code-like physical input.
+Hardware Keys
+Phase 2
+#105
+Vol-down then vol-up → toggle Bluetooth on host
+Paired alternate press → rfkill toggle bluetooth. Pure hardware, zero camera.
+Hardware Keys
+Phase 2
+#106
+Power 5-tap → safe shutdown sequence
+Five rapid power taps → sends shutdown -h +1 with cancelable WS confirmation window on HUD.
+Hardware Keys
+Phase 2
+#107
+Vol chord held 10s → factory reset confirmation UI
+Sustained chord triggers HUD overlay asking for second physical confirmation before wipe. Safety interlock.
+Hardware Keys
+Phase 2
+#108
+Vol-up hold at boot → recovery mode menu
+Physical key state read at app startup → displays HUD recovery menu (clear cache, reset prefs, etc.).
+Hardware Keys
+Phase 2
+#109
+Button sequence as morse code input
+Vol-up = dot, vol-down = dash, power = space. Buffer decoded to ASCII → WS types to host. Slow but 100% offline.
+Hardware Keys
+Phase 2
+#110
+Button rhythm pattern → scene activation
+Custom tap rhythm (long-short-long) → maps to scene ID → WS activates KDE/GNOME activity. Rhythmic macro.
+Hardware Keys
+Phase 2
+#111
+WS command: focus window by partial title
+Tablet sends {cmd:'focus', title:'Firefox'} → wmctrl -a. Lets HUD act as window switcher.
+Network/WS
+Phase 2
+#112
+WS command: move window to coordinates
+wmctrl -r :ACTIVE: -e 0,x,y,w,h piped from WS payload. Full remote window manager.
+Network/WS
+Phase 2
+#113
+WS command: take named screenshot + push to HUD
+scrot /tmp/snap.png → base64 → WS → HUD img element. Live screen preview on tablet.
+Network/WS
+Phase 2
+#114
+WS file transfer: host → tablet
+Host reads file → base64 chunks over WS → tablet reassembles Blob → offers download. LAN file share.
+Network/WS
+Phase 2
+#115
+WS file transfer: tablet → host
+Reverse direction. Tablet sends FileReader chunks → host Node.js writes to ~/Downloads/. Bidirectional.
+Network/WS
+Phase 2
+#116
+LAN mDNS service discovery display
+avahi-browse -a on host → JSON over WS → HUD shows all LAN services (Plex, printers, NAS). Network map.
+Network/WS
+Phase 2
+#117
+Running process list on HUD
+ps aux --sort=-%cpu | head -20 → JSON over WS every 5s → live process table on tablet.
+Network/WS
+Phase 2
+#118
+Kill process by WS command
+Tablet sends {cmd:'kill', pid:1234} → server runs kill -9 PID. Remote task manager from HUD.
+Network/WS
+Phase 2
+#119
+Disk usage tree pushed to HUD
+du -sh /* → JSON → rendered as treemap on tablet. Storage overview without touching host.
+Network/WS
+Phase 2
+#120
+WS-based alarm scheduler
+Tablet sends {cmd:'alarm', time:'09:30', msg:'standup'} → host cron job → plays TTS + notify at scheduled time.
+Network/WS
+Phase 2
+#121
+Specific alarm clock sound detection → auto-dismiss
+Web Audio FFT fingerprints a known alarm tone frequency pattern → auto-sends dismiss keypress to host.
+Acoustic
+Phase 2
+#122
+Phone ringtone detection → put host in DND mode
+Classify incoming ring frequency signature → dunstctl pause + notify on HUD. Acoustic awareness.
+Acoustic
+Phase 2
+#123
+Door knock detection → log visitor event
+Mic detects low-freq impact pair (80-400Hz) → logs timestamp + plays doorbell chime via host speaker.
+Acoustic
+Phase 2
+#124
+Appliance sound monitoring (smoke alarm)
+FFT matches 3kHz pulsed tone of smoke detector → emergency WS broadcast to all LAN clients.
+Acoustic
+Phase 2
+#125
+Glass break detection → security alert
+Broadband transient with specific spectral flatness → fires security alert WS event + optional siren via host.
+Acoustic
+Phase 2
+#126
+Background music BPM detection → sync HUD animations
+Web Audio beat tracker → sends current BPM over WS → HUD CSS animation speed synced to music.
+Acoustic
+Phase 2
+#127
+Room reverb estimation → meeting mode toggle
+Mic captures impulse (clap) → estimates RT60 reverb time → if large room detected, bumps mic gain.
+Acoustic
+Phase 2
+#128
+Voice stress level proxy → break reminder
+Pitch variance + jitter in voice increases under stress → after 30 min of high variance, suggests break.
+Acoustic
+Phase 2
+#129
+Acoustic echo map of room
+Speaker plays chirp → mic captures reflections → estimates room geometry. Fascinating but computationally heavy.
+Acoustic
+Phase 2
+#130
+Continuous ambient audio fingerprint logging
+Chromaprint-style audio hash every 10s → logs environment signatures. Heavy I/O + privacy concerns.
+Acoustic
+Phase 2
+#131
+Face count → meeting HUD mode
+MediaPipe Face Detection count > 1 → switches HUD to presentation mode (bigger text, hides private info).
+Vision
+Phase 2
+#132
+Face center tracking → mouse nudge
+Face centroid X normalized to screen width → nudges mouse cursor toward gaze region. Soft attractor.
+Vision
+Phase 2
+#133
+Hat/cap detection → casual mode
+Person landmark: head region crop → binary hat classifier → switches to casual notification profile.
+Vision
+Phase 2
+#134
+Micro-expression rapid blink rate monitor
+EAR calculated per-frame → if blink rate drops <8/min for 20min → eye strain alert with break prompt.
+Vision
+Phase 2
+#135
+Attention zone heatmap → focus score
+Gaze zone sampling over 5 min → generates focus score (% time on screen) → displayed on HUD.
+Vision
+Phase 2
+#136
+Look-away timer → Pomodoro assist
+Face not detected for 20s during focus session → pauses Pomodoro timer. Keeps honest time tracking.
+Vision
+Phase 2
+#137
+Head turn left → tab switch left
+MediaPipe Face Mesh yaw angle < -20° → xdotool key ctrl+shift+Tab. Natural browsing gesture.
+Vision
+Phase 2
+#138
+Head turn right → tab switch right
+Yaw > +20° → xdotool key ctrl+Tab. Paired with head-turn-left.
+Vision
+Phase 2
+#139
+Eyebrow raise → open spotlight/launcher
+MediaPipe: AU1+AU2 (inner+outer brow raise) → xdotool key super. Launcher trigger without hands.
+Vision
+Phase 2
+#140
+Sustained frown detection → ambient music trigger
+AU4 corrugator activation sustained 3s → playerctl play ambient playlist. Stress-responsive automation.
+Vision
+Phase 2
+#141
+Document scan → OCR → paste to host
+Rear cam captures flat document → perspective correct → tesseract → xdotool type result. Powerful scan-to-type.
+Vision
+Phase 2
+#142
+Plant health monitor
+Rear cam crops plant region → hue histogram → yellowing detection → sends care reminder over WS.
+Vision
+Phase 2
+#143
+Item counter on surface
+YOLO-nano counts specific objects on desk (books, cups) → logs inventory over time to HUD.
+Vision
+Phase 2
+#144
+Color temperature of room light → warm/cool alert
+Rear cam white balance estimation → if below 3000K push warm-light alert (good for eyes).
+Vision
+Phase 2
+#145
+Printout QR code as macro trigger
+Rear cam scans printed QR code at desk → maps QR payload to macro. Physical macro buttons from paper.
+Vision
+Phase 2
+#146
+ArUco marker detection → AR overlay trigger
+Rear cam detects ArUco marker → sends marker ID + pose over WS → host overlays info on HUD.
+Vision
+Phase 2
+#147
+Book spine OCR → Goodreads lookup
+Rear cam captures bookshelf → tesseract extracts title → host fetches Goodreads rating via curl.
+Vision
+Phase 2
+#148
+Whiteboard capture → clean image push
+Rear cam captures whiteboard → adaptive threshold + perspective correct → pushes PNG to host ~/Desktop.
+Vision
+Phase 2
+#149
+Light on/off detection → automate workflow
+Rear cam luma mean crosses dark/bright threshold → triggers 'lights on' or 'lights off' WS event.
+Vision
+Phase 2
+#150
+Motion zone alarm via rear cam
+Frame differencing in defined ROI → if object moves in 'restricted zone' → alert WS event. Security mode.
+Vision
+Phase 2
+#151
+Tap surface once → keyboard shortcut 1
+Accelerometer 1 impact (15-30ms) → xdotool key ctrl+c. Single tap = copy. Tactile desk interaction.
+Device Physics
+Phase 2
+#152
+Tap surface twice → keyboard shortcut 2
+Two impacts < 300ms apart → xdotool key ctrl+v. Double tap = paste.
+Device Physics
+Phase 2
+#153
+Three taps → keyboard shortcut 3
+Triple impact burst → xdotool key ctrl+z. Three taps = undo.
+Device Physics
+Phase 2
+#154
+Long hold tap → right-click context menu
+Single impact held vibration (pressure proxy via sustained z-variance) → xdotool click 3.
+Device Physics
+Phase 2
+#155
+Spinning tablet on surface → app carousel
+Gyro Z-axis sustained rotation → cycles through running app list via wmctrl. Fun, low false positives.
+Device Physics
+Phase 2
+#156
+Vigorous shake → panic kill all terminals
+High-magnitude sustained shake (>4g, >500ms) → killall gnome-terminal xterm. Emergency quit.
+Device Physics
+Phase 2
+#157
+Tilt forward (toward user) → scroll to top
+Pitch angle drops below -15° sustained 300ms → xdotool key ctrl+Home.
+Device Physics
+Phase 2
+#158
+Tilt back → scroll to bottom
+Pitch > +15° sustained → xdotool key ctrl+End. Paired with tilt-forward.
+Device Physics
+Phase 2
+#159
+Circular tilt motion → window resize
+Gyro traces circular path → maps radius to window size delta → wmctrl resize. Experimental.
+Device Physics
+Phase 2
+#160
+Micro-vibration pattern logger
+Accelerometer logs vibration signature of desk (fans, HDD spin) → anomaly detection if pattern changes.
+Device Physics
+Phase 2
+#161
+TTS readback of active window title
+wmctrl active title → Piper TTS → aplay. Auditory feedback when window changes.
+Voice
+Phase 2
+#162
+TTS clock announcement every hour
+Cron job → date string → Piper TTS → aplay. Time awareness without looking.
+Voice
+Phase 2
+#163
+Voice macro recording mode
+Say 'synapse record' → every subsequent voice command is stored as a named macro sequence. Meta-command.
+Voice
+Phase 2
+#164
+Voice-controlled SSH session
+'Synapse ssh pi' → Whisper parses host name → xterm -e ssh [host] launched on Ubuntu. Hands-free remote.
+Voice
+Phase 2
+#165
+Voice-triggered file search
+'Synapse find invoice' → locate invoice → results JSON over WS → HUD file list. Instant lookup.
+Voice
+Phase 2
+#166
+Voice note → append to daily journal
+Whisper transcription → appended with timestamp to ~/journal/YYYY-MM-DD.md. Frictionless logging.
+Voice
+Phase 2
+#167
+Hotword confidence threshold tuning HUD
+HUD slider (sent via hardware buttons) adjusts SpeechRecognition confidence threshold live. Self-calibrating.
+Voice
+Phase 2
+#168
+Per-app voice command profiles
+wmctrl active window → switches Whisper command grammar → 'synapse compile' in VS Code vs 'synapse send' in email.
+Voice
+Phase 2
+#169
+Voice to shell pipeline
+'Synapse run: ls -la /home' → Whisper → Electron executes trusted shell command → result displayed on HUD.
+Voice
+Phase 2
+#170
+Multilingual hotword switching
+Detect spoken language via Whisper language ID → switches interface language + TTS voice. Complex config.
+Voice
+Phase 2
+#171
+Auto-hide sensitive info on face absence
+MediaPipe: face not detected → HUD blurs/hides password fields and private data. Privacy screen.
+Vision
+Phase 2
+#172
+HUD widget layout saved per orientation
+Gyro detects landscape vs portrait → loads different widget layout JSON from localStorage. Adaptive HUD.
+Device Physics
+Phase 2
+#173
+WS-pushed calendar event overlay
+Host cron checks gcalcli or calcurse → upcoming events JSON over WS → HUD shows next 3 events.
+Network/WS
+Phase 2
+#174
+Live terminal output widget
+tail -f /var/log/syslog | WS stream → HUD renders live log tail. System monitoring at a glance.
+Network/WS
+Phase 2
+#175
+Git status widget
+git status --short in watched repo → JSON over WS → HUD shows modified/untracked file count.
+Network/WS
+Phase 2
+#176
+Docker container status HUD
+docker ps --format json polled every 10s → WS → HUD shows running containers, uptime, port map.
+Network/WS
+Phase 2
+#177
+Weather widget via curl wttr.in
+curl wttr.in/?format=j1 on server every 30min → JSON cached → WS pushed to HUD weather card.
+Network/WS
+Phase 2
+#178
+Pomodoro timer driven by HUD + physical keys
+Vol-up starts 25min timer, vol-down pauses, power skip. Piper TTS announces breaks. Full Pomodoro cycle.
+Hardware Keys
+Phase 2
+#179
+Focus mode: dims non-primary windows on HUD
+wmctrl lists windows → all except active get 0.4 opacity via xprop → snaps back on switch.
+Network/WS
+Phase 2
+#180
+Idle time tracker pushed to HUD
+xprintidle polled every minute → accumulated idle vs active time → daily productivity bar on HUD.
+Network/WS
+Phase 2
+#181
+Luma-based screen privacy filter
+Front cam detects second face → instantly enables xrandr privacy mode (reduced brightness + angle simulation).
+Vision
+Phase 2
+#182
+WS session encryption (WSS)
+Node.js upgraded to wss:// with self-signed cert → all WS traffic TLS-encrypted on LAN. Security baseline.
+Network/WS
+Phase 2
+#183
+MAC address allowlist for WS connections
+Server checks client IP → arp-scan maps to MAC → rejects unknown devices. LAN access control.
+Network/WS
+Phase 2
+#184
+Inactivity auto-lock with grace countdown
+xprintidle > 300000ms → HUD shows 10s countdown → if no button press → xset dpms force off + lock.
+Device Physics
+Phase 2
+#185
+Microphone always-off mode with LED indicator
+HUD toggle (via vol buttons) → amixer set Capture nocap → HUD shows red mic icon. Privacy assurance.
+Hardware Keys
+Phase 2
+#186
+Camera hardware disable flag
+Vol chord → sets camera: false in app config → getUserMedia returns null. Software camera kill switch.
+Hardware Keys
+Phase 2
+#187
+WS command audit log
+Every command received logged with timestamp, source IP, payload to ~/synapse_audit.log. Security trail.
+Network/WS
+Phase 2
+#188
+Anomalous command rate limiter
+Node.js: if >20 WS commands in 5s from one IP → auto-disconnect + notify-send. Anti-replay protection.
+Network/WS
+Phase 2
+#189
+Face-spoofing liveness check
+Front cam: requires blink + head turn before unlocking. Liveness = anti-photo-spoof.
+Vision
+Phase 2
+#190
+Network traffic anomaly HUD alert
+Monitor /proc/net/dev for sudden bandwidth spike → alert if > 10MB/s unexpected → WS warning.
+Network/WS
+Phase 2
+#191
+Time-of-day adaptive HUD theme
+Node.js compares current hour → morning/afternoon/evening/night JSON config → HUD re-themes automatically.
+Network/WS
+Phase 2
+#192
+Sunrise/sunset screen color temp shift
+curl sunrise-sunset.org API → at sunset xrandr --gamma 1.0:0.85:0.7. Blue light reduction.
+Network/WS
+Phase 2
+#193
+Fan noise estimation → focus mode toggle
+Mic background noise floor measured → if sustained HVAC band detected → auto-enable noise suppression on mic.
+Acoustic
+Phase 2
+#194
+Power outage detection → graceful shutdown
+UPS or battery event via upower → if discharging and < 10% → saves all open docs + initiates shutdown.
+Network/WS
+Phase 2
+#195
+Screen content categorizer → break enforcement
+scrot thumbnail every 5min → host-side tflite category inference → if 'social media' label → 10min block.
+Vision
+Phase 2
+#196
+Periodic posture photo + log
+Front cam captures frame every 30min → saves to ~/posture_log/ for manual review. Low-tech, effective.
+Vision
+Phase 2
+#197
+Desk temperature estimate from camera drift
+Long-exposure luma drift in front cam → correlates with ambient temp change. Highly experimental proxy.
+Vision
+Phase 2
+#198
+Multi-HUD mesh: two tablets as extended display
+Two SM-T515 units both on WS server → each receives different widget region → extended HUD dashboard.
+Network/WS
+Phase 2
+#199
+Self-diagnostics report on WS connect
+On new WS connection, server auto-sends: CPU load, free RAM, disk %, open ports, git hash of server app.
+Network/WS
+Phase 2
+#200
+SYNAPSE_OS watchdog process
+systemd service monitors Node.js server + MediaPipe loop PIDs → auto-restarts crashed components. OS-level reliability.
+Network/WS
+Phase 2
