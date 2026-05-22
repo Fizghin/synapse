@@ -798,13 +798,14 @@ app.whenReady().then(() => {
             startSubtitles(uiLog);
             break;
 
-          // ── 500-FEATURE GENERIC HANDLER ──
           case 'feature': {
             const fId = msg.feature;
             const payload = msg.payload || {};
             const cmdStr = payload.command || '';
+            const featObj = clientFeatures.find(f => f.id === fId);
+            const name = featObj ? featObj.name : (msg.name || `Feature #${fId}`);
             // Execute locally or via ADB, passing ws to send acknowledgement back
-            executeFeatureAction(fId, cmdStr, msg.name || `Feature #${fId}`, 'Tablet', ws);
+            executeFeatureAction(fId, cmdStr, name, 'Tablet', ws);
             break;
           }
 

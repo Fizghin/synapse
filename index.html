@@ -63,6 +63,9 @@ body{background:var(--bg);font-family:var(--sans);color:var(--t1);display:flex;f
 .hw-detail{font-family:var(--sans);font-size:11px;color:var(--t3);margin-top:6px}
 .ip-input{background:rgba(0,0,0,.2);border:1px solid var(--bdr);border-radius:8px;color:var(--t1);font-family:var(--sans);font-size:11px;padding:6px 10px;width:100%;margin-top:8px;outline:none;transition:.2s}
 .ip-input:focus{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(99,102,241,.15)}
+.btn{background:var(--cyan);border:none;border-radius:8px;color:var(--t1);font-family:var(--sans);font-size:11px;font-weight:600;padding:6px 12px;cursor:pointer;transition:.2s;outline:none}
+.btn:hover{filter:brightness(1.15)}
+.btn:active{filter:brightness(0.9)}
 
 /* Terminal */
 .term-wrap{flex:1;display:flex;flex-direction:column;overflow:hidden;padding:12px}
@@ -161,6 +164,7 @@ body{background:var(--bg);font-family:var(--sans);color:var(--t1);display:flex;f
           <div class="hw-row"><div class="sd wait" id="hw-tab-dot"></div><span id="hw-tab-status">Detecting</span></div>
           <div class="hw-detail" id="hw-tab-detail">Scanning USB & WiFi...</div>
           <input type="text" id="tablet-ip-input" class="ip-input" placeholder="Tablet IP" />
+          <button id="btn-scrcpy" class="btn" style="margin-top:8px; width:100%;">START MIRROR (SCRCPY)</button>
         </div>
         <div class="hw">
           <div class="hw-name">PS4 Slim</div>
@@ -325,6 +329,7 @@ ipcRenderer.on('telemetry-update',(e,{vehicle,speed,gear,rpm})=>{appendLog(`[TEL
 ipcRenderer.on('subtitle',(e,text)=>{appendLog(`[SUB] ${text}`,'SYS')});
 
 document.getElementById('tablet-ip-input').addEventListener('change',e=>{const ip=e.target.value.trim();if(ip)ipcRenderer.send('update-ip',ip)});
+document.getElementById('btn-scrcpy').addEventListener('click',()=>{ipcRenderer.send('start-scrcpy')});
 document.getElementById('feat-search').addEventListener('input',e=>{renderFeatures(allFeatures,e.target.value)});
 
 appendLog('SYNAPSE_OS v5.0 — Control Panel initialized.','SYS');
