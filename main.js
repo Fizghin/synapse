@@ -830,7 +830,8 @@ app.whenReady().then(() => {
         case 1: safeExec(`${getAdbCmd()} shell am start -a android.settings.SETTINGS`); uiLog('Settings launched.', 'SYS'); break;
         case 2: {
           if (scrcpyProc) { scrcpyProc.kill(); scrcpyProc = null; }
-          scrcpyProc = safeSpawn('scrcpy', ['-d', '--window-title=SYNAPSE MIRROR', '--video-codec=h264', '--video-bit-rate=8M', '--max-fps=60', '--display-buffer=0', '--audio-buffer=50', '--render-driver=opengl', '--stay-awake', '--power-off-on-close', '--shortcut-mod=lalt', '--no-key-repeat']);
+          const args = adbSerial ? ['-s', adbSerial, '--window-title=SYNAPSE MIRROR', '--bit-rate=8M', '--max-fps=60', '--display-buffer=0', '--render-driver=opengl', '--stay-awake', '--power-off-on-close', '--shortcut-mod=lalt', '--no-key-repeat'] : ['-d', '--window-title=SYNAPSE MIRROR', '--bit-rate=8M', '--max-fps=60', '--display-buffer=0', '--render-driver=opengl', '--stay-awake', '--power-off-on-close', '--shortcut-mod=lalt', '--no-key-repeat'];
+          scrcpyProc = safeSpawn('scrcpy', args);
           if (scrcpyProc) { scrcpyProc.stderr.on('data', d => uiLog(`[SCRCPY] ${d.toString().trim()}`, 'LOG')); scrcpyProc.on('close', c => { scrcpyProc = null; }); }
           uiLog('Mirror: h264 HW | 8Mbps | 60fps | 0ms buf', 'SYS'); break;
         }
@@ -902,9 +903,10 @@ app.whenReady().then(() => {
         case 33: { const lp = path.join(os.homedir(), 'Desktop', `synapse_audit_${Date.now()}.json`); fs.writeFileSync(lp, JSON.stringify(auditLog, null, 2)); uiLog(`[AUDIT] ${auditLog.length} entries → ${lp}`, 'SYS'); break; }
         case 45: {
           if (scrcpyProc) { scrcpyProc.kill(); scrcpyProc = null; }
-          scrcpyProc = safeSpawn('scrcpy', ['-d', '--window-title=SYNAPSE [H.265]', '--video-codec=h265', '--video-bit-rate=12M', '--max-fps=60', '--display-buffer=0', '--stay-awake']);
+          const args = adbSerial ? ['-s', adbSerial, '--window-title=SYNAPSE [H.264]', '--bit-rate=12M', '--max-fps=60', '--display-buffer=0', '--stay-awake'] : ['-d', '--window-title=SYNAPSE [H.264]', '--bit-rate=12M', '--max-fps=60', '--display-buffer=0', '--stay-awake'];
+          scrcpyProc = safeSpawn('scrcpy', args);
           if (scrcpyProc) scrcpyProc.on('close', () => { scrcpyProc = null; });
-          uiLog('H.265 HEVC active | 12Mbps', 'SYS'); break;
+          uiLog('H.264 high active | 12Mbps', 'SYS'); break;
         }
         case 53: { const s = Date.now(); safeExec(`${getAdbCmd()} shell echo PONG`, () => uiLog(`[BENCH] ADB: ${Date.now() - s}ms | Enc:${encryptionEnabled} | pass/drop:${passCount}/${dropCount}`, 'LOG')); break; }
         case 65: safeExec(`${getAdbCmd()} shell cmd vibrator_manager vibrate -d 0 oneshot 500`, e => { if (e) safeExec(`${getAdbCmd()} shell service call vibrator 2 i32 500`); }); break;
