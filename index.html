@@ -170,6 +170,11 @@ body{background:var(--bg);font-family:var(--sans);color:var(--t1);display:flex;f
           <div class="hw-name">PS4 Slim</div>
           <div class="hw-row"><div class="sd wait" id="hw-ps4-dot"></div><span id="hw-ps4-status">Standby</span></div>
           <div class="hw-detail" id="hw-ps4-detail">UDP :987</div>
+          <div style="display:flex; gap:6px; margin-top:8px;">
+            <button id="btn-ps4-wake" class="btn" style="flex:1;">WAKE</button>
+            <button id="btn-ps4-sleep" class="btn" style="flex:1; background:var(--red);">SLEEP</button>
+            <button id="btn-ps4-cinema" class="btn" style="flex:1; background:var(--purple);">CINEMA</button>
+          </div>
         </div>
       </div>
     </div>
@@ -330,6 +335,9 @@ ipcRenderer.on('subtitle',(e,text)=>{appendLog(`[SUB] ${text}`,'SYS')});
 
 document.getElementById('tablet-ip-input').addEventListener('change',e=>{const ip=e.target.value.trim();if(ip)ipcRenderer.send('update-ip',ip)});
 document.getElementById('btn-scrcpy').addEventListener('click',()=>{ipcRenderer.send('start-scrcpy')});
+document.getElementById('btn-ps4-wake').addEventListener('click',()=>{ipcRenderer.send('ps4-control','wake')});
+document.getElementById('btn-ps4-sleep').addEventListener('click',()=>{ipcRenderer.send('ps4-control','sleep')});
+document.getElementById('btn-ps4-cinema').addEventListener('click',()=>{ipcRenderer.send('ps4-control','cinema')});
 document.getElementById('feat-search').addEventListener('input',e=>{renderFeatures(allFeatures,e.target.value)});
 
 appendLog('SYNAPSE_OS v5.0 — Control Panel initialized.','SYS');

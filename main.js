@@ -941,6 +941,21 @@ app.whenReady().then(() => {
   });
 
   ipcMain.on('start-scrcpy', () => ipcMain.emit('fire-feature', null, 2));
+
+  ipcMain.on('ps4-control', (e, action) => {
+    if (action === 'wake') {
+      ps4.turnOn().then(() => uiLog('[PS4] Wake signal sent.', 'SYS')).catch(err => uiLog(`[PS4] Wake error: ${err.message}`, 'ERR'));
+    } else if (action === 'sleep') {
+      ps4.turnOff().then(() => uiLog('[PS4] Sleep signal sent.', 'SYS')).catch(err => uiLog(`[PS4] Sleep error: ${err.message}`, 'ERR'));
+    } else if (action === 'cinema') {
+      ps4.turnOn().then(() => {
+        uiLog('[PS4] Cinema Mode: Waking...', 'SYS');
+        setTimeout(() => {
+          ps4.startTitle('CUSA00129').then(() => uiLog('[PS4] Cinema Mode: Netflix launched.', 'SYS')).catch(e => {});
+        }, 15000);
+      }).catch(err => uiLog(`[PS4] Cinema Mode error: ${err.message}`, 'ERR'));
+    }
+  });
 });
 
 app.on('before-quit', () => {
