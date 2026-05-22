@@ -122,7 +122,7 @@ const featInterval = setInterval(() => {
 // 4. Integrity check (every 15s)
 // Checks ADB connection, reverse status, and server memory footprint
 const integrityInterval = setInterval(() => {
-  exec('adb reverse --list', (err, stdout) => {
+  exec('adb -d reverse --list', (err, stdout) => {
     if (err) {
       log(`ADB command error: ${err.message}`, 'WARN');
       stats.errorsCount++;
@@ -131,7 +131,7 @@ const integrityInterval = setInterval(() => {
     const hasReverse = stdout.includes('8085');
     if (!hasReverse) {
       log('ADB Reverse Tunnel check: MISSING! Attempting recovery...', 'ERR');
-      exec('adb reverse tcp:8085 tcp:8085', (reErr) => {
+      exec('adb -d reverse tcp:8085 tcp:8085', (reErr) => {
         if (reErr) {
           log(`Recovery of ADB reverse failed: ${reErr.message}`, 'ERR');
           stats.errorsCount++;

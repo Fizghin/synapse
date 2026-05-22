@@ -7,6 +7,9 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const WebSocket = require('ws');
+const { Device } = require('ps4-waker');
+
+const ps4 = new Device({});
 
 app.disableHardwareAcceleration();
 app.commandLine.appendSwitch('disable-gpu');
@@ -389,6 +392,23 @@ app.whenReady().then(() => {
   // Periodic ADB re-detection (every 10s) — auto-switches USB↔WiFi
   setInterval(() => detectAdbConnection(uiLog), 10000);
 
+  // PS4 Polling
+  let lastPs4Status = null;
+  setInterval(async () => {
+    try {
+        const status = await ps4.getDeviceStatus();
+        if (!lastPs4Status || lastPs4Status.status !== status.status || lastPs4Status.runningAppTitleId !== status.runningAppTitleId) {
+            lastPs4Status = status;
+            if (mainWindow) mainWindow.webContents.send('hw-status', { device: 'ps4', status: status.status, detail: status.runningAppTitleName });
+        }
+    } catch (err) {
+        if (!lastPs4Status || lastPs4Status.status !== 'Offline') {
+            lastPs4Status = { status: 'Offline' };
+            if (mainWindow) mainWindow.webContents.send('hw-status', { device: 'ps4', status: 'Offline' });
+        }
+    }
+  }, 5000);
+
   try { fs.writeFileSync(path.join(app.getPath('userData'), 'synapse_aes256.key'), ENC_KEY); } catch { }
 
   // ─── FRAMELESS WINDOW CONTROLS ───
@@ -411,6 +431,134 @@ app.whenReady().then(() => {
     uiLog(`[CONFIG] Tablet IP updated to ${newIp}`, 'SYS');
   });
 
+  const executeFeatureAction = (fId, cmdStr, name, source, ws = null) => {
+    uiLog(`[FEATURE] Execute request: ${fId} (${cmdStr}) from ${source}`, 'SYS');
+    
+    let sysCmd = null;
+    let isAdb = false;
+    let adbCmd = null;
+    
+    const n = (name || '').toLowerCase();
+    const c = (cmdStr || '').toLowerCase();
+    
+    // Check if it's an ADB command targeting the tablet
+    if (c.includes('adb_') || c.includes('tablet_') || c.includes('mobile_') || n.includes('tablet') || n.includes('phone') || n.includes('android')) {
+      isAdb = true;
+      if (n.includes('lock') || n.includes('sleep') || n.includes('power')) {
+        adbCmd = 'shell input keyevent 26';
+      } else if (n.includes('wake') || n.includes('unlock') || n.includes('woken')) {
+        adbCmd = 'shell input keyevent 224';
+      } else if (n.includes('home')) {
+        adbCmd = 'shell input keyevent 3';
+      } else if (n.includes('back')) {
+        adbCmd = 'shell input keyevent 4';
+      } else if (n.includes('volume-up') || n.includes('volume up') || n.includes('vol up') || n.includes('vol_up')) {
+        adbCmd = 'shell input keyevent 24';
+      } else if (n.includes('volume-down') || n.includes('volume down') || n.includes('vol down') || n.includes('vol_down')) {
+        adbCmd = 'shell input keyevent 25';
+      } else if (n.includes('settings')) {
+        adbCmd = 'shell am start -a android.settings.SETTINGS';
+      } else {
+        adbCmd = 'shell input keyevent 224';
+      }
+    } else {
+      // Local Host system level command
+      const cmdMap = {
+        'EXEC_TOUCHLESS_001': 'loginctl lock-session',
+        'EXEC_TOUCHLESS_002': 'xdotool key Page_Up',
+        'EXEC_TOUCHLESS_003': 'xdotool key Page_Down',
+        'EXEC_TOUCHLESS_004': 'amixer set Master 5%+',
+        'EXEC_TOUCHLESS_005': 'amixer set Master 5%-',
+        'EXEC_TOUCHLESS_006': 'playerctl next',
+        'EXEC_TOUCHLESS_007': 'playerctl previous',
+        'EXEC_TOUCHLESS_008': 'xdotool key Page_Up',
+        'EXEC_TOUCHLESS_009': 'xdotool key Page_Down',
+        'EXEC_TOUCHLESS_010': 'playerctl play-pause',
+        'EXEC_TOUCHLESS_020': 'amixer set Master toggle',
+        'EXEC_TOUCHLESS_021': 'xdotool key ctrl+alt+Left',
+        'EXEC_TOUCHLESS_022': 'xdotool key ctrl+alt+Right',
+        'EXEC_TOUCHLESS_034': 'xdg-open "https://google.com"',
+        'EXEC_TOUCHLESS_035': 'xdotool key alt+F4',
+        'EXEC_TOUCHLESS_036': 'xdotool type "Hello from Synapse!"',
+        'EXEC_TOUCHLESS_037': 'xdotool mousemove 500 500',
+        'EXEC_TOUCHLESS_038': 'xdotool click 1',
+        'EXEC_TOUCHLESS_039': 'xdotool click 3',
+        'EXEC_TOUCHLESS_040': 'xdotool click 4',
+        'EXEC_TOUCHLESS_111': 'wmctrl -a Firefox || xdg-open "https://github.com"',
+        'EXEC_TOUCHLESS_113': 'scrot ~/Desktop/Capture_$(date +%s).png',
+        'EXEC_TOUCHLESS_118': 'killall -9 gnome-terminal-server',
+        'EXEC_TOUCHLESS_151': 'xdotool key ctrl+c',
+        'EXEC_TOUCHLESS_152': 'xdotool key ctrl+v',
+        'EXEC_TOUCHLESS_153': 'xdotool key ctrl+z'
+      };
+
+      if (cmdMap[cmdStr]) {
+        sysCmd = cmdMap[cmdStr];
+      } else if (n.includes('lock') || n.includes('sleep') || n.includes('suspend')) {
+        sysCmd = 'loginctl lock-session || xdg-screensaver lock || gnome-screensaver-command -l || true';
+      } else if (n.includes('screenshot') || n.includes('capture') || n.includes('screencap')) {
+        sysCmd = 'scrot ~/Desktop/Capture_$(date +%s).png || gnome-screenshot -f ~/Desktop/Capture_$(date +%s).png || true';
+      } else if (n.includes('volume-up') || n.includes('volume up') || n.includes('vol up') || n.includes('raise volume') || n.includes('increase volume')) {
+        sysCmd = 'amixer set Master 5%+ || amixer set Master 2%+';
+      } else if (n.includes('volume-down') || n.includes('volume down') || n.includes('vol down') || n.includes('lower volume') || n.includes('decrease volume')) {
+        sysCmd = 'amixer set Master 5%- || amixer set Master 2%-';
+      } else if (n.includes('mute') || n.includes('toggle sound')) {
+        sysCmd = 'amixer set Master toggle';
+      } else if (n.includes('brightness up') || n.includes('increase brightness')) {
+        sysCmd = "xbacklight -inc 10 || xrandr --output $(xrandr --listactivemonitors | awk '{print $4}' | tail -n 1) --brightness 1.1 || true";
+      } else if (n.includes('brightness down') || n.includes('decrease brightness')) {
+        sysCmd = "xbacklight -dec 10 || xrandr --output $(xrandr --listactivemonitors | awk '{print $4}' | tail -n 1) --brightness 0.9 || true";
+      } else if (n.includes('play/pause') || n.includes('play-pause') || n.includes('toggle playback') || n.includes('play or pause')) {
+        sysCmd = 'playerctl play-pause || xdotool key XF86AudioPlay';
+      } else if (n.includes('next track') || n.includes('next song') || n.includes('skip track')) {
+        sysCmd = 'playerctl next || xdotool key XF86AudioNext';
+      } else if (n.includes('prev track') || n.includes('prev song') || n.includes('previous track')) {
+        sysCmd = 'playerctl previous || xdotool key XF86AudioPrev';
+      } else if (n.includes('browser') || n.includes('firefox') || n.includes('chrome') || n.includes('web page')) {
+        sysCmd = 'wmctrl -a Firefox || wmctrl -a Chrome || xdg-open "https://google.com"';
+      } else if (n.includes('show desktop') || n.includes('minimize all') || n.includes('desktop toggle')) {
+        sysCmd = 'xdotool key ctrl+alt+d';
+      } else if (n.includes('page up') || n.includes('scroll up') || n.includes('page-up')) {
+        sysCmd = 'xdotool key Page_Up';
+      } else if (n.includes('page down') || n.includes('scroll down') || n.includes('page-down')) {
+        sysCmd = 'xdotool key Page_Down';
+      } else if (n.includes('undo')) {
+        sysCmd = 'xdotool key ctrl+z';
+      } else if (n.includes('copy')) {
+        sysCmd = 'xdotool key ctrl+c';
+      } else if (n.includes('paste')) {
+        sysCmd = 'xdotool key ctrl+v';
+      } else if (n.includes('open setting') || n.includes('system setting')) {
+        sysCmd = 'gnome-control-center || true';
+      } else if (n.includes('terminal') || n.includes('console')) {
+        sysCmd = 'gnome-terminal || xterm || true';
+      } else if (n.includes('google')) {
+        sysCmd = 'xdg-open "https://google.com"';
+      } else {
+        sysCmd = `echo "[SYNAPSE] Executed: ${name} (${fId})"`;
+      }
+    }
+
+    if (isAdb) {
+      const fullAdb = `${getAdbCmd()} ${adbCmd}`;
+      uiLog(`[ADB CMD] Running: ${fullAdb}`, 'SYS');
+      safeExec(fullAdb, (err) => {
+        const status = err ? 'ACK_ERR' : 'ACK_OK';
+        uiLog(err ? `[ADB CMD] ✗ FAILED: ${err.message}` : `[ADB CMD] ✓ Success`, err ? 'ERR' : 'SYS');
+        if (ws) secureSend(ws, { type: status, id: fId, error: err ? err.message : undefined });
+        if (mainWindow) mainWindow.webContents.send('feature-execution-status', { id: fId, success: !err, message: err ? err.message : 'Success' });
+      });
+    } else {
+      uiLog(`[SYS CMD] Running: ${sysCmd}`, 'SYS');
+      safeExec(sysCmd, (err) => {
+        const status = err ? 'ACK_ERR' : 'ACK_OK';
+        uiLog(err ? `[SYS CMD] ✗ FAILED: ${err.message}` : `[SYS CMD] ✓ Success`, err ? 'ERR' : 'SYS');
+        if (ws) secureSend(ws, { type: status, id: fId, error: err ? err.message : undefined });
+        if (mainWindow) mainWindow.webContents.send('feature-execution-status', { id: fId, success: !err, message: err ? err.message : 'Success' });
+      });
+    }
+  };
+
   // ─── FIRE FEATURE FROM PC DASHBOARD ───
   ipcMain.on('fire-feature-from-ui', (e, feature) => {
     const fId = feature.id;
@@ -420,22 +568,8 @@ app.whenReady().then(() => {
     auditLog.push({ ts: Date.now(), mod: fId, name: feature.name });
     // Forward to connected tablet clients
     broadcastAll({ type: 'EXEC_FEATURE', id: fId, name: feature.name, payload });
-    // Execute locally if it maps to a system command
-    const numId = parseInt(fId);
-    if (!isNaN(numId) && numId >= 1 && numId <= 200) {
-      ipcMain.emit('fire-feature', null, numId);
-    } else if (cmdStr.startsWith('EXEC_')) {
-      const ADB = getAdbCmd();
-      if (cmdStr.includes('ADB_') || cmdStr.includes('TABLET_')) {
-        safeExec(`${ADB} shell input keyevent 0`, (err) => {
-          uiLog(err ? `[CMD] ✗ ${feature.name}: ${err.message}` : `[CMD] ✓ ${feature.name} executed`, err ? 'ERR' : 'SYS');
-        });
-      } else {
-        uiLog(`[CMD] ✓ ${feature.name} → broadcast to clients`, 'SYS');
-      }
-    } else {
-      uiLog(`[CMD] ✓ ${feature.name} → broadcast to clients`, 'SYS');
-    }
+    // Execute locally or via ADB
+    executeFeatureAction(fId, cmdStr, feature.name, 'PC UI');
   });
 
   // ─── SYSTEM TELEMETRY LOOP ───
@@ -638,7 +772,18 @@ app.whenReady().then(() => {
             if (msg.id) ipcMain.emit('fire-feature', null, msg.id);
             break;
           case 'PS4_WAKE':
-            wakePS4(uiLog);
+            ps4.turnOn().catch(e => uiLog(`[PS4] Wake error: ${e.message}`, 'ERR'));
+            break;
+          case 'PS4_SLEEP':
+            ps4.turnOff().catch(e => uiLog(`[PS4] Sleep error: ${e.message}`, 'ERR'));
+            break;
+          case 'PS4_CINEMA_MODE':
+            ps4.turnOn().then(() => {
+                uiLog('[PS4] Waking for Cinema Mode...', 'SYS');
+                setTimeout(() => {
+                    ps4.startTitle('CUSA00129').catch(e => {});
+                }, 15000);
+            }).catch(e => uiLog(`[PS4] Cinema Mode error: ${e.message}`, 'ERR'));
             break;
           case 'DS4_SYNC':
             startDS4Sync(uiLog);
@@ -658,60 +803,8 @@ app.whenReady().then(() => {
             const fId = msg.feature;
             const payload = msg.payload || {};
             const cmdStr = payload.command || '';
-            uiLog(`[FEATURE] Dispatching: ${fId} → ${cmdStr}`, 'LOG');
-            // Route known command prefixes to real subsystem calls
-            if (cmdStr.startsWith('EXEC_')) {
-              // Generic exec — map feature command to ADB/system call
-              const ADB = getAdbCmd();
-              // Subsystem routing based on command naming convention
-              if (cmdStr.includes('ADB_') || cmdStr.includes('TABLET_')) {
-                safeExec(`${getAdbCmd()} shell input keyevent 0`, (e) => {
-                  secureSend(ws, { type: e ? 'ACK_ERR' : 'ACK_OK', id: fId, error: e ? e.message : undefined });
-                });
-              } else {
-                // Execute as a system-level feature
-                let sysCmd = `echo "[SYNAPSE] Feature ${fId} (${cmdStr}) triggered"`;
-                const cmdMap = {
-                  'EXEC_TOUCHLESS_001': 'loginctl lock-session',
-                  'EXEC_TOUCHLESS_002': 'xdotool key Page_Up',
-                  'EXEC_TOUCHLESS_003': 'xdotool key Page_Down',
-                  'EXEC_TOUCHLESS_004': 'amixer set Master 5%+',
-                  'EXEC_TOUCHLESS_005': 'amixer set Master 5%-',
-                  'EXEC_TOUCHLESS_006': 'playerctl next',
-                  'EXEC_TOUCHLESS_007': 'playerctl previous',
-                  'EXEC_TOUCHLESS_010': 'playerctl play-pause',
-                  'EXEC_TOUCHLESS_020': 'amixer set Master toggle',
-                  'EXEC_TOUCHLESS_021': 'xdotool key ctrl+alt+Left',
-                  'EXEC_TOUCHLESS_022': 'xdotool key ctrl+alt+Right',
-                  'EXEC_TOUCHLESS_034': 'xdg-open "https://google.com"',
-                  'EXEC_TOUCHLESS_035': 'xdotool key alt+F4',
-                  'EXEC_TOUCHLESS_036': 'xdotool type "Hello from Synapse!"',
-                  'EXEC_TOUCHLESS_037': 'xdotool mousemove 500 500',
-                  'EXEC_TOUCHLESS_038': 'xdotool click 1',
-                  'EXEC_TOUCHLESS_039': 'xdotool click 3',
-                  'EXEC_TOUCHLESS_040': 'xdotool click 4',
-                  'EXEC_TOUCHLESS_111': 'wmctrl -a Firefox',
-                  'EXEC_TOUCHLESS_113': 'scrot ~/Desktop/Capture_$(date +%s).png',
-                  'EXEC_TOUCHLESS_118': 'killall -9 gnome-terminal-server',
-                  'EXEC_TOUCHLESS_151': 'xdotool key ctrl+c',
-                  'EXEC_TOUCHLESS_152': 'xdotool key ctrl+v',
-                  'EXEC_TOUCHLESS_153': 'xdotool key ctrl+z'
-                };
-                if (cmdMap[cmdStr]) {
-                  sysCmd = cmdMap[cmdStr];
-                }
-                safeExec(sysCmd, (e) => {
-                  secureSend(ws, { type: e ? 'ACK_ERR' : 'ACK_OK', id: fId });
-                });
-              }
-            } else {
-              // Direct passthrough to module dispatch
-              const numId = parseInt(fId);
-              if (!isNaN(numId)) {
-                ipcMain.emit('fire-feature', null, numId);
-              }
-              secureSend(ws, { type: 'ACK_OK', id: fId });
-            }
+            // Execute locally or via ADB, passing ws to send acknowledgement back
+            executeFeatureAction(fId, cmdStr, msg.name || `Feature #${fId}`, 'Tablet', ws);
             break;
           }
 
@@ -721,7 +814,9 @@ app.whenReady().then(() => {
     ws.on('close', () => {
       uiLog('[WS] Client disconnected.', 'SYS');
       updateClientCount();
-      if (mainWindow) mainWindow.webContents.send('hw-status', { device: 'tablet', status: 'disconnected' });
+      if (wss.clients.size === 0) {
+        if (mainWindow) mainWindow.webContents.send('hw-status', { device: 'tablet', status: 'disconnected' });
+      }
     });
   });
 

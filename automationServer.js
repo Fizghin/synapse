@@ -61,6 +61,17 @@ wss.on('connection', (ws, req) => {
                 } catch (err) {
                     ws.send(JSON.stringify({ type: 'PS4_ERROR', error: err.message }));
                 }
+            } else if (payload.type === 'PS4_CINEMA_MODE') {
+                try {
+                    await ps4.turnOn();
+                    // Wait for the system to boot up, then start Netflix (CUSA00129 is common Netflix ID)
+                    setTimeout(async () => {
+                        try { await ps4.startTitle('CUSA00129'); } catch (e) {}
+                    }, 15000); 
+                    ws.send(JSON.stringify({ type: 'ACK_OK', id: 'PS4_CINEMA_MODE' }));
+                } catch (err) {
+                    ws.send(JSON.stringify({ type: 'PS4_ERROR', error: err.message }));
+                }
             } else if (payload.type === 'START_SCRCPY') {
                 exec('adb devices', (error, stdout) => {
                     const devices = stdout.split('\n').slice(1).filter(l => l.includes('\tdevice')).map(l => l.split('\t')[0]);
@@ -88,6 +99,31 @@ wss.on('connection', (ws, req) => {
         console.log(`[WS] Touchless HUD Disconnected.`);
     });
 });
+
+// PS4 Status Polling
+let lastPs4Status = null;
+setInterval(async () => {
+    try {
+        const status = await ps4.getDeviceStatus();
+        if (!lastPs4Status || lastPs4Status.status !== status.status || lastPs4Status.runningAppTitleId !== status.runningAppTitleId) {
+            lastPs4Status = status;
+            wss.clients.forEach(ws => {
+                if (ws.readyState === WebSocket.OPEN) {
+                    ws.send(JSON.stringify({ type: 'PS4_STATUS', status: status.status, titleName: status.runningAppTitleName }));
+                }
+            });
+        }
+    } catch (err) {
+        if (!lastPs4Status || lastPs4Status.status !== 'Offline') {
+            lastPs4Status = { status: 'Offline' };
+            wss.clients.forEach(ws => {
+                if (ws.readyState === WebSocket.OPEN) {
+                    ws.send(JSON.stringify({ type: 'PS4_STATUS', status: 'Offline' }));
+                }
+            });
+        }
+    }
+}, 5000);
 
 const interval = setInterval(() => {
     wss.clients.forEach((ws) => {

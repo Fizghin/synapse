@@ -164,8 +164,8 @@ body{background:var(--bg);font-family:var(--sans);color:var(--t1);display:flex;f
         </div>
         <div class="hw">
           <div class="hw-name">PS4 Slim</div>
-          <div class="hw-row"><div class="sd wait"></div><span>Standby</span></div>
-          <div class="hw-detail">UDP :987</div>
+          <div class="hw-row"><div class="sd wait" id="hw-ps4-dot"></div><span id="hw-ps4-status">Standby</span></div>
+          <div class="hw-detail" id="hw-ps4-detail">UDP :987</div>
         </div>
       </div>
     </div>
@@ -288,11 +288,16 @@ function renderFeatures(features,filter=''){
 ipcRenderer.on('log-message',(e,{msg,type})=>appendLog(msg,type));
 ipcRenderer.on('update-pc-stats',(e,{ram,cpu,ping,ds4})=>{document.getElementById('cpu-val').textContent=`${cpu}%`;document.getElementById('ram-val').textContent=`${ram}%`;document.getElementById('ping-val').textContent=`${ping}ms`;document.getElementById('ds4-bat').textContent=`${ds4}%`});
 ipcRenderer.on('ws-client-count',(e,c)=>{document.getElementById('ws-clients').textContent=`${c} client${c!==1?'s':''}`});
-ipcRenderer.on('hw-status',(e,{device,status})=>{
+ipcRenderer.on('hw-status',(e,{device,status,detail})=>{
   if(device==='tablet'){
     const d=document.getElementById('hw-tab-dot'),l=document.getElementById('hw-tab-status'),dt=document.getElementById('hw-tab-detail'),card=document.getElementById('hw-tablet'),td=document.getElementById('tab-dot');
     if(status==='connected'){d.className='sd on';td.className='sd on';l.textContent='WS Connected';dt.textContent='Spatial engine active';card.classList.add('active')}
     else{d.className='sd off';td.className='sd off';l.textContent='Disconnected';dt.textContent='Awaiting reconnection...';card.classList.remove('active')}
+  } else if(device==='ps4'){
+    const d=document.getElementById('hw-ps4-dot'),l=document.getElementById('hw-ps4-status'),dt=document.getElementById('hw-ps4-detail'),td=document.getElementById('ps4-dot');
+    if(status==='Awake'){d.className='sd on';td.className='sd on';l.textContent='Awake';dt.textContent=detail||'Online';}
+    else if(status==='Standby'){d.className='sd wait';td.className='sd wait';l.textContent='Standby';dt.textContent='Rest Mode';}
+    else {d.className='sd off';td.className='sd off';l.textContent='Offline';dt.textContent='Powered Off';}
   }
 });
 ipcRenderer.on('adb-transport',(e,{transport,serial})=>{
